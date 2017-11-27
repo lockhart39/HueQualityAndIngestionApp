@@ -1,0 +1,1042 @@
+# Chinese (China) translations for Hue.
+# Copyright (C) 2012 Cloudera
+# This file is distributed under the same license as the Hue project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-10-17 16:28-0400\n"
+"PO-Revision-Date: 2012-07-30 18:52-0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: src/filebrowser/conf.py:25
+msgid "Max snappy decompression size in bytes."
+msgstr "最大 Snappy 解压缩大小（字节）。"
+
+#: src/filebrowser/conf.py:32
+msgid ""
+"Location on local filesystem where the uploaded archives are temporary "
+"stored."
+msgstr "位于本地文件系统中，其中暂时存储着上载的存档。"
+
+#: src/filebrowser/conf.py:38
+msgid "whether to show the download button in hdfs file browser."
+msgstr ""
+
+#: src/filebrowser/conf.py:44
+msgid "whether to show the upload button in hdfs file browser."
+msgstr ""
+
+#: src/filebrowser/forms.py:73
+msgid "File to edit"
+msgstr "要编辑的文件"
+
+#: src/filebrowser/forms.py:74
+msgid "Contents"
+msgstr "内容"
+
+#: src/filebrowser/forms.py:75
+msgid "Encoding"
+msgstr "编码"
+
+#: src/filebrowser/forms.py:91
+msgid "File to rename"
+msgstr "要重命名的文件"
+
+#: src/filebrowser/forms.py:91
+msgid "The file to rename."
+msgstr "要重命名的文件。"
+
+#: src/filebrowser/forms.py:92
+#: src/filebrowser/templates/listdir_components.mako:170
+msgid "New name"
+msgstr "新名称"
+
+#: src/filebrowser/forms.py:92
+msgid "Rename the file to:"
+msgstr "将文件重命名为："
+
+#: src/filebrowser/forms.py:101
+msgid "File to copy"
+msgstr "要复制的文件"
+
+#: src/filebrowser/forms.py:101
+msgid "The file to copy."
+msgstr "要复制的文件。"
+
+#: src/filebrowser/forms.py:102
+msgid "Destination location"
+msgstr "目标位置"
+
+#: src/filebrowser/forms.py:102
+msgid "Copy the file to:"
+msgstr "将文件复制到："
+
+#: src/filebrowser/forms.py:112
+msgid "File to Upload"
+msgstr "要上传的文件"
+
+#: src/filebrowser/forms.py:113 src/filebrowser/forms.py:118
+msgid "Destination Path"
+msgstr "目标路径"
+
+#: src/filebrowser/forms.py:113
+msgid "Filename or directory to upload to."
+msgstr "要上传到的文件名或目录。"
+
+#: src/filebrowser/forms.py:117
+msgid "Archive to Upload"
+msgstr "要上传的存档"
+
+#: src/filebrowser/forms.py:118
+msgid "Archive to upload to."
+msgstr "要上传的存档。"
+
+#: src/filebrowser/forms.py:122
+msgid "File to remove"
+msgstr "要移除的文件"
+
+#: src/filebrowser/forms.py:126
+msgid "Directory to remove"
+msgstr "要移除的目录"
+
+#: src/filebrowser/forms.py:130
+msgid "Directory to remove (recursively)"
+msgstr "要移除的目录（递归）"
+
+#: src/filebrowser/forms.py:139
+msgid "Path to restore"
+msgstr "要还原的路径"
+
+#: src/filebrowser/forms.py:151
+msgid "Path in which to create the directory"
+msgstr "要在其中创建目录的路径"
+
+#: src/filebrowser/forms.py:152
+#: src/filebrowser/templates/listdir_components.mako:378
+msgid "Directory Name"
+msgstr "目录名称"
+
+#: src/filebrowser/forms.py:156
+msgid "Path in which to create the file"
+msgstr "要在其中创建文件的路径"
+
+#: src/filebrowser/forms.py:157
+#: src/filebrowser/templates/listdir_components.mako:408
+msgid "File Name"
+msgstr "文件名"
+
+#: src/filebrowser/forms.py:161
+msgid "Path to change user/group ownership"
+msgstr "用户/组所有权更改路径"
+
+#: src/filebrowser/forms.py:164
+#: src/filebrowser/templates/fb_components.mako:142
+#: src/filebrowser/templates/listdir_components.mako:50
+#: src/filebrowser/templates/listdir_components.mako:202
+#: src/filebrowser/templates/listdir_components.mako:235
+msgid "User"
+msgstr "用户"
+
+#: src/filebrowser/forms.py:165
+msgid "OtherUser"
+msgstr "OtherUser（其他用户）"
+
+#: src/filebrowser/forms.py:166
+#: src/filebrowser/templates/fb_components.mako:144
+#: src/filebrowser/templates/listdir_components.mako:51
+#: src/filebrowser/templates/listdir_components.mako:204
+#: src/filebrowser/templates/listdir_components.mako:236
+msgid "Group"
+msgstr "组"
+
+#: src/filebrowser/forms.py:167
+msgid "OtherGroup"
+msgstr "OtherGroup（其他组）"
+
+#: src/filebrowser/forms.py:168
+#: src/filebrowser/templates/listdir_components.mako:207
+#: src/filebrowser/templates/listdir_components.mako:271
+msgid "Recursive"
+msgstr "递归"
+
+#: src/filebrowser/forms.py:183
+msgid "Path to change permissions"
+msgstr "权限更改路径"
+
+#: src/filebrowser/views.py:132
+#, python-format
+msgid "File not found: %(path)s."
+msgstr "未找到文件：%(path)s。"
+
+#: src/filebrowser/views.py:134
+#, python-format
+msgid "'%(path)s' is not a file."
+msgstr "'%(path)s' 不是一个文件。"
+
+#: src/filebrowser/views.py:180
+#, python-format
+msgid "Cannot access: %(path)s. "
+msgstr "无法访问：%(path)s。 "
+
+#: src/filebrowser/views.py:182
+msgid " The HDFS REST service is not available. "
+msgstr " HDFS REST 服务不可用。 "
+
+#: src/filebrowser/views.py:184 src/filebrowser/views.py:991
+#, fuzzy, python-format
+msgid ""
+" Note: you are a Hue admin but not a HDFS superuser, \"%(superuser)s\" or"
+" part of HDFS supergroup, \"%(supergroup)s\"."
+msgstr " \" \"\" 注：您是 Hue 管理员，但不是 HDFS 超级用户（即 \"\"%(superuser)s\"\"）。\"\"\""
+
+#: src/filebrowser/views.py:217
+#, python-format
+msgid "Cannot edit a directory: %(path)s"
+msgstr "无法编辑目录：%(path)s"
+
+#: src/filebrowser/views.py:221
+#, python-format
+msgid "File too big to edit: %(path)s"
+msgstr "文件太大，无法编辑：%(path)s"
+
+#: src/filebrowser/views.py:231
+#, python-format
+msgid "File is not encoded in %(encoding)s; cannot be edited: %(path)s."
+msgstr "文件未采用 %(encoding)s 进行编码；无法编辑：%(path)s。"
+
+#: src/filebrowser/views.py:267
+msgid "No path specified"
+msgstr "没有指定路径"
+
+#: src/filebrowser/views.py:280 src/filebrowser/views.py:282
+#: src/filebrowser/views.py:535
+msgid "The file could not be saved"
+msgstr ""
+
+#: src/filebrowser/views.py:284
+#, python-format
+msgid "Saved %(path)s."
+msgstr "已保存 %(path)s。"
+
+#: src/filebrowser/views.py:309
+#, python-format
+msgid "Not a directory: %(path)s"
+msgstr "不是目录：%(path)s"
+
+#: src/filebrowser/views.py:488 src/filebrowser/views.py:520
+#: src/filebrowser/views.py:527
+#, python-format
+msgid "File not found: %(path)s"
+msgstr "未找到文件：%(path)s"
+
+#: src/filebrowser/views.py:555
+#, python-format
+msgid "Not a file: '%(path)s'"
+msgstr "不是文件：'%(path)s'"
+
+#: src/filebrowser/views.py:582
+msgid "First byte to display must be before last byte to display."
+msgstr "要显示的第一个字节必须在要显示的最后一个字节之前。"
+
+#: src/filebrowser/views.py:592
+msgid "Mode must be one of 'binary' or 'text'."
+msgstr "模式必须是其中一个 'binary' 或 'text'。"
+
+#: src/filebrowser/views.py:594
+msgid "Offset may not be less than zero."
+msgstr "偏移不能小于零。"
+
+#: src/filebrowser/views.py:596
+msgid "Length may not be less than zero."
+msgstr "长度不能小于零。"
+
+#: src/filebrowser/views.py:598
+#, python-format
+msgid "Cannot request chunks greater than %(bytes)d bytes."
+msgstr "不能请求大于 %(bytes)d 字节的区块。"
+
+#: src/filebrowser/views.py:722
+msgid "Failed to decompress snappy compressed file."
+msgstr "无法对 Snappy 压缩的文件解压缩。"
+
+#: src/filebrowser/views.py:727
+msgid "Failed to decompress snappy compressed file. Snappy is not installed."
+msgstr "无法对 Snappy 压缩的文件解压缩。未安装 Snappy。"
+
+#: src/filebrowser/views.py:730
+#, python-format
+msgid ""
+"Failed to decompress snappy compressed file. File size is greater than "
+"allowed max snappy decompression size of %d."
+msgstr "无法对 Snappy 压缩的文件解压缩。文件大小超出允许的最大 Snappy 解压缩大小 %d。"
+
+#: src/filebrowser/views.py:758
+msgid "Failed to read Avro file."
+msgstr "无法读取 Avro 文件。"
+
+#: src/filebrowser/views.py:770
+msgid "Failed to read Parquet file."
+msgstr "无法读取 Parquet 文件。"
+
+#: src/filebrowser/views.py:776 src/filebrowser/templates/display.mako:454
+msgid "Offsets are not supported with Gzip compression."
+msgstr "不支持采用 Gzip 压缩的偏移。"
+
+#: src/filebrowser/views.py:781
+msgid "Failed to decompress file."
+msgstr "无法对文件解压缩。"
+
+#: src/filebrowser/views.py:792
+msgid "Failed to read file."
+msgstr "无法读取文件。"
+
+#: src/filebrowser/views.py:851 src/filebrowser/views.py:853
+msgid "First Block"
+msgstr "第一个块"
+
+#: src/filebrowser/views.py:851 src/filebrowser/views.py:853
+msgid "Previous Block"
+msgstr "上一个块"
+
+#: src/filebrowser/views.py:856 src/filebrowser/views.py:859
+msgid "Next Block"
+msgstr "下一个块"
+
+#: src/filebrowser/views.py:856 src/filebrowser/views.py:859
+msgid "Last Block"
+msgstr "最后一个块"
+
+#: src/filebrowser/views.py:988 src/filebrowser/views.py:998
+msgid "Cannot perform operation."
+msgstr "无法执行操作。"
+
+#: src/filebrowser/views.py:995
+msgid "S3 filesystem exception."
+msgstr ""
+
+#: src/filebrowser/views.py:1031
+#, python-format
+msgid ""
+"Could not rename folder \"%s\" to \"%s\": Hashes are not allowed in "
+"filenames."
+msgstr "无法将文件夹 \"%s\" 重命名为 \"%s\"：文件名中不允许使用哈希。"
+
+#: src/filebrowser/views.py:1036
+#, fuzzy, python-format
+msgid "The destination path \"%s\" already exists."
+msgstr "目标 %(name)s 已存在。"
+
+#: src/filebrowser/views.py:1047
+#, python-format
+msgid ""
+"Could not name folder \"%s\": Slashes or hashes are not allowed in "
+"filenames."
+msgstr "无法将文件夹命名为 \"%s\"：文件名中不允许使用斜线或哈希。"
+
+#: src/filebrowser/views.py:1057
+#, python-format
+msgid "Could not name file \"%s\": Slashes are not allowed in filenames."
+msgstr "无法对“%s”文件命名：文件名中不允许使用斜线。"
+
+#: src/filebrowser/views.py:1201
+#, python-format
+msgid "Sorry, no \"%(sep)s\" in the filename %(name)s.sep"
+msgstr "很抱歉，文件名 %(name)s.sep 中没有 \"%(sep)s\""
+
+#: src/filebrowser/views.py:1213 src/filebrowser/views.py:1305
+#, python-format
+msgid "Destination %(name)s already exists."
+msgstr "目标 %(name)s 已存在。"
+
+#: src/filebrowser/views.py:1215 src/filebrowser/views.py:1307
+#, python-format
+msgid "Copy to %(name)s failed: %(error)s"
+msgstr "无法复制到 %(name)s：%(error)s"
+
+#: src/filebrowser/views.py:1226 src/filebrowser/views.py:1318
+#, python-format
+msgid "Error in upload form: %s"
+msgstr "上载表单错误：%s"
+
+#: src/filebrowser/views.py:1267
+#, python-format
+msgid "No \"%(sep)s\" allowed in the filename %(name)s.sep"
+msgstr "文件名 %(name)s.sep 中不允许使用 %(sep)s"
+
+#: src/filebrowser/views.py:1276 src/filebrowser/views.py:1282
+#: src/filebrowser/views.py:1288
+msgid "Could not extract contents of file."
+msgstr "无法提取文件内容。"
+
+#: src/filebrowser/views.py:1292
+msgid "Could not interpret archive type."
+msgstr "无法解释存档类型。"
+
+#: src/filebrowser/lib/archives.py:44
+msgid "Must implement 'extract' method."
+msgstr "必须实施 “提取”方法。"
+
+#: src/filebrowser/templates/display.mako:31
+#: src/filebrowser/templates/edit.mako:33
+#, python-format
+msgid "%(filename)s - File Viewer"
+msgstr "%(filename)s - 文件查看器"
+
+#: src/filebrowser/templates/display.mako:45
+#: src/filebrowser/templates/listdir_components.mako:71
+msgid "Page"
+msgstr "页面"
+
+#: src/filebrowser/templates/display.mako:53
+#: src/filebrowser/templates/listdir_components.mako:79
+msgid "First page"
+msgstr "首页"
+
+#: src/filebrowser/templates/display.mako:54
+#: src/filebrowser/templates/listdir_components.mako:82
+msgid "Previous page"
+msgstr "上一页"
+
+#: src/filebrowser/templates/display.mako:55
+#: src/filebrowser/templates/listdir_components.mako:85
+msgid "Next page"
+msgstr "下一页"
+
+#: src/filebrowser/templates/display.mako:56
+#: src/filebrowser/templates/listdir_components.mako:88
+msgid "Last page"
+msgstr "末页"
+
+#: src/filebrowser/templates/display.mako:69
+msgid "The current file is empty."
+msgstr "当前文件为空。"
+
+#: src/filebrowser/templates/display.mako:74
+msgid "Warning: some binary data has been masked out with '&#xfffd'."
+msgstr "警告：已使用 '&#xfffd' 将有些二进制数据屏蔽。"
+
+#: src/filebrowser/templates/display.mako:77
+#, python-format
+msgid "Output rendered from compressed %s file."
+msgstr "压缩 %s 文件提供的输出。"
+
+#: src/filebrowser/templates/display.mako:304
+#, python-format
+msgid "Sorry, you cannot request for more than %s pages."
+msgstr "抱歉，您无法请求超过 %s 个页面。"
+
+#: src/filebrowser/templates/display.mako:387
+msgid "There was an unexpected server error."
+msgstr "存在异常服务器错误。"
+
+#: src/filebrowser/templates/edit.mako:63
+#: src/filebrowser/templates/edit.mako:94
+msgid "Save"
+msgstr "保存"
+
+#: src/filebrowser/templates/edit.mako:64
+#: src/filebrowser/templates/edit.mako:79
+msgid "Save as"
+msgstr "另存为"
+
+#: src/filebrowser/templates/edit.mako:82
+#: src/filebrowser/templates/saveas.mako:34
+msgid "Enter the location where you would like to save the file."
+msgstr "输入文件保存位置。"
+
+#: src/filebrowser/templates/edit.mako:89
+#: src/filebrowser/templates/listdir_components.mako:174
+#: src/filebrowser/templates/listdir_components.mako:213
+msgid "Name is required."
+msgstr "需要提供名称。"
+
+#: src/filebrowser/templates/edit.mako:93
+#: src/filebrowser/templates/listdir_components.mako:155
+#: src/filebrowser/templates/listdir_components.mako:180
+#: src/filebrowser/templates/listdir_components.mako:215
+#: src/filebrowser/templates/listdir_components.mako:280
+#: src/filebrowser/templates/listdir_components.mako:302
+#: src/filebrowser/templates/listdir_components.mako:324
+#: src/filebrowser/templates/listdir_components.mako:393
+#: src/filebrowser/templates/listdir_components.mako:418
+#: src/filebrowser/templates/listdir_components.mako:1441
+#: src/filebrowser/templates/listdir_components.mako:1511
+msgid "Cancel"
+msgstr "取消"
+
+#: src/filebrowser/templates/fb_components.mako:26
+#: src/filebrowser/templates/fb_components.mako:52
+msgid "Home"
+msgstr "主页"
+
+#: src/filebrowser/templates/fb_components.mako:29
+msgid "Edit path"
+msgstr "编辑路径"
+
+#: src/filebrowser/templates/fb_components.mako:37
+msgid "View trash"
+msgstr "查看垃圾桶"
+
+#: src/filebrowser/templates/fb_components.mako:38
+msgid "Trash"
+msgstr "垃圾桶"
+
+#: src/filebrowser/templates/fb_components.mako:44
+msgid "View History"
+msgstr "查看历史记录"
+
+#: src/filebrowser/templates/fb_components.mako:45
+msgid "History"
+msgstr "历史记录"
+
+#: src/filebrowser/templates/fb_components.mako:85
+msgid "File Browser"
+msgstr "文件浏览器"
+
+#: src/filebrowser/templates/fb_components.mako:98
+#: src/filebrowser/templates/listdir.mako:48
+#: src/filebrowser/templates/listdir.mako:50
+msgid "Actions"
+msgstr "操作"
+
+#: src/filebrowser/templates/fb_components.mako:104
+msgid "View as text"
+msgstr "以文本格式查看"
+
+#: src/filebrowser/templates/fb_components.mako:108
+msgid "View as binary"
+msgstr "以二进制格式查看"
+
+#: src/filebrowser/templates/fb_components.mako:112
+msgid "Preview as Gzip"
+msgstr "以 Gzip 格式预览"
+
+#: src/filebrowser/templates/fb_components.mako:116
+msgid "Preview as Avro"
+msgstr "以 Avro 格式预览"
+
+#: src/filebrowser/templates/fb_components.mako:120
+msgid "Stop preview"
+msgstr "停止预览"
+
+#: src/filebrowser/templates/fb_components.mako:124
+msgid "Edit file"
+msgstr "编辑文件"
+
+#: src/filebrowser/templates/fb_components.mako:127
+msgid "View file"
+msgstr "查看文件"
+
+#: src/filebrowser/templates/fb_components.mako:131
+#: src/filebrowser/templates/listdir.mako:63
+#: src/filebrowser/templates/listdir.mako:64
+#: src/filebrowser/templates/listdir_components.mako:477
+msgid "Download"
+msgstr "下载"
+
+#: src/filebrowser/templates/fb_components.mako:133
+msgid "View file location"
+msgstr "查看文件位置"
+
+#: src/filebrowser/templates/fb_components.mako:134
+msgid "Refresh"
+msgstr "刷新"
+
+#: src/filebrowser/templates/fb_components.mako:137
+msgid "Info"
+msgstr "信息"
+
+#: src/filebrowser/templates/fb_components.mako:140
+msgid "Last modified"
+msgstr "上次修改"
+
+#: src/filebrowser/templates/fb_components.mako:146
+#: src/filebrowser/templates/listdir_components.mako:49
+msgid "Size"
+msgstr "大小"
+
+#: src/filebrowser/templates/fb_components.mako:148
+msgid "Mode"
+msgstr "模式"
+
+#: src/filebrowser/templates/fileop.mako:26
+msgid "File Operation"
+msgstr "文件操作"
+
+#: src/filebrowser/templates/listdir.mako:42
+msgid "Search for file name"
+msgstr "搜索文件名"
+
+#: src/filebrowser/templates/listdir.mako:54
+#: src/filebrowser/templates/listdir.mako:56
+#: src/filebrowser/templates/listdir_components.mako:181
+#: src/filebrowser/templates/listdir_components.mako:469
+#: src/filebrowser/templates/listdir_components.mako:471
+msgid "Rename"
+msgstr "重命名"
+
+#: src/filebrowser/templates/listdir.mako:57
+#: src/filebrowser/templates/listdir.mako:58
+#: src/filebrowser/templates/listdir_components.mako:303
+#: src/filebrowser/templates/listdir_components.mako:472
+#: src/filebrowser/templates/listdir_components.mako:473
+msgid "Move"
+msgstr "移动"
+
+#: src/filebrowser/templates/listdir.mako:59
+#: src/filebrowser/templates/listdir.mako:60
+#: src/filebrowser/templates/listdir_components.mako:325
+#: src/filebrowser/templates/listdir_components.mako:474
+#: src/filebrowser/templates/listdir_components.mako:475
+msgid "Copy"
+msgstr "复制"
+
+#: src/filebrowser/templates/listdir.mako:72
+#: src/filebrowser/templates/listdir_components.mako:483
+msgid "Change owner / group"
+msgstr "更改所有者/组"
+
+#: src/filebrowser/templates/listdir.mako:78
+#: src/filebrowser/templates/listdir_components.mako:489
+#: src/filebrowser/templates/listdir_components.mako:563
+#: src/filebrowser/templates/listdir_components.mako:564
+msgid "Change permissions"
+msgstr "更改权限"
+
+#: src/filebrowser/templates/listdir.mako:84
+#: src/filebrowser/templates/listdir_components.mako:499
+msgid "Summary"
+msgstr ""
+
+#: src/filebrowser/templates/listdir.mako:90
+#: src/filebrowser/templates/listdir_components.mako:503
+msgid "Restore from trash"
+msgstr "从垃圾桶还原"
+
+#: src/filebrowser/templates/listdir.mako:90
+#: src/filebrowser/templates/listdir_components.mako:503
+msgid "Restore"
+msgstr "还原"
+
+#: src/filebrowser/templates/listdir.mako:93
+#: src/filebrowser/templates/listdir.mako:102
+#: src/filebrowser/templates/listdir_components.mako:496
+msgid "Delete forever"
+msgstr "永久删除"
+
+#: src/filebrowser/templates/listdir.mako:97
+#: src/filebrowser/templates/listdir_components.mako:494
+msgid "Move to trash"
+msgstr "移至垃圾桶"
+
+#: src/filebrowser/templates/listdir.mako:108
+#: src/filebrowser/templates/listdir.mako:110
+#: src/filebrowser/templates/listdir_components.mako:216
+#: src/filebrowser/templates/listdir_components.mako:281
+msgid "Submit"
+msgstr "提交"
+
+#: src/filebrowser/templates/listdir.mako:117
+#: src/filebrowser/templates/listdir_components.mako:505
+msgid "Empty trash"
+msgstr "清空垃圾桶"
+
+#: src/filebrowser/templates/listdir.mako:121
+#, fuzzy
+msgid "Upload files"
+msgstr "上传 zip 文件"
+
+#: src/filebrowser/templates/listdir.mako:121
+#: src/filebrowser/templates/listdir.mako:125
+#: src/filebrowser/templates/listdir.mako:126
+msgid "Upload"
+msgstr "上传"
+
+#: src/filebrowser/templates/listdir.mako:130
+msgid "Files"
+msgstr "文件"
+
+#: src/filebrowser/templates/listdir.mako:131
+msgid "Archive"
+msgstr "存档"
+
+#: src/filebrowser/templates/listdir.mako:131
+#, fuzzy
+msgid "Zip/Tgz/Bz2 file"
+msgstr "Zip/Tgz 文件"
+
+#: src/filebrowser/templates/listdir.mako:138
+msgid "New"
+msgstr "新建"
+
+#: src/filebrowser/templates/listdir.mako:142
+msgid "File"
+msgstr "文件"
+
+#: src/filebrowser/templates/listdir.mako:143
+msgid "Directory"
+msgstr "目录"
+
+#: src/filebrowser/templates/listdir.mako:143
+msgid "Bucket"
+msgstr ""
+
+#: src/filebrowser/templates/listdir.mako:154
+msgid ""
+"This is Hadoop trash. Files will be under a checkpoint, or timestamp "
+"named, directory."
+msgstr "这是 Hadoop 垃圾桶。文件将位于 checkpoint 或按时间戳命名的目录下。"
+
+#: src/filebrowser/templates/listdir.mako:157
+msgid "The permissions for this folder are managed by the Sentry Namenode plugin."
+msgstr "此文件夹的权限由 Sentry Namenode 插件进行管理。"
+
+#: src/filebrowser/templates/listdir.mako:160
+msgid ""
+"The permissions of some of the selected files are managed by the Sentry "
+"Namenode plugin."
+msgstr "某些选定文件的权限由 Sentry Namenode 插件进行管理。"
+
+#: src/filebrowser/templates/listdir_components.mako:48
+msgid "Name"
+msgstr "名称"
+
+#: src/filebrowser/templates/listdir_components.mako:52
+msgid "Permissions"
+msgstr "权限"
+
+#: src/filebrowser/templates/listdir_components.mako:53
+msgid "Date"
+msgstr "日期"
+
+#: src/filebrowser/templates/listdir_components.mako:61
+msgid "There are no files matching the search criteria."
+msgstr "没有符合搜索条件的文件。"
+
+#: src/filebrowser/templates/listdir_components.mako:93
+msgid "Show"
+msgstr "显示"
+
+#: src/filebrowser/templates/listdir_components.mako:95
+msgid "of"
+msgstr "的"
+
+#: src/filebrowser/templates/listdir_components.mako:95
+msgid "items"
+msgstr "项目"
+
+#: src/filebrowser/templates/listdir_components.mako:103
+msgid "Confirm Delete"
+msgstr "确认删除"
+
+#: src/filebrowser/templates/listdir_components.mako:107
+#, fuzzy
+msgid "Are you sure you want to delete these buckets?"
+msgstr "是否确定要删除这些文件？"
+
+#: src/filebrowser/templates/listdir_components.mako:108
+msgid ""
+"Deleting a bucket will delete all of its contents and release the bucket "
+"name to be reserved by others."
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:111
+msgid "Are you sure you want to delete these files?"
+msgstr "是否确定要删除这些文件？"
+
+#: src/filebrowser/templates/listdir_components.mako:117
+#: src/filebrowser/templates/listdir_components.mako:135
+msgid "No"
+msgstr "否"
+
+#: src/filebrowser/templates/listdir_components.mako:118
+#: src/filebrowser/templates/listdir_components.mako:136
+msgid "Yes"
+msgstr "是"
+
+#: src/filebrowser/templates/listdir_components.mako:127
+msgid "Confirm Restore"
+msgstr "确认恢复"
+
+#: src/filebrowser/templates/listdir_components.mako:130
+msgid "Are you sure you want to restore these files?"
+msgstr "是否确定要还原这些文件？"
+
+#: src/filebrowser/templates/listdir_components.mako:145
+#, fuzzy
+msgid "Confirm empty trash"
+msgstr "确认清空垃圾桶"
+
+#: src/filebrowser/templates/listdir_components.mako:149
+msgid "Are you sure you want to permanently delete all your trash?"
+msgstr "是否确定要永久删除所有垃圾？"
+
+#: src/filebrowser/templates/listdir_components.mako:156
+#, fuzzy
+msgid "Delete all"
+msgstr "删除"
+
+#: src/filebrowser/templates/listdir_components.mako:167
+msgid "Renaming:"
+msgstr "正在重命名："
+
+#: src/filebrowser/templates/listdir_components.mako:177
+#: src/filebrowser/templates/listdir_components.mako:391
+#: src/filebrowser/templates/listdir_components.mako:416
+msgid "already exists."
+msgstr "已存在。"
+
+#: src/filebrowser/templates/listdir_components.mako:196
+msgid "Change Owner/Group"
+msgstr "更改所有者/组"
+
+#: src/filebrowser/templates/listdir_components.mako:200
+#, fuzzy, python-format
+msgid ""
+"Note: Only the Hadoop superuser, \"%(superuser)s\" or the HDFS "
+"supergroup, \"%(supergroup)s\" on this file system, may change the owner "
+"of a file."
+msgstr "注：只有此文件系统上的 Hadoop 超级用户 \"%(superuser)s\"\"才可更改文件的所有者。"
+
+#: src/filebrowser/templates/listdir_components.mako:228
+msgid "Change Permissions:"
+msgstr "更改权限："
+
+#: src/filebrowser/templates/listdir_components.mako:237
+msgid "Other"
+msgstr "其他"
+
+#: src/filebrowser/templates/listdir_components.mako:244
+msgid "Read"
+msgstr "读取"
+
+#: src/filebrowser/templates/listdir_components.mako:251
+msgid "Write"
+msgstr "写"
+
+#: src/filebrowser/templates/listdir_components.mako:258
+msgid "Execute"
+msgstr "执行"
+
+#: src/filebrowser/templates/listdir_components.mako:265
+msgid "Sticky"
+msgstr "易贴"
+
+#: src/filebrowser/templates/listdir_components.mako:292
+msgid "Move to"
+msgstr "移至"
+
+#: src/filebrowser/templates/listdir_components.mako:299
+#: src/filebrowser/templates/listdir_components.mako:321
+msgid "Select a folder or paste a path..."
+msgstr "选择文件夹或粘贴路径..."
+
+#: src/filebrowser/templates/listdir_components.mako:300
+#: src/filebrowser/templates/listdir_components.mako:322
+msgid "Required"
+msgstr "必填"
+
+#: src/filebrowser/templates/listdir_components.mako:314
+msgid "Copy to"
+msgstr "复制到"
+
+#: src/filebrowser/templates/listdir_components.mako:334
+#, fuzzy
+msgid "Upload to"
+msgstr "正在上传到："
+
+#: src/filebrowser/templates/listdir_components.mako:339
+#: src/filebrowser/templates/listdir_components.mako:355
+msgid "Enable JavaScript to use the file uploader."
+msgstr "启用 JavaScript 以使用文件上传器。"
+
+#: src/filebrowser/templates/listdir_components.mako:350
+msgid "Upload and extract in"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:369
+msgid "Create Directory"
+msgstr "创建目录"
+
+#: src/filebrowser/templates/listdir_components.mako:372
+msgid "Create Bucket"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:381
+#, fuzzy
+msgid "Bucket Name"
+msgstr "新名称"
+
+#: src/filebrowser/templates/listdir_components.mako:388
+msgid "Directory name is required."
+msgstr "需要提供目录名。"
+
+#: src/filebrowser/templates/listdir_components.mako:394
+#: src/filebrowser/templates/listdir_components.mako:419
+msgid "Create"
+msgstr "创建"
+
+#: src/filebrowser/templates/listdir_components.mako:405
+msgid "Create File"
+msgstr "创建文件"
+
+#: src/filebrowser/templates/listdir_components.mako:413
+msgid "File name is required."
+msgstr "文件名为必填字段。"
+
+#: src/filebrowser/templates/listdir_components.mako:429
+msgid "Summary for"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:436
+msgid "Disk space consumed"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:440
+msgid "Bytes used"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:444
+msgid "Namespace quota"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:448
+msgid "Disk space quota"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:452
+msgid "Number of directories"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:456
+msgid "Number of files"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:462
+msgid "Close"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:512
+msgid "Upload progress"
+msgstr "上传进度"
+
+#: src/filebrowser/templates/listdir_components.mako:546
+msgid "Change owner"
+msgstr "更改所有者"
+
+#: src/filebrowser/templates/listdir_components.mako:555
+msgid "Change group"
+msgstr "更改组"
+
+#: src/filebrowser/templates/listdir_components.mako:656
+msgid "Clear history..."
+msgstr "清除历史记录..."
+
+#: src/filebrowser/templates/listdir_components.mako:731
+msgid "Not available."
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:760
+msgid "This folder"
+msgstr "此文件夹"
+
+#: src/filebrowser/templates/listdir_components.mako:764
+msgid "One level up"
+msgstr "上移一级"
+
+#: src/filebrowser/templates/listdir_components.mako:1201
+msgid "Items moving to"
+msgstr "项目移至"
+
+#: src/filebrowser/templates/listdir_components.mako:1226
+msgid "You cannot copy a folder into itself."
+msgstr "您无法将文件夹复制到自己当中。"
+
+#: src/filebrowser/templates/listdir_components.mako:1377
+msgid "Submitting is not available as the Oozie app is disabled"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:1432
+#, fuzzy
+msgid "Drop the files here to upload"
+msgstr "拖放文件到此处进行上传"
+
+#: src/filebrowser/templates/listdir_components.mako:1433
+msgid "Select files"
+msgstr "选择文件"
+
+#: src/filebrowser/templates/listdir_components.mako:1443
+#: src/filebrowser/templates/listdir_components.mako:1513
+msgid "Failed"
+msgstr "失败"
+
+#: src/filebrowser/templates/listdir_components.mako:1462
+#: src/filebrowser/templates/listdir_components.mako:1532
+msgid "Error: "
+msgstr "错误： "
+
+#: src/filebrowser/templates/listdir_components.mako:1465
+#: src/filebrowser/templates/listdir_components.mako:1535
+#: src/filebrowser/templates/listdir_components.mako:1742
+msgid " uploaded successfully."
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:1502
+msgid "Drop the archives here to upload and extract them"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:1503
+msgid "Select ZIP, TGZ or BZ2 files"
+msgstr ""
+
+#: src/filebrowser/templates/listdir_components.mako:1656
+msgid "Drop files here to upload"
+msgstr "拖放文件到此处进行上传"
+
+#: src/filebrowser/templates/listdir_components.mako:1700
+msgid "Cancel upload"
+msgstr "取消上传"
+
+#: src/filebrowser/templates/listdir_components.mako:1732
+msgid "Upload has been canceled"
+msgstr "已取消上传"
+
+#: src/filebrowser/templates/listdir_components.mako:1783
+msgid "User is required."
+msgstr "需要提供用户。"
+
+#: src/filebrowser/templates/listdir_components.mako:1788
+msgid "Group is required."
+msgstr "组为必填字段。"
+
+#: src/filebrowser/templates/listdir_components.mako:1794
+msgid "Specify another group."
+msgstr "指定另一个组。"
+
+#: src/filebrowser/templates/listdir_components.mako:1802
+msgid "Specify another user."
+msgstr "指定另一位用户。"
+
+#: src/filebrowser/templates/listdir_components.mako:2052
+msgid ""
+"Did you know? You can use the tab key or CTRL + Space to autocomplete "
+"file and folder names"
+msgstr "您知道吗？您可使用 Tab 键或 CTRL + 空格键自动完成文件和文件夹名称"
+
+#: src/filebrowser/templates/listdir_components.mako:2058
+msgid "There was a problem with your request."
+msgstr "您的请求出错。"
+
+#: src/filebrowser/templates/saveas.mako:20
+msgid "Save File As..."
+msgstr "文件另存为..."
+

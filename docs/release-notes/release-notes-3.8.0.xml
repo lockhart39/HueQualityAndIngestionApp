@@ -1,0 +1,6407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <title>Hue v3.8.0, released April 24th 2015</title>
+</articleinfo>
+<simpara>Hue, <ulink url="http://gethue.com">http://gethue.com</ulink>, is an open source Web UI for easily doing Big Data analysis with Hadoop.</simpara>
+<simpara>Its mainly features:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Editors for Hive, Impala, Spark and Pig
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Search Dashboards for querying, exploring, visualizing data and with Solr
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Hadoop File, Job and HBase Browsers
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>On top of that, a SDK is available for creating new apps integrated with Hadoop.</simpara>
+<simpara>More user and developer documentation is available at <ulink url="http://gethue.com">http://gethue.com</ulink>.</simpara>
+<section id="_latest_notable_features">
+<title>Latest Notable Features</title>
+<simpara>The complete list and video demos are on <ulink url="http://gethue.com/hue-3-8-with-an-oozie-editor-revamp-better-performances-improved-spark-ui-is-out/">http://gethue.com/hue-3-8-with-an-oozie-editor-revamp-better-performances-improved-spark-ui-is-out/</ulink>.</simpara>
+<simpara>Note</simpara>
+<simpara>If you built custom apps, follow the <ulink url="http://gethue.com/developer-guide-on-upgrading-apps-for-django-1-6/">upgrade guide</ulink>!</simpara>
+<simpara>Oozie Editor</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+New look and less knowledge of Oozie required
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Importing / exporting workflows is easier
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Workflows supports tens of new functionalities
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Support of the new HiveServer2 and Spark Action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Coordinator user experience is simpler
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Oozie Dashboard</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Easy way to differentiate workflows submitted manually or by coordinators
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Sub-workflow links to corresponding workflows and logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Update end time of coordinator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Hive jobs ids are visible
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Spark Notebook (Beta)</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+New REST Spark Job Server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Notebook Web UI
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Scala
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Python
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+SQL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+YARN cluster
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Stability/performance</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Hue HA
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Static files caching
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Hive 1.1 support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Major upgrade of Django 1.6
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Run with Apache Server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Fixed a number of deadlocks
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Fixed some non-standard Oracle DB issues
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Search</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Regular users can now also create dashboards
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Range &amp; Up facet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2D maps
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Multiple widgets using the same fields
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Enable only the Search app
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Export and import dashboard
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Security</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Sensitive data redaction in logs and SQL editors (PCI)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HTTPS/SSL configuration
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Use Impala/Hive with LDAP authentication and SSL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HCatalog with Pig Editor and security
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+SAML 2.0 support
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>HBase</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Impersonation with or without Kerberos
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_compatibility">
+<title>Compatibility</title>
+<simpara>Runs on CentOS versions 5 to 6, Red Hat Enterprise Linux (RHEL 5 and 6), and Ubuntu 10.04, 12.04 and 14.04.</simpara>
+<simpara>Tested with CDH5. Specifically:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Hadoop 0.20 / 2.6.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Hive 1.1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Oozie 4.1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HBase 1.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pig 0.12
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Impala 2.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Solr 4.10
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Sqoop2 1.99.5
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>These minimum versions should work (not tested):</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Hadoop 0.20 / 1.2.0 / 2.0.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Hive 0.12.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Oozie 3.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HBase 0.92
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pig 0.8
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Impala 1.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Solr 3.6
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Sqoop2 1.99.3
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Supported Browsers:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Windows: Chrome, Firefox 17+, Internet Explorer 9+, Safari 5+
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Linux : Chrome, Firefox 17+
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mac: Chrome, Firefox 17+, Safari 5+
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Runs with Python 2.6.5+</simpara>
+<simpara>Note: CentOS 5 and RHEL 5 requires EPEL python 2.6 package.</simpara>
+</section>
+<section id="_list_of_1121_commits">
+<title>List of 1121 Commits</title>
+<itemizedlist>
+<listitem>
+<simpara>
+d4c48e9 [doc] 3.8 release notes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5eb812c [core] Bump version to 3.8
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7289d49 HUE-2654: Update virtualenv: BIGTOP-1635
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+747c924 [spark] Bumping Spark create session timeout to 2 minutes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+040d52a [spark] Send all the snippet to close when leaving the notebook
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc4d33d [jb] Support killing Spark jobs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+822afd4 [hadoop] Handle when the standby YARN RM fails back to the master RM
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ed44419 [hadoop] Make sure to use LOG.exception when handling exceptions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0ea1a0e HUE-2638 [livy] Fix running spark commands by setting spark.repl.class.uri
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+41722d2 [oozie] UX fixes for Firefox and IE on workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+518e67b [oozie] Do not show sub-workflow main properties when expanding node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3e29581 [oozie] Warning about using HBase credentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f0126c7 [oozie] Fix workflow actions with files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2672423 [oozie] Add credentials default to the examples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6fe5081 Remove executable permissions for static files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0ad436f [fb] Fix appending to existing file if upload is interrupted
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f1abd63 [spark] Open notebooks directly from the homepage
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b5451ca HUE-2640 [spark] Notebooks are slowed down by unnecessary jsonifies
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cfda484 HUE-2639 [spark] Only propose changing snippet type in edit mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8587786 [livy] Automatically import the spark context as "sc"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5b811bd [hadoop] Follow ssl_cert_ca_verify for HDFS uploads
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c028749 [core] Bump number of cherrypy threads to 40
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fbfca95 [spark] Update Scala notebook example
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+48cd324 [core] Remove the install all examples button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9376f14 [desktop] Protect against get_default_mrcluster() returning None
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7800cd5 [tools] Add hue-review script for submitting code reviews
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8d89569 [hadoop] Default to always verifying certificates are signed.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+019f926 [oozie] Add config option ssl_cert_ca_verify
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bd47eee [oozie] Log the full exceptions thrown from communicating with oozie
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+833d962 [about, metastore, and desktop] Add blank config files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c254fc1 [desktop] Fix infinite loop in requests-kerberos when receiving 401
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c72b524 [desktop] Upgrade requests to 2.6.0.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cbf4094 [oozie] Generate Workflow credentials properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9ab5054 [fb] Support viewing files with tabs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f8b5939 HUE-2630 [fb] Support filenames with spaces and parenthesis
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+77f8408 [impala] Silence error messages due out of sync invalidate metadata
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+852a1b4 [filebrowser] Show the last 10 paths in history
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4dcc95d [oozie] Generate Coordinator SLAs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+29146e1 [oozie] Generate Workflow SLAs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+19beda7 [oozie] Display and select available workflow credentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a59392d [search] Remove unused argument in pairwise2 utils
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+86d2ec5 [spark] Disable functionality of action buttons when no notebooks are selected
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+87ca9ff [spark] Bulk copy and delete notebooks
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a243de0 [hadoop] Make WebHdfs SSL certification verification configurable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8494a15 [livy] Add server thread session spec
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c9a5ecc [livy] Fix reporting spark exceptions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f4e975f [spark] Support for change snippet type on edit mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5aa9718 [hbase] Do not close transport when flushing as it resets the headers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dd5e278 [oozie] Open coordinator input paths in a new tab
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e13d963 [spark] Added description editing to the UI
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b4f14e7 [oozie] Preview HDFS links with the correct UTC start time
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dca8124 [spark] Avoid result duplication on window resize
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2b8bb40 [spark] Add description field to the notebook
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ebe3623 [livy] Ignore the dependency-reduced-pom.xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e9629ba [spark] Make notebook name editable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2ee3562 [spark] Reset results from sample notebook
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cabd476 HUE-2595 [spark] Lighter POST calls without all the notebook data
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+14cb2e8 [oozie] Space evenly the workflow parameters in the coordinator editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ab7c87e [spark] Add an Notebook example with Python, Scala and SQL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6a04452 [spark] Add permission checking for notebooks
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+60111a7 [spark] Add example command infrastructure
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b52de42 [oozie] Restyled workflow editor page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a6f3d4c [oozie] Restyled bundle editor page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2016c4e [oozie] Restyled coordinator editor page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5a66d31 [oozie] Add smart switching between editor and dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a4d6c1d [oozie] Support / and space as separators for the coordinator dataset typeahead
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3c8f635 [oozie] Fix coordinator start and end time Z
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4259cc8 [oozie] Hide overflow of the wf, coord and bundle description
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+351379d [oozie] Improve reliability of dropdown menu
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8c62255 [spark] Automatically run <literal>hadoop classpath</literal> and append to livy classpath
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ec9b89b HUE-2562 [pig] Make example work with non admin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+35dedef [oozie] Provide Hive2 action HiveServer2 URL at runtime by default
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+677f7c4 [oozie] Spark jar example was not added because of git ignore
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8de4cc5 [doc] Help command to fix setup for tarball install
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6927e00 [livy] Relocate jetty so it does not conflict with spark&#8217;s jetty
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+16784c7 HUE-2625 [oozie] Workflow dashboard completed table is being refreshed for nothing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3c784c9 [oozie] Remove seconds from Coordinator from/to and add Z at the end
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5a4eb4f [oozie] Hide deployment dir on filechooser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a81b432 [oozie] Skip hdfsAutocomplete keydown handler
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c18dd66 [oozie] Fix month rendering on parameters and input focus to the last char
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f65e7d5 [jb] Provide a generic page for YARN apps other than Spark or MR
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cd0e578 [oozie] Support editing description of workflows, coordinators, bundles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d100bb6 [security] Add LOG.exception to log any ignored sentry exceptions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f5e416f HUE-2623 [oozie] Add externalId link to the details tab in sub workflow action page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2519e8a [search] Bump the max value of demo range facet to include all records
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2fa2a9d [search] Do not miss out values above the rounded max value of a range
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+423b76a [search] Make corrrect the counts of an esc range facet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c02b2f5 [search] Display the name of the 2d dimension in map if non edit mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ec5c3af [search] Update Apache log demo with latest widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+da76d9a [search] Update Yelp dashboard with latest widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7179a26 [search] Support numbers as 2nd dimension of gradient map
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c14b4c2 [search] Remove Job collection and prettify Twitter dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+10c8a7f [oozie] Adding new properties to the Oozie mini cluster
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1cefd92 [spark] Add an experimental config option to launch livy
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+93455b8 [livy] Update spark version to 1.3.0-cdh5.5.0-SNAPSHOT
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+92cef00 [spark] Make the livy-assembly.jar not include the maven version
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+de699c6 [oozie] Switch workflow integration tests to the new editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5c1a734 [oozie] Add a Fork Example with Pig and Sub-workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3992bf3 [oozie] Adding a Bundle example to the New Editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5b5ce3d [oozie] Add an example of Coordinator to the New Editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2f84ea1 [oozie] Do not prompt for variables filled by coordinator datasets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+877c946 [oozie] Prefill HiveServer2 action with the real HiveServer2 address
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+084eb56 [oozie] Add HiveServer2 example for the New Editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cf45917 [core] Turn off database logging by default
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+17c7863 [impala] Close invalidate metadata statements when installing the examples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8c91ec7 [oozie] Add Spark Example for new Editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+04ec871 [core] Sync imported workflow from the new Oozie Editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f429cb8 [oozie] Fix workflow dashboard LastModified and Submission columns
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e63dec6 [load-balancer] Don&#8217;t expose the staticfile dirs by default
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b776889 [load-balancer] Add example SSL configuration to nginx config
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b22e3ab [load-balancer] Add static file caching to nginx config
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+198e250 [desktop] ATOMIC_REQUESTS is a setting on the database config
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d131f42 [search] Inline download results buttons
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9d7011b [oozie] Hide logs icon if logs are empty
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0d43b1e [desktop] Fix migrations for postgresql
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+947eda8 [oozie] Make sure a subworklow gets its graph in the dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4ea0da8 [desktop and beeswax] Avoid race on Template.render
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e10c758 [desktop] Allow Document2.uuid to be 36 characters long
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+38dd834 [desktop] Django-1.6 deprecated TEMPLATE_DIRS not being a tuple
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ceba427 [oozie] Disable current workflow as subworkflow from the workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+03858ab [oozie] Fix definition codemirror back button problem
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+474f802 [oozie] Add Spark action XML template
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+feeb4a0 [oozie] Fixed minor UI glitches on the workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6ced93d [oozie] Fix datepicker values on the submit coordinator popup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a0e09eb [oozie] Move the logs icon to every specific action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+da6a84a [core] First pass of locatization for 3.8
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0f63a7f [oozie] manual filter bug fix for running table on workflow dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+16125c7 [spark] Remove multi notebooks tabs for now
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3ab5853 [liboozie] Add tests to check for workflow action external id links
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+920dd51 [core] Bumping Java Hadoop libs to 2.6
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ccc9776 [desktop] Replace Python 2.7 subprocess.check_output with a 2.6-safe code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0ba97c6 [desktop] Stop nose from trying to run tests from an abstract base class
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1df4c56 [livy] Handle the Error and NotStarted session states
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c852455 [desktop] Add support SSL certificate passwords
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c1ba9c4 [search] Updated empty dashboard colors
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e7a7a15 [oozie] Hide graph from workflows with unavailable graph data
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c621540 [oozie] Fixed action buttons with non selected items and bundle submission
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+62c17ed [oozie] Support deploying the workflow of a subworkflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bbd9fd6 [libsentry] Handle HA exception more properly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1c0e1e3 [sentry] Do not error out when the group does not exist in Sentry
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+36d7109 [oozie] Importing workflow with credentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+002592e HUE-2281 [oozie] Dive into logs for Sub-Workflow action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+167df25 [oozie] Submit jobs from older version
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e8da678 [oozie] Import the workspace of copied workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6931e2d HUE-2499 [desktop] Allow passwords to be produced by a script
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+46f8bc4 HUE-2392 [search] Allow multiple independent range facet on the same field
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7672b6d [search] Do not show +1 facet in Bar and Pie charts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b54ad6d HUE-2392 [search] Allow multiple independent field facet on the same field
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2ff30a6 [hbase] Adding back missing reset import
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8113609 [hbase] Examples installed from the UI should use the current user credentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d7e4aaf [oozie] Updating Oozie tests with credentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5c852c0 [hbase] Decorating Thrift calls to set the doAs header
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0d1620e HUE-2603 [sqoop] Change labeling of jobs and links
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5c5c171 HUE-2412 [desktop] Work around Oracle not supporting <literal>SELECT DISTINCT</literal> with CLOBs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9dd4e4e HUE-2597 [oozie] Link subworkflows from workflow inside a workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0322f43 [hbase] Thrift util is using Thrift Socket when the transport mode is <emphasis>socket</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a04cd6e [desktop] Convert to the latest log redaction file format and add more tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+687b09e [oozie] Enable saving an old workflow to the new format
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a251576 [core] Removing the History documents from the home page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+57e5060 [oozie] Fix unit tests for TestEditor and TestCredentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+082d63a HUE-2371 [sentry] Move privilege select2 to normal dropdown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f040261 [sentry] Merge two bindings for allowing of editing of a privilege
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+65de378 [oozie] Fix workflow editor in non-viewer mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f54f376 HUE-1899 [oozie] Also generate job.properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f4e4c9a [oozie] Dashboard support for Bundle version 2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5b9f4f4 [oozie] Support $ parameters in the job name in the editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+08e9868 [core] Ignore case when searching or creating LDAP users
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dd4bcba [hadoop] Read umask mode directly from the hdfs-site.xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c82be3b [oozie] Live updates on the V2 dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+253b955 [desktop] Remove the redundant database_logging option
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e1195c6 [jobbrowser] Include info about the node each task ran on in task attempt page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+abe5a7a [oozie] Update hive credentials to display correct principal when HS2 and HMS are on different hosts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7c3b1a2 HUE-2579 [sqoop] Support new REST API attributes without breaking
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+31d5d13 HUE-2596 [oozie] Adjust column width on dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d18207d HUE-2596 [oozie] Restyled and simplified parent column on dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e289d3d HUE-2596 [oozie] Add parent column on dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e4555b0 [livy] Capture stdout in scala, add tests for scala and python
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f46ee77 [livy] Simplify creating a scala/spark interpreter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d2568b0 [livy] Stop the python repl crashing hanging the livy-repl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c501318 [livy] Clean up some dead code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8ec9dd0 HUE-2577 [search] Range setting widget does not update the model
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c2e9d87 [search] Added legend to the discrete map chart
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a797854 [search] Restyle automatic grid layout icon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c1947bf [search] Restyled dashboard previews
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f209ea5 [search] Add filter bar in the magic layout template
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+505be54 [hadoop] Turn on SSL certificate verification by default
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+af0c507 [beeswax] Connection to Hive/Beeswax does not need client certificates
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0f1e3ee [desktop] Return a broken path if we can&#8217;t find a file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+07c455b [spark] Fix the Makefile to remove a circular dependency
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+560f393 [oozie] Support for logs link on widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8019ed0 [search] Improve discrete map color grouping and coding
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+71b5e84 [oozie] Hide arrows on tab change on workflow dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d4d5b3b HUE-2534 [hbase] Automatically detect configuration based on hbase-site.xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a483647 HUE-2534 [hbase] Install the examples with the doas
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b3cebec HUE-2534 [core] HTTP Thrift transport implementation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+108856a [sentry] Flip to use our version of Kazoo with Kerberos support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a1afc18 [zookeeper] Adding parameter for specifying zookeeper principal name
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1e49a50 [libsentry] Automatic failover to any available Sentry Server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0ba8f30 [sentry] Do not spin endlessy when server cannot be contacted
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+544857d [libsentry] HA support with Kazoo
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0491ffd [desktop] Update kazoo with with SASL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6dac09c [desktop] Import kazoo-2.0 into ext-py
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ffbe62 [oozie] Adding the Spark Action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cbf941c [search] Moved scope to properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3a64d10 [search] Improved scope dropdown CSS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2d11028 [search] Restyle scope dropdown and alignment of the selected dimension
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7e99e58 [search] Show a default of 5 items on the 2d map widget
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a790446 [search] Introduce discrete map for pivot data
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+de50e79 [search] Migrate map widget to use pivot facets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+24cbaca [search] Make examples visible with the new dashboard permissions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+485b43a HUE-1353 [search] Support for Collection Aliases
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b74007f HUE-1987 [search] Dashboard level access for non admin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e5e30da [oozie] Move isSaving(false) to .always in the AJAX calls
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8f54840 [search] Fix Leaflet map z-index and edit form
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f42ce43 [oozie] Disable save button while saving
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+db33754 HUE-2102 [oozie] Workflow with credentials can&#8217;t be used with Coordinator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a9366b6 [oozie] Update workflow icons to work with static files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d0dfafa [desktop] Fix create_desktop_app for staticfiles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6d8855c HUE-2417 [desktop] Move staticfiles into build/static
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3ba0690 HUE-2417 [tools] Integrate staticfiles into app_reg
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+df12969 HUE-2417 [desktop] Switch to CachedStaticFilesStorage, which appends a hash to the filenames
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+46049b5 HUE-2417 [desktop] Fix help app to look in the right place for staticfiles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1e7ba6e HUE-2417 [desktop] Convert a relative path to pngs to an absolute path
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fae7e60 HUE-2417 [desktop] Fix Debug=False
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+62a6cac HUE-2417 [all] Switch the python libraries to use settings.STATIC_URL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bac9d57 HUE-2417 [all] Switch mako scripts to use <literal>static</literal> function
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a68c488 HUE-2417 [all] Switch the static files to use the new /static prefix
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+743b3e8 HUE-2417 [desktop] Expose staticfiles.static to the mako templates
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+32dca45 HUE-2417 [desktop] Switch to using django.contrib.staticfiles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4a905ef HUE-2417 [all] Move files to prep for django.contrib.staticfiles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+db17d17 HUE-2583 [core] DOM Based XSS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8433938 [security] Solves Json error of Django 1.6 upgrade
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7361436 HUE-2585 [impala] Display further errors when no line is specified in the error message
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c495df4 [spark] Code formatting of static files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eb5f8ce [oozie] Code formatting of static files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+db5709c [oozie] Preliminary work for new dashboard graph
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c1f874f [jobbrowser] Additional log info for debugging
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2f933b7 [livy] Wait until the session is ready before we notify the server we&#8217;re idle
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+46d1038 [indexer] Properly throw an exception if we can&#8217;t find solrctl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b1476da HUE-2198 [core] Reduce noise such as "Mutual authentication unavailable on 200 response"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7c32ddb [oozie] Improved submit modal autosizing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+365fec6 [oozie] Unified and extracted change tracker, made common submit modal code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0b2664a [oozie] Make workflows dashboard buttons responsive
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+27b2788 HUE-2546 [hive] Localized date format for Hive/Impala
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6f87b9b [oozie] Fix Fs action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5e6b8e7 [oozie] Use default HDFS permissions for the workspace
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+860ee4c HUE-828 [oozie] Differentiate workflows submitted by a coordinator from ones submitted manually
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e281ddc [spark] Fix polling the livy session status
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fcde243 [pig] Compatibility with Django 1.6 upgrade
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+83e7db0 [spark] Fixed js error after adding a Text snippet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3ab7bc5 [spark] Hide and not load Assist if Beeswax is blacklisted
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+552ea1a HUE-2540 [search] Pagination result number labels are not always accurate
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e6c266c HUE-1350 [search] Introduce value and up facet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+af74306 HUE-2156 [search] Range facet with single gap unit should display only start value
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9975618 HUE-2575 [home] Fix sharing color and modal dialog for already shared documents
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+66b5dbc [spark] Check for running status of a new session
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ac5d732 HUE-2367 [yarn] Ensure checking of SSL certificates is on or off
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fe821ca [desktop] Upgrade pytz to 2014.10
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a86f78b [desktop] Upgrade requests-kerberos to 0.6.1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bf22469 [desktop] Upgrade requests to 2.5.1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+187142c [desktop] Upgrade MySQL-python to 1.2.5
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+620db48 [docs] Fix header declaration
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+188f20b [livy] Remove some of the hardcoded versions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a23f977 [livy] Clean up some unnecessary comments
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+092dd66 [spark] Add livy configuration options to hue.ini
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dee851d [livy] Mark source as UTF-8
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+007fc7e [livy] Process sessions should use spark-submit
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+879bcec [spark] Swap tabs for spaces and whitespace cleanup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+550b2c2 [livy] Allow the livy assembly to be found on yarn
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+be173e3 [livy] Rearchitect livy to use shaded jar and the system spark
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bcaed64 [livy] Remove unnecessary repositories and dead code from the pom.xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+75a2b1e [livy] Add a thread session
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+71eeefb [livy] Clean up session code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7250081 [impala] Add an environment variable to point tests to a read impalad
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+542167a [hadoop] Simplify a little copyfile
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e9fc26a [oozie] Cleaned up unused CSS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+11bc1df [impala] Add an impala test command that runs against a real Impalad
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+192670d [hive] Remove old Spark menu
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+71b1531 HUE-2323 [oozie] Update endtime of running coordinator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1dda3c1 HUE-2653 [indexer] Selected checkboxes are not visually checked
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+82e8667 [fb] Remove unused deprecated md5 import
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+171dc66 [oozie] Added support for coordinator dataset multi typeahead
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e17631e [jb] List jobs from new Json format
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+46c1ff1 [oozie] Make submit popup work with Django 1.6
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2644776 [oozie] Empty state messages
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fbc70e6 [oozie] Unified button sizes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7069d7c [oozie] Fixes coordinator load problem
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+991447f [oozie] Preparation for the workflow running dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+029274e [docs] Update to support Hue SDK installed via CDH/CM
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2076e40 HUE-2571 [core] django_auth_ldap module DEBUG logging
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+629b8ff [oozie] Reset dirtiness on bundle save
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+391f3ab [oozie] Offer link to coordinator when adding one in a bundle
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+79a7aee [oozie] Renaming HttpResponse to JsonReponse
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c8f9f78 HUE-2569 [home] Delete project is broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b5df830 [oozie] Added isDirty to bundle editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+420e1e9 [oozie] Restyled old-editor messages to fit better any size of the screen
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4387082 [core] Introduce ALLOWED_HOSTS configuration for Hue
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c58adc1 HUE-2563 [search] Copy/delete buttons are not disabled on dashboard page when nothing is selected
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+101be27 HUE-1078 [useradmin] LDAP debug logging
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+09f3765 [oozie] Support submitting old format directly from the editor list
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+61052f0 [oozie] Make list of jobs work after Django 1.6 upgrade
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8343d55 HUE-1663 [core] Option to either follow or not LDAP referrals for auth
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4518874 [search] Update dashboard page for Django 1.6
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d201109 HUE-2257 [impala] Quicker detection of non null values in a column
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+40e3268 HUE-2257 [hive] Support NULL values in column level format
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e797245 [hive] Support fetching logs with column level format
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c96d057 [hive] Detect correctly the end of a resultset with Hive 1.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e21cbec [hive] Fix another test query that does not trigger MR jobs anymore
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0c0588d [hive] Perform fetch metadata call only when start_over is true
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2f06c75 HUE-2257 [hive] Add a workaround for missing hasMoreRows in the API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d30132f HUE-2257 [hive] Supporting new column format and old row format
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc0a8dc HUE-2257 [hive] Adding Hive 0.13 Thrift
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a29753a HUE-2436 [desktop] Upgrade django-nose to 1.3
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+02721e6 HUE-2436 [desktop] Upgrade South to 1.0.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+45d5510 HUE-2436 [ext] Update the external dependency documentation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6e77edd HUE-2436 [beeswax] Django-1.6: fix export tests to work with StreamingHttpResponse
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7c2abee HUE-2436 [pig] Pig hadoop tests require a superuser account
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+89fb3a3 HUE-2436 [oozie and pig] Don&#8217;t cache the oozie api, this can break the tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+32993e2 HUE-2436 [oozie and jobsub] Django-1.6: Change oozie autocomplete to return a dict
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bde70cc HUE-2436 [oozie] Django-1.6 doesn&#8217;t allow form exclusion to be a string
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f7802b7 HUE-2436 [oozie] Django-1.6: Change massaged_oozie_jobs_for_json to return dict
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ac28607 HUE-2436 [jobbrowser] Django-1.6: Return json objects
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1012e75 HUE-2436 [filebrowser] Remove a debug message
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dd25ae6 HUE-2436 [filebrowser] Django-1.6: Fix test, make sure to always close avro file reader
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+481eaa7 HUE-2436 [filebrowser] Django-1.6: Don&#8217;t quote urlpaths
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9b3e535 HUE-2436 [search] Django-1.6: Fix search tests to work with StreamingHttpResponse
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+92fb581 HUE-2436 [useradmin] Django-1.6: Pass in groups when updating user
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e965d3e HUE-2436 [useradmin] Django-1.6: Stop caching the user in the session
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+41db158 HUE-2436 [useradmin] Add ModelForms now require a Meta.model
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7797743 HUE-2436 [useradmin] Django-1.6: We no longer need to quote uses of <literal>reverse</literal> (which is used by <literal>url)</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fc20566 HUE-2436 [desktop] Protect tests from falling into an infinite loop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+63df3f3 HUE-2436 [desktop] Remove dead code that made Hue compatible with Python 2.4 and 2.5
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9332b5a HUE-2436 [desktop] creating a test user should make sure to update is_superuser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+86f55d9 HUE-2436 [desktop] Wrap getting and releasing the test oozie lock in a try-finally
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5e6a0c6 HUE-2436 [desktop] Fix ldap login test, which was using an invalid username
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4b9d569 HUE-2436 [desktop] Make sure to reset the mako test wrapper
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c346195 HUE-2436 [desktop] Django-1.6: fix export tests to work with StreamingHttpResponse
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+206edd5 HUE-2436 [desktop] Fix EnsureSafeRedirectURLMiddleware to work with https
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b04171a HUE-2436 [desktop] Django-1.6: Revert to django&#8217;s ConditionalGetMiddleware
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+88aaedf HUE-2436 [desktop] Django-1.6: response.template was renamed to response.templates
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8a10654 HUE-2436 [desktop] Django-1.6: We no longer need to quote uses of <literal>reverse</literal> (which is used by <literal>url)</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d440464 HUE-2436 [desktop] Django-1.6: Monkey-patch User validator to work with our username regex
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c11f107 HUE-2436 [desktop] Django-1.6: Cast csrf to unicode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5199436 HUE-2436 [desktop] Django-1.6: TransactionMiddleware has been deprecated
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+78b99a0 HUE-2436 [desktop] Django-1.6: We now need a SECRET_KEY set or django won&#8217;t start
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7db42e2 HUE-2436 [desktop] Remove reference to deprecated django.views.generic.simple.redirect_to
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a77b3d0 HUE-2436 [all] Django-1.6: Django deprecated use of simplejson
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+590011a HUE-2436 [all] Django-1.6: django deprecated mimetype, backported JsonResponse from 1.7
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6787c1d HUE-2436 [all] Django 1.6 &#8594; django.conf.urls.defaults &#8594; django.conf.urls
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+91c8661 HUE-2436 [desktop] Fix running ./build/env/bin/hue commands
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cc7d187 HUE-2436 [desktop] Upgrade to Django 1.6.10
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fb0bee0 HUE-2436 [desktop] Django-1.6: Add the six library for django-extensions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6cc50f6 HUE-2436 [desktop] Django-1.6: Upgrade django-extensions to 1.5.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e94eed8 HUE-2436 [desktop and filebrowser] Whitespace cleanup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a474603 [sqoop] Upgrade to Sqoop 1.99.4 API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9f1b32c [livy] Use the hadoop versions specified in the hue-parent maven pom.xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c603f1e [livy] Fix spark creating a spark context
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b417522 [desktop and beeswax] Fix the beeswax redaction tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+82dfce0 HUE-2257 [hive] Keep the list of MR jobs when using the new GetLog() API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8953e50 [hive] Switch to Hive 1.0 new way to fetch job logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9bd0877 [oozie] Support fetching parameters from Coordinator in Bundle editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+858ae0e [oozie] Support edit and non edit mode in Bundle editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d669208 [oozie] Make the dashboard views compatible with Oozie v1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+195e6ec [core] Adding link to contributing guidelines on github
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1b43b18 HUE-2556 [core] Cannot update project tags of a document
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+947afca [oozie] Show coordinator dataset link with YEAR, MONTH&#8230; variables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+89f000f [oozie] Fix coordinator submit dialog CSS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3f091d6 [oozie] Support for coordinator.isDirty
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6c50d52 [oozie] UX update for Bundle editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9ef57ee [spark] Improve performances of snippet re-ordering
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+655ed94 [spark] Restyled notebooks page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1ef8bee [spark] Fix run all/clear snippets css
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c4f3aa3 [oozie] Dataset can support same tz, start date and frequency as coordinator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bde837e [oozie] Present the non filled parameters of a workflow in coord submit popup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+203a97d [oozie] Integrate new coordinator with their dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c8b64ee [oozie] Add a link for scheduling a workflow from the editor page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a05db1c [oozie] Move new Editor templates to a separate directory
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c636b90 [desktop] Update redaction rules to match the new JSON scheme
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+629530e [oozie] Integrate workflow dashboard with the new editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e36f379 [spark] Restyled add snippet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+59b0866 [oozie] Fixed submit workflow popup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+47827fd [spark] Restyle create session spinner
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+07ccff4 [spark] Unified tooltip for discrete bar chart and numeric bar chart
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+551ce40 [livy] Don&#8217;t bake in a path to fake_shell.py, pass along SPARK_HOME, set SPARK_CONF_DIR
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3c37ed9 [livy] Add tests, move spark interpreter into a classloader, fix shutdown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+092109f [livy] Pass the MASTER environment variable through a YARN app
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a537735 [livy] Change the name of the submitted yarn applications
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7c7d6a2 [jb] Add application type to the mocked apps in the tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+75c645e [spark] Correct z-index of play/stop buttons
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+203011e [spark] Show toggle left panel just on hover of chart or grid
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7ca5e33 [spark] Basic printing CSS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0ffbd18 [spark] Restyle medium toolbar and make text widgets always editable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c6b94f6 [spark] Fixed discrete bar chart re-draw
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+02785d1 [spark] Fixes chart mixup on window resize
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0910b55 [spark] Collapse snippets on sortable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc402e9 [spark] Also hide charts when clearing all snippets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5a3dd2a [spark] Automatically retry the snippet when the session expired
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2b49af6 [spark] Do not hide and show charts when re-executing a query
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+22cc1b7 [spark] Do not blink the cancel button of an Impala query when closing it
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2c557a7 [spark] Smoother UX transitions when displaying results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+10a13e8 [livy] Fix spark sessions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bb63031 [spark] Added double click handler to assist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ef13146 [spark] Restyle go button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+abd287d [spark] i18n medium editor and style fixes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0c7855e [spark] Add only one new notebook link to menu
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7bfe03c [spark] Set to failed status when session creation failed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d1633b0 [spark] Try to keep the graph legends when re-rerunning a snippet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+87ffc80 [spark] Add a clear all result snippets button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+69503d6 [jb] Support killing generic YARN apps
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+47f3eb8 [spark] Basic download of table data
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8ce2995 [spark] Show text result as text and not a table
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b9b0246 [spark] Show grid and chart buttons for table result
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7782f7b [livy] Setup maven for running tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f317630 [livy] Scripts should cd into the LIVY_HOME directory
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+42218ce [livy] Add pyspark support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a7d6a5b [livy] Hack python session to allow the last line of a cell to be a magic fn
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6fb0bd1 [livy] Handle %table type conversions better
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e7140c7 [livy] Allow multiline python cells
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a774da1 [livy] Add type detection to the %table magic
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+62113c3 [spark] Disable ctrl-enter on loading widget
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4782e12 [spark] Formatted duration of query
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8469b5e [spark] Offer graphing to Spark snippets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1df588b [spark] Switch to medium editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ecb923 [livy] Add %table magic to python sessions, fix passing python exceptions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3136cb6 [livy] Add explicit type
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+33a94fa [livy] Fix reporting internal errors to users
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bf7f210 [livy] Fix yarn sessions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4cf28a0 [livy] Migrate fake_shell.py into a resource
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6562c61 [spark] Print the execution time of a snippet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bf26325 [spark] Fix showing spinner on Codemirror for &gt; key
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d9de4d9 [spark] Styled more progress bar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7b76317 [spark] Hooked up render data error for expired queries
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+64437b1 [spark] Fix preview sample data icon position
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e13d998 [spark] Resize handle for Codemirror
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1565f28 [spark] Handler for render data error
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+992824b [spark] Fix assist force loading and display of long tables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c91c016 [spark] Added split group to switch between grid and chart results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7e60f9b [spark] Fixed width and resize for the gradient map
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f3ea100 [spark] Fix Assist async and force calls settings
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8a3d70d [spark] Provide a list of job names and links
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8f77564 [spark] Ask for first snippet language in new notebooks
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6f48849 [spark] Potentially close snippets when leaving the page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2486ba5 [spark] Try to close the previous snippet when re-executing it
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a8da13a [spark] More explicit legend for the Pie chart
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2806879 [livy] Add support for python to livy-server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aec6f9a [livy] Use Seq instead of List
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3b4e111 [livy] Fix AsyncResult exceptions being silently ignored
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+169ea33 [livy] Clean up maven files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d4f3888 [spark] Re-introduced assist filter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+55889e1 [spark] Hide refresh and collapse Assist icons by default
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0b1495c [spark] Codemirror default placeholder disappears on focus and reappears on blur if empty
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6ec9837 [spark] Fix group by autocomplete
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fd4ea28 [spark] Add customized snippet placeholder
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1029a08 [spark] Added Gradient Map support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+09890d8 [spark] Adding new style to the notebook list page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0d85195 [spark] Change scatter plot grouping logic
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0eee7ab [spark] Fixed download form UX
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8dc25a0 [spark] Support for Scatter Plot chart
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0e27dc4 [spark] Fix loading state of second created snippet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+638d5f1 [spark] Integrate status of snippet with its buttons
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1ceaf09 [spark] Fix retry of re-creation of an expired session
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8bc5dea [spark] Display Spark resultset when available
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+af9f09f [spark] Setting process as default mode for the server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4a2a9de [spark] Make the spark server command available
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cb40547 [spark] Update check_status to work with livy (not quite working yet)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0e978cd [livy] Change session/statement creation to return a 201 CREATED
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d92f137 [livy] Turn statements into a class, clean up output
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ece0313 [livy] Cache the session results in livy-server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0868573 [livy] Fix parsing lines with no trailing <emphasis>\n</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+02db858 [livy] Clean up session state transitions, expose interruption support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+adf608d [livy] Don&#8217;t start the spark-shell in debug mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c0d825f [livy] Fix fetching statements
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2779c89 [livy] Work around scalatra AsyncResults not erroring out properly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e4c00dc [livy] Move the spark-shell script
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7d56a97 [livy] Fix a null pointer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+898f85c [livy] Rename the startup command to livy_server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+01c22e6 [livy] Catch JSON parse/extraction errors
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+34dbb3e [spark] Fix connecting to livy, starting a session
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a344448 [spark] Fix running <literal>hue spark-server</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9821fff [spark] Allow session backend to be picked on the cli
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4df0913 [spark] Initial progress on a SparkYarnSession
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+486f652 [spark] Factor the spark web session into it&#8217;s own class
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5831d85 [spark] Cleanup livy-server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f2c2240 [spark] Get livy-server to work with livy-repl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4d70af9 [spark] Clean up imports, use the right SparkProcessSession
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d961bc7 [spark] Rewrite livy-server in scala
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7ea0a05 [spark] Remove an unused servlet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+03f22e8 [spark] Capture access logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+066f9fd [spark] Get everything to compile
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+66b99dc [spark] Switch to logback
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a57d2af [spark] Minor code cleanup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+683a72a [spark] Cleanup dead code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8038077 [spark] Add livy-core, cleanup launching livy-repl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+224f7b1 [livy] livy-repl doesn&#8217;t need an assembly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+14f30a6 [spark] We are not quasiquoting
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7d03aae [spark] Get the spark repl to run inside yarn (!)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+42af9ca [spark] Working server running on yarn
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ad958fd [spark] Fix some more renames
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+827e04f [spark] More work getting yarn to run
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+908cc72 [spark] Wire the repl into the yarn app master
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9a923e1 [spark] Rename Sparker to Livy since we&#8217;re going to be more than Spark
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a79eeee [spark] Initial version of sparker-yarn working
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+deeedda [spark] Update YARN clients
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+46257a6 [spark] Initial progress on the AM
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b76108f [spark] Route the output of statement execution to /statement
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f25d613 [spark] cleaning up the code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ed2c280 [spark] Initial web server working
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2b4b2ef [spark] Fix the sparker-shell
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+12ec268 [spark] Bump garbage collecting sessions to an hour
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f992dc3 [spark] start mocking out spark-repl webapp
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f28277d [spark] Don&#8217;t actually do the interruption
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+966d062 [spark] Start factoring out the request code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+933d7f3 [spark] Stub out interruption support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6304ca8 [spark] Rename cell to statement
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aeeaa4d [spark] Keep 5 spark sessions precached to speed up start time
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d25b2dc [spark] Up the gc of sessions to 10 minutes.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9186687 [spark] Fix the creation methods
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7d5ab00 [spark] Don&#8217;t print out the ready line for now
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b48a093 [spark] Protect against races on the SparkSession, add CellResource
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+80ff2c7 [spark] Add a constructor to the ExecuteStatementRequest
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+25f6dc1 [spark] Remove dead code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4cc3aae [spark] Reorganize the code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+72661d8 [spark] Cleaned up the session api
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7bd6ddf [spark] Make sparker-shell speak json requests and responses
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+925f35c [spark] Produce json strings for the ui
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+947ee44 [spark] Make sparker-shell cwd independent
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6e9a03c [spark] More logging tweaks
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ac9a823 [spark] Add logging, also log stderr
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cf99285 [spark] Don&#8217;t suspend the server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4356fd3 [spark] Ability to multiplex between 2 sessions with different implementations
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ce5958 [spark] Get sparker-shell integerated into SparkServer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f05bb22 [spark] Minor cleanup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a890eaa [spark] Print out json lines
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a20a7ba [spark] Refactor and add initial repl that captures the input/output of spark
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+35664a7 [spark] Split sparker into independent jars
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c73cebb [spark] Adding Session DELETE command
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+17b6fe3 [spark] Incorperate sean&#8217;s patches
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5f9c6cd [spark] Initial integration of the spark job server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d95c8f3 [spark] Update statement on codemirror in ctrl-enter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cef42a5 [spark] Migrated from Chosen to Select2 and filtered out chart columns
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+47fdd22 [spark] Download buttons are now using links
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a42ade8 [spark] Restyled collapse left colum
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2f388cb [spark] Show assist preview icon on hover
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7d7191b [spark] Configure the list of available languages
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ff4668e [spark] Remove snipped forces redraw of table headers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+027c1b9 [spark] Reload assist and show error when Hive is not there
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+11ae4ef [spark] Cleanup the Hive snippet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a23c1fe [spark] Show specific results when there is no datasets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f5d43bc [spark] Resize assist on window resize
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d14bff0 [spark] Added empty message
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3a1c5fd [spark] Styled logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+abdf745 [spark] Moved and grouped buttons
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ed5a56d [spark] Fix problem with minimum height for results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fd8dac8 [spark] Restyled add snippet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f330e68 [spark] Redraws the chart on query refresh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6daa4e2 [spark] Removed fixed height for results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc3e800 [spark] Fix infinite scroll for queries that don&#8217;t have more results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bfce7b7 [spark] Improved performances of Codemirror
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+334b1ba [spark] Adds body scrolling on table scrollup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+844e705 [spark] Fixes horizontal scrolling
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c621099 [spark] Toggle left panel
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a737114 [spark] Enabled db assist table preview
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+61d4327 [spark] Toggle db assist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+712e6ed [spark] Fixed scrolling for Firefox
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9eecb00 [spark] Added infinite scroll to the results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e7e361a [spark] Show errors when coming from fetch status
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6b5a73c [spark] Redraw table headers on results change
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6545f0d [spark] Fix table scrolling for all the tables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4d6af5c [spark] Download snippet results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a64e320 [spark] Editors autoexpand to maximum 20 lines
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c087815 [spark] Fixes loading of the editor lines and content
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+74bb7cc [spark] Wysiwyg editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f98cb5e [spark] Support for leaflet chart
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8270a0a [spark] Unify all the exception handling
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+44d158f [spark] Fixed multibar chart and pie chart
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9a5c5f0 [spark] Support fetching incomplete results from resultset
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+671bc65 [spark] Unified exception handling in the API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7bb0be2 [spark] start_over support when fetching results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fe6f477 [spark] Load back saved results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d8882e1 [spark] Datatables supports multiple results fetching
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+09d4fe9 [spark] Bigger progress bar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0bd62dd [spark] Fixed result height
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c8f64a9 [spark] Split see logs from the other buttons
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+16c110a [spark] Correct progress report when loading back a page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+62f6943 [spark] Subtle progress bar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1e75866 [spark] Get dummy Scala logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e6056f5 [spark] Switch to Impala API for Impala snippets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a25a5fd [spark] Fetch log and compute progress
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+625e026 [spark] Initial version of fetch metadata from a resulset
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7d5abb2 [spark] First results column should always be small
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+20e6c95 [spark] Support for running new queries in the same snipper and row numbers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fb21549 [spark] Added * to autocomplete, basic restyle of the results area
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6f76476 [spark] Fetch next rows of a result set
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ab34145 [spark] Scroll to column
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+958e0c4 [spark] Basic assist.js error notification
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a896919 [spark] Toggle result columns
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6d53dcf [spark] Fetch again status of runnin queries on page refresh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ac72bff [spark] Impala support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5043099 [spark] Cancel a statement
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+74c2444 [spark] Enable load on refresh of a just saved notebook
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2f435fe [spark] Fixed styles for assist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+145fa36 [spark] Hive and Impala autocomplete
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+01499a0 [spark] Support Text snippet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ed32f15 [spark] Support $variables in the editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e4b4ed9 [spark] Initial support for Assist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5689608 [spark] Restart a Spark session when it has expired
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5a6f3ea [spark] Load back the results of snippets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f7c9698 [spark] Added dashboard functionality to the notebooks
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d9d302a [spark] Save and load a Notebook
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0e3fb8b [spark] Restructure top bar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+938d6b9 [spark] Cleanup of old Spark Job Server files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a950f6c [spark] Basic support for on the fly autocomplete change
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ef84f8 [spark] Support for Spark server API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b024468 [oozie] Check snippet job status correctly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c3709d3 [spark] Basic restyle of the page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d8da307 [spark] Initial support for wysiwyg
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eedff01 [spark] Core of the notebook model
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2f40e42 [spark] Initial support for Markdown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+834fadf [oozie] Various UX consistencies fixes and appending Z to dates
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+35366b8 [oozie] Provide the list of older bundles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0b4cff6 [oozie] Provide the list of older coordinators
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e119a58 HUE-2539 [beeswax] Alert the user when a query was redacted
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6f68ff7 HUE-2243 [metastore] Listing tables can be very slow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ff8660e [oozie] Lock "save" button during workflow saving
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fd63bc1 HUE-2553 [beeswax] Add test checking for NaN and infinite numbers in json
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+afb9755 [oozie] Remove "cred" attribute from action when it is empty
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9050f1b [filebrowser] Fix archive upload directory issue
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7445268 [oozie] Fix mixed labels for <emphasis>nocleanup</emphasis> and <emphasis>refresh</emphasis> form options
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9fc5add [beeswax] Support NaN and Infinity values from HiveServer2 API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+99d5de3 [doc] Add SSL package reference for RHEL7
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cef9bc9 HUE-2552 [metastore] Show error when removing header of file missing permissions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4b9c214 [beeswax] Truncate database design name to 64 characters to avoid overflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d6cc802 [fb] Do not show Sentry warning when selecting files in a Sentry directory
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9e0eb37 [metastore] Replace <emphasis>None</emphasis> with <emphasis>NULL</emphasis> in table sample
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b4bf797 [desktop] Python-2.6&#8217;s logging.Handler is an old-style class
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2c7eb81 [oozie] Convert datetimes to strings when generating XML
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6b7837d [oozie] Adding a series of autocompletes to the coordinator editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+75286ce [oozie] Hide default parameters in submission popups
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d482340 [desktop] nose on Python 2.6 does not support assert_is
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0e37608 [oozie] Modify coordinator start and end date parameters directly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+49663e1 [beeswax] handle create database description with accented characters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f3c43fc HUE-2538 [beeswax] Redact the QueryHistory query if redaction is enabled
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2251316 HUE-2538 [desktop] Add support for log redaction
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e956712 [beeswax] Minor whitespace cleanup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+650035f [desktop] Fix logging test creating files named "&lt;open file&#8230;"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eea98ea HUE-2493 [beeswax] Change QueryHistory.server_port to be a PositiveIntegerField
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+56c9bb3 [oozie] Put example conditions in the decision node branches
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+29498b9 [oozie] Enable deleting old workflows from new editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2ad70db [oozie] Add message warning about using the old editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a6be69d [oozie] Import content of old workflow nodes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c9a25ed HUE-2549 [core] Update checkbox check jQuery methods on jHueSelector
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2b586a2 HUE-2548 [metastore] Create table then load data does redirect to the table page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1f14101 HUE-2547 [core] Reset MapReduce API cache after YARN RM switch
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+210c2d2 [oozie] Try to load and convert older workflows on the fly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a8e3083 HUE-2545 [fb] Move popup could have a home quick link
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e6e27bc HUE-2411 [useradmin] Lazy load user and group list in permission sharing popup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+83d5abe [oozie] Fix isDirty bug for non-observable parameter values
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4a2367e [oozie] Hide move/copy icons just on the new action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+971b5da [oozie] Simpler naming for the cron tab
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+95243e0 [tools] Add load balancer example
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6404e36 [oozie] Add name of job in submission popup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ddd0cb4 [oozie] Better decision node UX
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d8be58d HUE-2528 [beeswax] Partitions limit gets capped to 1000 despite configuration
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2fc9956 [oozie] Styled advanced parameter configuration
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+521aedb [indexer] Provide more information when not detecting Solr Cloud mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7c0d2d5 [oozie] Added now, calendar and filechooser to submit modal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b73646c [oozie] Migrated coordinator variables to Select2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+64e4ec6 [oozie] Split datepicker and timepicker for coordinator start and end
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6e57b90 [oozie] Use parameters by default for coordinator start and end times
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6ddbfa2 [oozie] Second step styling of Coordinator editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+239677c [useradmin] Update LDAP groupanme_pattern test case
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a75e6a8 [oozie] Pre-fill the parameters of the workflow of a coordinator with its variables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+38fa2cf [oozie] Update Oozie Editor 2 tests with latest API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b6ecfd6 [oozie] Use Oozie 1 workspace style until we switch to 2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9adaef6 [oozie] Add jcron for picking coordinator frequency
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f2d1d55 [sentry] Do not show edit actions on a granted privilege
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ea80dbb HUE-2537 [search] Timeline interval is not used
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8b47918 [oozie] Fix new bundle link
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6fdfe6d [oozie] Re-enable all side drops after move
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ec11326 [oozie] Fixed section hightlighting for coordinator and bundles list
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+708f88e [oozie] Shortcut links to workflows in the coordinator editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d3da396 [oozie] List bundle editor page with copy, delete and share actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+13b68d4 [oozie] List coordinator page with copy, delete and share actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+13e4141 [oozie] Support creating Fork of Fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6641c62 [oozie] Protect against XSS in the editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+687abd0 [oozie] Add share button directly on the list of workflows page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4487805 [oozie] Refresh page when deleting or copying workflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+75223ad [oozie] Wire Hue checkboxes to the ko-ified workflow list
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2912da0 [oozie] ko-ify the editor list of workflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0a8b2de HUE-2491 [indexer] Add option to show only collections
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3094025 HUE-2535 [oozie] Running jobs filter does not show jobs in dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a998b67 HUE-2536 [jb] Failed filter shows other statuses
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a78c797 [useradmin] remove old password requirement when superuser tries to change password for another user
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f307c6e [oozie] Declutter arrows and fix widget clicking problem on IE
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+be785d7 [oozie] Fix expanded widget status
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7ce2cbb HUE-2532 [search] Fix share URL on Internet Explorer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1c22b91 [oozie] Restyled editor workflow list page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+50a0605 [oozie] Reset workflow node expansion on toggle edit
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f4f0ab5 [oozie] Remove some non unicode characters from the templates
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a57befe HUE-2531 [impala] Autogrow missing result list
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+684a95e [oozie] Added parameter and file content to the isDirty observables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5f5d085 [pig] Skip dependency on the external autocomplete js
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f6b6499 [pig] Give empty autocomplete URL when Hive app is not installed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a9a9eb5 [pig] Exclude HCat autocomplete if autocomplete URL is empty
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4550c63 [oozie] Introduced unsaved message for dirty workflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+89284c5 [oozie] Improve dragging visual hints on workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b18278c [oozie] Ask for a hive-site.xml when creating a Hive action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0e1e53f HUE-2529 [useradmin] Bump up LDAP Sync group name character limit to 256
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a961245 [oozie] Flag to enable Editor v2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e6e3390 [oozie] Adding new editor to the menu
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d46c14f [oozie] Check read and write permissions for bundles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0acedac [oozie] Check read and write permissions for coordinators
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+beadb15 [oozie] Check read and write permissions for workflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0c33b94 [oozie] Moving nodes should not lose any properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+714727c [oozie] Copying a node also copies its properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f22b9ed [oozie] Persist show arrow toggling
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5bba798 [oozie] Add un-expand icon to global kill node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1e4a2c8 [core] Avoid double leading slash on hdfs autocomplete paths
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+541f3c6 [oozie] Display just the name of the file on common-fs-link
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+89f337f [oozie] Disable page scroll on Filechooser modal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+883d94b [core] Added file filter to jHueFileChooser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+45265b0 [core] Delegate keydown event to the HDFS autocomplete element instead of window
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f66a90d [oozie] Enable picker for every parameter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1382853 [oozie] Parse variables from Hive scripts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+841ff70 [oozie] Fix all the advanced properties of the actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+650b04a [oozie] Also add FileBrowser shortcuts to parameters values
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a645b6c [oozie] Friendler UX for action with a script with parameters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f91a827 [oozie] Bump version of Oozie workflows to 0.5
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+13ebaf2 [oozie] Added coordinator picker to bundle page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8eea907 [oozie] Added workflow picker to coordinator page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+640b8bf [oozie] Added scroll up plugin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6ce7b42 [oozie] Enable filechooser for all the parameters with <emphasis>=</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3b4cb98 [oozie] Added filechooser binding for parameters named input or output
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fb8d12d [oozie] Added parameters typeahead for Pig
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+616a477 [oozie] Fix arrow drawing on toggle properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a25d130 [oozie] Added upload file and create folder options
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7d3c001 [oozie] Added HDFS autocomplete on filechooser inputs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e04c3fd [oozie] Improved wrapping of small widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+75789ee [oozie] Added Workspace button to filechooser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8e8ca06 [oozie] Click to expand widget maintains bubbling order now
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+403b527 [oozie] Update add button status after key press
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aae3998 [oozie] Scroll to new added action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e5c5c3d [oozie] Improved readability on inline forms
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3ed6a4d [oozie] Improved inline popup for widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6c1f12a [oozie] Improve look of idle drop targets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e950607 [oozie] Restore backdrop on settings modal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5c8e649 [oozie] Passthrough arrows click
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c7541a4 [oozie] Require all fields on the add action modal before adding
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b9f69b1 [oozie] Fixed all the input with missing type
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bfc13e0 [oozie] Streaming action UX
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f8e4c15 [oozie] Streaming action UX
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c65d1f0 [oozie] Email action UX
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b8842d9 [oozie] Fs action UX
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+888a292 [oozie] UX of Ssh action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2adbb74 [oozie] UX of Shell action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+79a3d52 [oozie] Better UX for MapReduce action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3673704 [oozie] UX of Java action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+196527e [oozie] Better UX for Hive actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a370310 [oozie] Adding links to selected subworkflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8660e83 [oozie] Cleaning up the UI
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+048f807 [oozie] Resized input for new actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ad60eff [oozie] Moved Oozie specific code from common-dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ff21fe3 [oozie] Fixed filechooser on new action binding
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2552022 [oozie] Also get list of subworkflows at loading of the editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2d82ed3 [oozie] Add properties of Subworkflow action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6eeb35a [oozie] Add some filechoosers for the field pointing to HDFS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b47f84d [oozie] Integrate document sharing in workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+36123e6 [oozie] Move Kill node text message to advanced properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9b4af10 [oozie] New filechooser options to show just the last bit of the path
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ea86b90 [oozie] Bundle name as x-editable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7fcace1 [oozie] Coordinator name as x-editable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+166a7e0 [oozie] Workflow name and description as x-editable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a49d5d9 [oozie] Improved spacing with readonly workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6299119 [oozie] Fix JS error on overlay remove
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0c07788 [oozie] Move expand of the widget to the widget body
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f115cfc [oozie] Generate a valid XML Oozie name for jobs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+63325c0 [oozie] Pull Pig parameters from Pig action script
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d0644c4 [oozie] Support a customizable pattern for workflow workspace path
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8c4f312 [oozie] Link Document2 to Document for 3.x compatibility
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+31455ec [oozie] Updating icons, bundle dependencies, link to pig script
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+92d0544 [oozie] Generate XML and submit Bundles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d4d6edb [oozie] Improved drag to add UX
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+06c8079 [oozie] Support for expansion of widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+857a793 [oozie] Remove autoscroll
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+69b9c79 [oozie] Toggle arrows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+855e508 [oozie] Bundle skeleton page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0c4cc40 [oozie] Get Coordinator variables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e07c150 [oozie] Pull workflow variables to fill up in the coordinator editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3c4e811 [oozie] Look for parameters in Workflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8ba5b76 [oozie] Add all the field of a Coordinator in the UI
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b57c5c7 [oozie] Fix remove kill node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e0a24eb [oozie] Restyled decision and initial support for large scrolling workflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a6909b8 [oozie] Started coord restyle
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fbea788 [oozie] Submit a Coordinator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c5f4b15 [oozie] Generate XML of Coordinator with range datasets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+77ae36a [oozie] Generate XML of Coordinator with datasets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e3fdc4e [oozie] Generate XML of Coordinator with workflow properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e09a962 [oozie] Restyled properties tab
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e979010 [oozie] Generate basic XML of Coordinator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ac835d5 [oozie] Reorganized CSS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9c4bf2e [oozie] Toggle SLA form
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e7486e2 [oozie] Model of the Coordinator editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+19076af [oozie] Coordinator editor skeleton page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+06871a8 [oozie] Started to restyle settings dialog
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0bbcd46 [oozie] Added filechooser binding to files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a46b824 [oozie] Added generic kill node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5b3e75a [oozie] Fixed get relatives bugs and improved UI
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c5d58b8 [oozie] Removed id from widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5b5e277 [oozie] Restyled common sections
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+73ba03d [oozie] Removed unused inputs on widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+59554be [oozie] Started to restyle widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4ee18cf [oozie] Cleaned up non-editing UI
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4a0b650 [oozie] Improved display of edit mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0aa3ba2 [oozie] DistCp action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e3eb91c [oozie] Edit in place does not open a popup now
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fe4f9a5 [oozie] Streamin action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8a35028 [oozie] Email action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+30b67a2 [oozie] Adding the Ssh action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b9ce600 [oozie] Adding Fs action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+67634f3 [oozie] Better helper for clone and move
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+921f122 [oozie] Introduced expanded state for editing the widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+379abba [oozie] Adding the Shell action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+db875c8 [oozie] Add MapReduce action to editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b524941 [oozie] Add Sqoop 1 action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9da2932 [oozie] HiveServer2 Action support in workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+013941b [oozie] Reduced margins for the dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+61d7d17 [oozie] Enable copy to the same row
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6eade6b [oozie] Disable drop zones for forks with two nodes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e4f4925 [oozie] Disable creation of forks next to a decision node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9b65982 [oozie] A decision node can be deleted only when it has 0 or 1 child
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+888448b [oozie] Enable drag to copy of nodes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b03314c [oozie] Import an old wofklow with a Fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+14fa64e [oozie] Workflow layout converter from Hue 3.7 format
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ecc165b [oozie] Fix action linking by not removing the Kill node from the list
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ce5fc77 [oozie] Add End node to the end in order to submit workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9e24a39 [oozie] Use select box to list the OK and KO transitions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eca5bf2 [oozie] Add link to HDFS workspace
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fe3cc0d [oozie] Generate XML of Decision node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+28e623e [oozie] Support for basic Decision node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+16b39c4 [oozie] Join widget should not be movable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+99a7a5b [oozie] Kill widget should not be movable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eed039a [oozie] Disabled drop after decision node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a84efed [oozie] Convert to decision removes the join node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b5e16e8 [oozie] Support for loading N-nested forks
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d85e3bb [oozie] Just regular nodes can be moved
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ee7be67 [oozie] Disable drop targets around widget
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9392d97 [oozie] Delete an action below a Join
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ce3540 [oozie] Smarter move a node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b351ea7 [oozie] Smarter delete action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b9f8734 [oozie] Disable drop on sides of the same widget row
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6e50935 [oozie] Moving to a fork doesn&#8217;t create a new node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+31e7863 [oozie] Support sequential move of nodes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4c03402 [oozie] Support for sub workflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7b72776 [oozie] Initial support for fork/decision conversion
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+89e2804 [oozie] Support for node move
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4800f43 [oozie] Refactored redundant code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1336db4 [oozie] Adding Kill droppable Kill node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+de5fc1f [oozie] Fork of Fork support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+93da84a [oozie] Templating logic for Hive, Pig and Java actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e015ec7 [oozie] Fix widget predecessor and successor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1333d15 [oozie] Swapped sortable for droppables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c93a081 [oozie] Fixed side drop zone height change
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8a0eca8 [oozie] Enable drop on the side of a fork and disable it on the side of joins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2f92334 [oozie] Add a node on top of Fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+da1da1f [oozie] Add a node below a Join
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9585783 [oozie] Add a node on top of node in a Fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3eb1ed1 [oozie] Hide extra dropping target right after fork and before join
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ed4c998 [oozie] Delete from more than 3 nodes in a Fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f5bef09 [oozie] Fix bug in Node.set_link
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+526b85e [oozie] Add 3rd node to a fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+210949f [oozie] Redraw arrows on window resize
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4875eea [oozie] Improved arrows display
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fdbd14b [oozie] Side drops have now 100% height
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+80e565b [oozie] Refresh after save reloads the same workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8dc0603 [oozie] Refactor getWidgetSuccessor and getWidgetPredecessor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2dde136 [oozie] Support for widget successor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8658040 [core] Updated font-family on Bootplus and enabled compression
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d8b5a7d [oozie] Support create a fork or add a new node to a fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a2671c6 [oozie] Arrow drawing on model change
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b736f5a [oozie] Fix for a getPredecessor bug before forks
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6cbc3bc [oozie] Disable slide up and down on drop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+019aff2 [oozie] Drop on existing fork does not create a new fork anymore
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5c0f580 [oozie] Add row in between rows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a739e9e [oozie] Delete any node in a fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+24d6335 [oozie] Add computed linkMapping to workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+56a4ff8 [oozie] Initial support for arrow linking
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9ad2509 [oozie] Delete a node from a fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f22bcd5 [oozie] Change ok link to to link for action nodes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+20bdafd [oozie] Lateral drop targets are minimized in non editing mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+de6d292 [oozie] Remove a node below a regular action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cf91b7b [oozie] Delete a single action node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c08d575 [oozie] Link fork and Join nodes to their widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5426538 [oozie] Start, end, fork and join nodes cannot be manually removed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3c7a518 [oozie] Delete a widget can delete forks and joins too
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8ba8cdb [oozie] Support creating a fork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+70fdef1 [oozie] Initial support for fork and join and fixed predecessor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a42e939 [oozie] Support sequential actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4bea516 [oozie] Removed isNested reference from template and other dashboards
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1f53602 [oozie] Generate random ids for the action sections
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+237787a [oozie] Better delete logic for widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7a551d6 [oozie] Add set_link() and get_link() to a Node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d0c3669 [oozie] Get widget predecessor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ec92593 [oozie] Basic structure for getting the parents of columns, rows and widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1bc6ba5 [oozie] Support for drag and drop on the sides of widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+08ea05f [oozie] Removed layout change buttons and styled side dropzones
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a196d2b [oozie] Restore common_dashboard.mako
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7412922 [oozie] Support for start and end node outside the workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5fbbaa1 [oozie] Initial support for nested dashboards
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5d3e881 [oozie] Adding SLA to Workflow properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f943ed9 [oozie] Adding workflow Hadoop properties settings
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c362fe5 [oozie] Factorize common action properties into a template
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+90533d3 [oozie] Credentials support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+05bc667 [oozie] Add SLA to action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cdaaa07 [oozie] Add archives to action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4da321c [oozie] Add properties to action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+179c1a6 [oozie] Support for Job XML in action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e4ec10f [oozie] Support prepare in action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5d75444 [oozie] Generate valid name for action node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0035898 [oozie] Add file to Pig action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e49c122 [oozie] Refactor adding new widget
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+50376ef [oozie] Add more properties for Pig action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fdb9424 [oozie] Add custom action properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7669d08 [oozie] Generate workspace and create it at save time
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4fc7e66 [oozie] Adding workflow settings modal and parameters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+53463ba [oozie] Add sharelib by default to workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+43ea2de [oozie] Submit a workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f40f14f [oozie] Add semi modal asking for main action properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+43917d3 [oozie] Generate XML workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+722785d [oozie] List workflow editor page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1aeef12 [oozie] Save a workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+44b085d [oozie] Create a new workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6523907 [oozie] Skeleton of new workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b1b10ce [impala] Save or update a dashboard into a document
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+22416bc [core] Set document natural keys as composite
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+74b5d72 [core] Backport Django #16317 Self-referencing model with natural key
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e787c0a [impala] Save dashboard into new document model table
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+decf9d2 [core] New Document format
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0174747 [impala] Save dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+699b35d [impala] Fix facet toggling
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+706a447 [impala] Add range facet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7819e3c [impala] Move dashboards to own module
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+626a88c HUE-2498 [oozie] Sharing workflows requires HDFS admin privileges
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1205bce [core] Fix home page when Beeswax app is blacklisted
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+48d4a45 [useradmin] Disable password update for LDAP users
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cba7cf4 HUE-2520 [pig] Enable a user to save an unsaved pig script after execution
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c86f67c HUE-2514 [oozie] Add more reducers when running terasort on larger cluster
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6ca6ee0 HUE-2515 [beeswax] Fix MySQL transaction problem in test_parallel_queries unit test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0ff5c60 HUE-2525 [core] Fix manual install of samples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+539541b HUE-2526 [desktop] Avoid a deadlock in the thrift connection pool
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+50120ca HUE-2518 [pig] Fix typo in logging error: Change "demo" to "job"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0cd3f9b HUE-2524 [impala] Sort numerically recent queries tab
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8a95384 HUE-2513 [fb] File list column sorting is broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c7cd3a2 HUE-1241 [pig] Support macros with several or no spaces before the name
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ffab977 [hive] Missing import of _ for internationalization
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8d9da44 HUE-2511 [impala] Infinite scroll keeps fetching results even if finished
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3d514dc HUE-2512 [impala] Fix installing Impala examples when tables already exist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9a8df9a HUE-2505 [fb] Top row is not the current directory
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fb37853 HUE-2510 [pig] Ensure that CSRF cookie is loaded in the editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4e93e36 HUE-2506 [search] Marker map does not display with HTML widget
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fdc5fe4 HUE-2504 [beeswax] Skip loading of sample data if table already exists
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+695fda0 HUE-2495 [oozie] Improve dashboards sorting mechanism
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1bab576 [core] ConditionalGetMiddleware should import <literal>parse_http_date_safe</literal>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+753a4ac [beeswax] Rename TestHiveServer2API test to test_parsing_partition_values
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+878fd24 [beeswax] Remove dead comments
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5c799cc [beeswax] Fix parsing complex PartitionKey types
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d211512 HUE-2503 [jb] Better handling of expired YARN jobs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+52d57d8 [desktop] Fix pseudo_hdfs4 starting up a yarn nodemanager
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+68fb193 [tools] Fix tools/jenkins/build-functions so the hadoop tests run on OS X
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e3cda67 HUE-2454 [useradmin] Use correct <emphasis>search_bind_authentication</emphasis> in multidomain-style LDAP
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+26de2fb [search] Add newline at the end of the file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f93ef1e [desktop] Backport Django 1.5&#8217;s ConditionalGetMiddleware to fix streaming bug
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a7262e5 HUE-2501 [metastore] Creating a table with header files bigger than 64MB truncates it
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b1572f1 HUE-2485 [core] Add strict redirection in EnsureSafeRedirectURLMiddleware
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+da9725a [core] Display all possible errors when installing all the examples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f435f9e HUE-2481 [oozie] handle escaped = in jo.properties when submitting from hdfs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4310671 [jobsub] Filter out designs without a document. Empty documents will break the editor.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5bb859c HUE-2478 [pig] ignore variables with escape character before $
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+864cd85 [core] Remove trailing whitespace
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f79e4d4 [core] Add ConditionalGetMiddleware
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f971351 [doc] Update Hue screenshot
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+28be8c8 [oozie] Order coordinator actions on the Oozie side
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+24200e7 HUE-2494 [search] Timeline remove doesn&#8217;t delete the chart
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9afc8da [search] Make timeline support timestamps with milliseconds
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9419cbc [beeswax] Support Spark SQL table metadata format
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+648908f HUE-2492 [impala] Avoid imports for deleted app
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f829594 HUE-2484 [beeswax] Configure support for Hive Server2 LDAP authentication
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0db0435 [oozie] Support exporting workflows with credentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2c17370 HUE-2391 [beeswax] install example exception handling correction
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+653ea10 [beeswax] Handle case where a PartitionKey includes extra ','s or ':'s
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+964c5a3 [beeswax] Add a test case for <emphasis>,</emphasis> and <emphasis>:</emphasis> in a partition key comments
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c195f0e [beeswax] Clean up test_partition_values
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c081dd6 [beeswax] Cleanup the table properties test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e8ab4e1 [beeswax] Replace tabs with spaces
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0d8fd54 HUE-2102 [oozie] Workflow with credentials can&#8217;t be used with Coordinator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5be7a0c "[fb] Make archive upload case insensitive"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dbe2b3a HUE-2152 [pig] Credentials support for HCat in editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cabed17 HUE-2479 [fb] Cancel moving a file with drag and drop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b2a78ae [core] Add wsgi.py script to simplify deployment to Apache
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6edcd4f [hbase] Tell user when HBase kerberos principal is missing from hbase-site.xml in secure mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+41cd7ae HUE-2472 [impala] Hide Show more results in certain cases
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ce916f HUE-2366 [jb] Message explaining when no Resource Manager is available
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1b68f38 HUE-2471 [beeswax] Fix display ellipsis on fields longer than 20 characters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9b22320 HUE-2486 [beeswax] Fix saving result to a new Hive table and to a HDFS directory
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+70d15bf [fb] Support upload of tar.gz archive
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5d13ff8 [desktop] UTF8 decode byte strings before printing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+20402cc HUE-2467 [sentry] Disallow admin operations on parent page of prefixed directories
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3880be1 [core] Add config check to validate MySql storage engine
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+af5b28a [desktop] Remove /desktop/debug/who_am_i
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ff19460 HUE-2476 [oozie] Import workflow with ssh action ignores &lt;args&gt; tag
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+504fdb9 [sqoop] Upgrade for Sqoop for 1.99.4 API: main first cut
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+33f88c0 HUE-2472 [impala] Stabilize result retrieval
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5fd5fcd HUE-2471 [beeswax] Truncate field type in assist to 20 characters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+94d7717 HUE-2467 [sentry] Check NN plugin prefixes for exact match of subpath
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9e10347 [jb] Reverting the job header name to job id
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c62fdaf HUE-2446 [oozie] Add a no-op migration script to help upgrade from CDH4.7 to 5.x
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+450f686 [core] replace some tabs with spaces
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b4b3712 HUE-2467 [fb] Hide change owner link when the folder is Sentry managed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d3f2a58 HUE-2470 [beeswax] DB Assist should load different Impala and Hive tables without hitting refresh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5c81fd8 [build] Allow building with JDK8
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2ace338 HUE-2467 [fb] Sentry NameNode plugin integration
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0336f74 HUE-2462 [beeswax] Escape HTML when printing field schema
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d4acb8d HUE-2424 [search] Removed commented lines
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+44eefc5 HUE-2424 [search] Bar/line widgets should not update their start/end/gap values
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9811087 [search] Support double in bar and line widgets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c97ce22 HUE-2450 [search] Pagination Should Reset When Facet Changes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e6afc20 HUE-2458 [core] fix an import bug
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+326eccd HUE-2458 [core] don&#8217;t rely on saml2 being installed in the libsaml config
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4d5d078 HUE-2458 [core] make libsaml backwards compatible with abec&#8217;s saml2 forks
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+65118b5 HUE-2467 [fb] Sentry NameNode plugin integration
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fd4d197 HUE-2460 [impala] Update syntax highlighting to include 2.0 analytic functions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+adc26f9 HUE-2468 [core] Updated docs manual for ubuntu 14.04
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+932d568 Use the PATH to find the xmlsec1 binary
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b3e2e70 HUE-2458 [core] simplify finding xmlsec binary
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bf3f009 HUE-2458 [core] Fix the import order
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7c2d997 HUE-2458 [core] make SAML2 urls backwards compatible
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9367478 HUE-2458 [core] Expose a POST logout URL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4d9e719 HUE-2458 [core] Add support for configuring the SAML2 name id
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6a068fe HUE-2458 [core] except libsaml.views.acs from csrf
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8d87b75 [core] whitespace cleanup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cb53728 [core] try to find xmlsec1 in the path
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3e2d50b [search] Support selecting a text facet with non range dates
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+10430d1 [beeswax] Now Hive leaves some temporary files when doing a CTAS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+47d5351 HUE-2456 [oozie] Coordinator filter checkbox should filter by character regardless of case
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1a10b06 HUE-2428 Missing CSRF Tokens
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e9be887 HUE-2453 [beeswax] Add an order by id for the query_history
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3ec3ff7 HUE-2449 [oozie] Raise an exception if oozie frequency is invalid
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e2d9933 HUE-2449 [oozie] Remove redundant delete
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0ecb0b7 HUE-2155 [search] Field names autocomplete
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+abbbb1d [core] Update tests to use latest Hadoop versions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f508f1e HUE-2346: Compile hue-JT-thrift-plugin against hadoop2.4 with backward compatibility
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d24ab97 HUE-2430 [pig] Progress bars of running scripts not updated on Dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ceadc79 [core] Check Oracle client only when Oracle is installed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+566478f HUE-2447 [core]: ignore if document tables already exist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bab8602 HUE-2448 [oozie]: fix a unicode exception
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cc3b624 HUE-2444 [search] Remove showDetails:false from the grid result dump
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d1c94cd HUE-2445. kt_renewer should explicitly ask for renewable tickets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0060abf HUE-2438 [core] Disable SSLv3 for Poodle vulnerability
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1b64d0c [core] HUE-2334. Make cx_Oracle compilation optional
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c6f0ffa [core] HUE-2334. Add cx_Oracle to external dependency
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+94d5bb1 HUE-2433 [oozie] Coordinator rerun filters should only check boxes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bdbc98a [oozie] Fix rerun tests and hide manage section accordingly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+444ff15 [search] Timeline is broken with group by facet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9857b96 HUE-2437 [indexer] Trim field names in the backend
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+37b8f9d HUE-2360 [sentry] Sometimes Groups are not loaded we see the input box instead
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ce4fb2a HUE-2435 [oozie] ensure consistency of coordinator rerun actions bar with other dashboards in oozie
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c112e4b [pig] Fix typo in filter list
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2ca67a8 HUE-2434 [oozie] coordinator rerun items that are killed should not display MANAGE section
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+426a631 HUE-2430 [pig] Fix exception when fetching logs of action on dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+269732e HUE-2342 [impala] SSL encryption
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eef6fc8 HUE-2426 [pig] Dashboard gives a 500 error
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+871583c HUE-2131 [core] Add sharing to pig, hive, rdbms
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7a956e1 HUE-2131 [core] Modularize the sharing permission modal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+adbe263 HUE-2415 [core] Expose a <emphasis>is_alive</emphasis> route a load balancer can poll
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+325e327 HUE-2412 [core] partially optimize the desktop home view
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b18ed0f Wrap some lines to 80 characters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b920656 HUE-2340 [hbase] Deleting a table deletes it but does not refresh the UI
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc6965d [search] Speedup widget retrieval
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1493a70 HUE-2397 [beeswax] Can see the logs when opening a running query
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fa2dfbe HUE-2423 [jobsub] Broken symbolic link jobsubd
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9500cd2 HUE-2403 [oozie] More intuitive rerun of coordinator actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b3e25b2 HUE-2418 [search] Automatically resize sibling widgets on drop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c8b0ce8 HUE-2210 [search] Improve reliability of the timeline start/date fields
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+02e07d9 HUE-2419 [core] Revert back progress bar color change
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+75f1aeb HUE-2402 [fb] Prettify uploading snippet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cf609c2 HUE-2347 [fb] Drag and drop to move files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e008de0 HUE-2414 [search] Timeline chart breaks when there&#8217;s no extraSeries defined
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0c1454b [HUE-2411] limit fetching autocomplete users and groups to 2000
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b48d635 HUE-2410 [core] Upgrade to font-awesome 4.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f18e382 HUE-2409 [fb] Context menu not displayed in Firefox
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0cc14e0 [jb] failsafe in cases where applicationType may not be available
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bb08159 HUE-2405 [useradmin] Add enhanced user password policy
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d1edb10 [sentry] Support None authentication
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+11c7ef6 HUE-2094 [jb] Add more metadata when viewing Spark application details
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+72f2774 HUE-2094 [jb] Spark jobs will now be visible in the job browser instead of erroring
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6ebd600 HUE-2407 [beeswax] Enable chart X axis ordering
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dc5db15 HUE-2348 [search] Highlight terms inplace in the field
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+24d786c [core] Cache permission list and remove unused middlewares
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c52f886 HUE-2406 [search] New dashboard page has a margin problem
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+22a1a3b HUE-2404 [oozie] CSRF token missing in rerun popups
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d947503 [beeswax] Prevents <emphasis>save</emphasis> overriding a query when only a portion of it is selected
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+83c7e36 HUE-2373 [search] Heatmap can break
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+287661d HUE-2401 [search] Visually report selected and excluded values for ranges too
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a8bfb0c HUE-2395 [search] Broken widget in Solr Apache logs example
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7c9e0de HUE-2400 [core] The CSRF protection breaks some apps
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+db91c54 HUE-2398 [fb] Drag and Drop hover message should not appear when elements originating in DOM are dragged
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+98c71f2 HUE-2396 [beeswax] Fix Cross-site scripting(XSS) vulnerbility
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6a02467 HUE-2387 [beeswax] Support getting logs using FetchResults() api
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+37c80cb HUE-2369 [search] Download query should not included non selected headers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1f54b8b [core] Add csrf token in non-jQuery requests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+339e68a [core] Add CSRF protection to all requests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+504b5ad [oozie] Adding version from metrics as it is unrelated to Oozie
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cdbae5b [core] Bump Hadoop MR1 plugin to 2.5.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5a63476 HUE-2372 [search] Move <emphasis>add a dimension</emphasis> to the left
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c2d0d19 [jb] Verify certificate in secure when talking to RM over rest https (ssl)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ed8695c [imapala] Example doesn&#8217;t fail with already installed message
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ca76305 HUE-2389 [impala] Expand results table after the results are added to datatables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4d865a4 HUE-2371 [sentry] Sentry URI should be created only with a ALL permission
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2b02474 [fb] Better error message when can&#8217;t connect to HTTPFS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9c5880a HUE-2210 [search] Add a initial_gap in sync with gap for new facets or saved collection
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f078e13 [fb] Opening an empty file should not create a js error
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e7ff38a [core] Fix test name typo in database setup
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_contributors">
+<title>Contributors</title>
+<simpara>This Hue release is made possible thanks to the contribution from:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Aaron Newton
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aaron T. Myers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+abec
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Abraham Elmahrek
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aditya Acharya
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Alex Breshears
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Alex Newman
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Alex (posi) Newman
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+alheio
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ambreen Kazi
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrei Savu
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Bayer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Yao
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ann McCown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ashu Pachauri
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Atupal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bcwalrus
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc Wong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ben Bishop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ben Gooley
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ben White
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bhargava Kalathuru
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruce Mitchener
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruno Mahé
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Christopher Conner
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Christopher McConnell
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Christopherwq Conner
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cwalet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dbeech
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Derek Chen-Becker
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Dominik Gehl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Eli Collins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Enrico Berti
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Erick Tryzelaar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+gdgt
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Gilad Wolff
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+grundprinzip
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Harsh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Harsh J
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Henry Robinson
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Igor Wiedler
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ilkka Turunen
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Istvan
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ivan Orlov
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Jakub Kukul
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Jarcek
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Joey Echeverria
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Jon Natkins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Karissa McKelvey
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Kevin Wang
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+krish
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Lars Francke
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Linden Hillenbrand
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Luca Natali
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Marcus McLaughlin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mariusz Strzelecki
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Michalis Kongtongk
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+mrmrs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Nicolas Fouché
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Olaf Flebbe
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pala M Muthaia Chettiar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Patricia Sz
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Patrycja Szabłowska
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Paul Battaglia
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Paul McCaughtry
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Peter Slawski
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Philip Zeyliger
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Piotr Ackermann
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Prasad Mujumdar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+raphi
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ricky Saltzer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Romain Rigaux
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Roman Shaposhnik
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Rui Pereira
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Sai Chirravuri
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Sean Mackrory
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shawn Van Ittersum
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shrijeet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shrijeet Paliwal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shuo Diao
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Stephanie Bodoff
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Suhas Satish
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Tatsuo Kawasaki
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+thinker0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Thomas Aylott
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Todd Lipcon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vinithra
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+vybs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+William Bourque
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Word
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Zhihai Xu
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</article>

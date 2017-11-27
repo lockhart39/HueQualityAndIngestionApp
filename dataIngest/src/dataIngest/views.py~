@@ -1,0 +1,257 @@
+
+#!/usr/bin/env python
+# Licensed to Cloudera, Inc. under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  Cloudera, Inc. licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from desktop.lib.django_util import render
+
+from utils import dbLogin, getDatabaseNames, sqoopTable, getHiveDatabaseNames, getCSVContext, query_string, exportToCSV
+from forms import dbLoginForm, TableForm
+import subprocess
+import os
+from django.shortcuts import redirect 
+
+def index(request):
+    return render('index.mako', request, {
+        'is_embeddable': request.GET.get('is_embeddable', False),
+    })
+
+
+def exportDatabase(request):
+    if request.method =='POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        hiveDbase = request.POST.get('hiveDbase')
+        hiveTable = request.POST.get('hiveTable')
+        sqlDbase=request.POST.get('sqlDbase')
+        sqlTable=request.POST.get('sqlTable')
+        export = subprocess.Popen("sqoop export --connect jdbc:mysql://localhost:3306/"+sqlDbase+" --username "+username+" --password "+password+" --table "+sqlTable+" --export-dir=/user/hive/warehouse/"+hiveDbase+".db/"+hiveTable+" --m 1 --input-fields-terminated-by '\001' --lines-terminated-by '\n'", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return render('export.mako', request, {
+                      'is_embeddable': request.GET.get('is_embeddable', False),
+        })
+    else:
+        return render('export.mako', request, {
+                      'is_embeddable': request.GET.get('is_embeddable', False),
+        })
+
+def exportHome(request):
+	if request.method == 'POST':
+	        var =request.POST.get('export_dest')
+		print var 
+		if var == "database":
+			"it found that var is database" 
+			return redirect(exportDatabase)
+		if var == "csv":
+			return redirect(exportCSV)
+	else:
+		context ={}
+		return render('export_home.mako',request,  context)	
+
+
+def exportCSV(request):
+    if request.method == 'POST':
+        db = request.POST.get('exportDB')
+        table = request.POST.get('exportTable')
+        columns = request.POST.getlist('exportCols')
+        fileName = request.POST.get('fileName')
+        filePath = request.POST.get('filePath')
+        delimiter = request.POST.get('delimiter')
+        context = exportToCSV(db, table, columns, fileName, filePath, delimiter)
+        return render('exportCSV.mako', request, context)
+    else:
+        context = {'dbNames' : getHiveDatabaseNames(),
+                   'noPath' : '',
+                   'exSuccess' : '',
+                   'exFail' : ''
+                   }
+        return render('exportCSV.mako', request, context)
+
+
+def quality(request):
+    import subprocess    
+    if request.method =='POST':
+    	context = {
+    	}
+    return render('hive.mako', request, {})
+
+
+def tables(request):
+    loginFailed = False
+    loginForm = dbLoginForm(request.POST or None)
+    if request.method == "POST":
+        pswd = request.POST.get("txtPassword")
+        username = request.POST.get("txtUsername")
+        db = request.POST.get("selDB")
+        if request.POST.get("loginSubmit"):
+            if loginForm.is_valid() and dbLogin(db, username, pswd):
+                return render('tableIngest.mako', request, {
+                    'db' : db,
+                    'username' : username,
+                    'password' : pswd,
+                    'dbNames' : getDatabaseNames(db, username, pswd),
+                    'hiveDbNames' : getHiveDatabaseNames()
+                })
+            else:
+                loginFailed = True
+        elif request.POST.get("sqoopSubmit"):
+            srcDB = request.POST.get("selDBName")
+            srcTable = request.POST.get("selTable")
+            srcColumns = request.POST.getlist("selColumns")
+            stgDB = request.POST.get("selStgDB")
+            stgTable = request.POST.get("selStgTable")
+            splitBy = request.POST.get("txtSplitBy")
+            if stgTable == None:
+                stgTable = request.POST.get("txtStgTable")
+            sqoopSuccess = sqoopTable(db, srcDB, username, pswd, srcTable, srcColumns, stgDB, stgTable, splitBy)
+            return render('tableIngest.mako', request, {
+                'db' : db,
+                'username' : username,
+                'password' : pswd,
+                'dbNames' : getDatabaseNames(db, username, pswd),
+                'hiveDbNames' : getHiveDatabaseNames(),
+                'sqoopSuccess' : sqoopSuccess,
+                'srcDB' : srcDB,
+                'srcTable' : srcTable,
+                'stgDB' : stgDB,
+                'stgTable' : stgTable,
+            })
+    return render('tableLogin.mako', request, {
+        'form' : loginForm,
+        'loginFailed' : loginFailed,
+        'is_embeddable': request.GET.get('is_embeddable', False),
+    })
+
+
+def csv(request):
+    if request.method == 'POST':
+        filepath = os.path.dirname(os.path.abspath(__file__))
+        filepath = filepath + '/meta.csv'
+        file = request.FILES['metaCSV']
+        with open(filepath, 'wb+') as dest:
+            for chunk in file.chunks():
+                dest.write(chunk)
+        with open(filepath, 'rb+') as csv:
+            data = csv.read().splitlines()
+            info = '\n'.join(data)
+        return render('csv.mako', request, {
+            'dbNames': getHiveDatabaseNames(),
+            'metaInfo': info
+        })
+    return render('csv.mako', request, {
+        'dbNames': getHiveDatabaseNames(),
+        'metaInfo': ''
+    })
+
+
+def csvSuccess(request):
+    if request.method == 'POST':
+        filepath = os.path.dirname(os.path.abspath(__file__))
+        filepath = filepath + '/tmp.csv'
+        file = request.FILES['my_file']
+        with open(filepath, 'wb+') as dest:
+            for chunk in file.chunks():
+                dest.write(chunk)
+        # dbexists = request.POST.get('dbexists')
+        dbexists = "Yes"
+        delimiter = request.POST.get('delimiter')
+        texists = request.POST.get("texists")
+        isHeader = request.POST.get("header")
+        metaCSV = request.POST.get("metaLoaded")
+        print isHeader
+        # db and table names have to be lowercase to work with hive and SQL
+        context = getCSVContext(dbexists, texists, isHeader, delimiter, filepath, metaCSV, request)
+
+    # Render new HTML page to notify user that their request has been completed
+    return render('csvSuccess.mako', request, context)
+
+# -----------------------------------------------------------------------------------------------------
+
+
+# Hive to hive views.py starts here
+def hive_query(request):
+	myform = TableForm(request.POST or None)
+	context = {'form': myform}
+	k = {}
+	if request.method == 'POST':
+		sdb = request.POST.get('srcdbase')
+		st = request.POST.get('srctable')
+		ddb = request.POST.get('dstdbase')
+		dt = request.POST.get('dsttable')
+		col= request.POST.getlist('srccol')
+		choices=[]
+		for i in col:
+			choices.append((i,i))
+		myform.fields['srccol'].choices=choices
+		myform.fields['srcdbase'].choices=[(sdb,sdb)]
+		myform.fields['srctable'].choices=[(st,st)]
+		myform.fields['dstdbase'].choices=[(ddb,ddb)]
+		myform.fields['dsttable'].choices=[(dt,dt)]
+		if myform.is_valid():
+			# call python program to do table stuff
+			for i in myform.cleaned_data:
+				k[i] = myform.cleaned_data[i] 		# puts context into a new dictionary for sample_ingest to run
+			s =query_string(k)
+			request.session['mystring'] = s 		# uses a session to store the new string generated from sample_ingest
+			#to create sample
+			select = s[s.lower().find("select"):].replace("\n"," ").replace("\r", " ").replace("/r", " ").replace("\'","\"")
+			select = select[:-1]
+			print select
+			q= subprocess.Popen("beeline --showHeader= false --outputFormat=csv2 -u jdbc:hive2://localhost:10000 -e \'"+select+" limit 50;\'", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()[0]
+			qs=q.replace(",", ", ")
+			n = qs.find(".")
+    			table = qs[0:n+1]
+    			qs=qs.replace(table,"")
+			request.session['mystring2'] = qs
+
+			return redirect(hive_success)				# redirects to success page, which accesses the session variable
+		else:
+			print myform.errors
+			return render('hive_query.mako',request, context)
+#			return redirect(index)
+	return render('hive_query.mako',request,  context)
+
+def hive_success(request):
+	if request.method == 'POST':
+		if 'return' in request.POST:
+			return redirect(hive_query)
+		s = request.POST.get('hidden')
+		s=s.replace("\n"," ").replace("\r", " ").replace("/r", " ").replace("\'","\"")
+		q = subprocess.Popen("beeline -u jdbc:hive2://localhost:10000 -e \'"+s+"\'", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+		test = q.communicate()[1]
+		if test.lower().find("error") >= 0:
+			request.session['results'] = "An error occured while processing your query"
+		else:
+			request.session['results'] = "Your query has been successfuly submited and processed"
+			
+		return redirect(hive_submit)
+	else:
+		context = {}
+		context['s'] = request.session.pop('mystring')	# pops current session off and assigns to context
+		sp =request.session.pop('mystring2')
+		if sp == "":
+			context['qs'] ="Query returned error or no data, please check your syntax."
+		else:
+			context['qs'] = sp
+		return render('hive_success.mako',request, context) # renders the string
+
+def hive_submit(request):
+	if request.method == 'POST':
+		return redirect(hive_query)
+	context={}
+	context['results']=request.session.pop('results')
+	return render('hive_submit.mako',request,context)
+
+

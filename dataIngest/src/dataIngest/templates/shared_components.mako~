@@ -1,0 +1,36 @@
+<%!
+from django.utils.translation import ugettext as _
+%>
+
+<%!
+def is_selected(section, matcher):
+  if section == matcher:
+    return "active"
+  else:
+    return ""
+%>
+
+<%def name="menubar(section='')">
+  <div class="navbar hue-title-bar nokids" style="margin-top: 28px;">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="app-header">
+              <a href="/dataIngest">
+                <img src="${ static('dataIngest/art/icon_dataIngest_48.png') }" class="app-icon"  alt="${ _('App icon') }"/>
+                dataIngest 
+              </a>
+             </li>
+             <li class="${is_selected(section, 'home')}"><a href="/dataIngest/" data-bind="hueLink: '/dataIngest/'">Home</a></li>
+             <li class="${is_selected(section, 'tables')}"><a href="/dataIngest/tables" data-bind="hueLink: '/dataIngest/tables/'">Tables</a></li>
+             <li class="${is_selected(section, 'csv')}"><a href="/dataIngest/csv" data-bind="hueLink: '/dataIngest/csv/">CSV's</a></li>
+             <li class="${is_selected(section, 'hive')}"><a href="/dataIngest/hive" data-bind="hueLink: '/dataIngest/hive'">Quality</a></li>
+	     <li class="${is_selected(section, 'H2H')}"><a href="/dataIngest/hive_query" data-bind="hueLink: '/dataIngest/hive_query'">H2H</a></li>
+             <li class="${is_selected(section, 'Export')}"><a href="/dataIngest/export" data-bind="hueLink: '/dataIngest/hive_query'">Export</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</%def>

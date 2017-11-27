@@ -1,0 +1,1608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <title>Hue v3.5.0, released Wednesday 4th, December 2013</title>
+</articleinfo>
+<simpara>Hue, <ulink url="http://gethue.com">http://gethue.com</ulink>, is an open source UI for Hadoop and its satellite projects.</simpara>
+<simpara>It makes the whole platform (e.g. HDFS, MapReduce, Hive,  Oozie, Pig, Impala, Solr, Sqoop,
+ZooKeeper&#8230;) easy to use and accessible from your browser (e.g. upload files to HDFS, send Hive queries from a Web editor,
+build workflows with Drag &amp; Drop&#8230; all within a single app).</simpara>
+<section id="_notable_features">
+<title>Notable Features</title>
+<itemizedlist>
+<listitem>
+<simpara>
+The look &amp; feel and navigation bar have been redesigned
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://gethue.com/dbquery-app-mysql-postgresql-oracle-and-sqlite-query">DBQuery App: MySQL and PostgreSQL Query Editors</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://gethue.com/new-search-feature-graphical-facets">New Search feature: Graphical facets</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://gethue.com/integrate-external-web-applications-in-any-language">Integrate external Web applications in any language</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://gethue.com/hadoop-tutorial-create-hive-tables-with-headers-and">Create Hive tables and load quoted CSV data</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://gethue.com/hadoop-tutorial-submit-any-oozie-jobs-directly-from">Submit any Oozie jobs directly from HDFS</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://gethue.com/sso-with-hue-new-saml-backend">SSO with Hue: new SAML backend</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://gethue.com/hadoop-tutorial-hive-query-editor-with-hiveserver2-and">Hive Query editor with HiveServer2 and Sentry</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_compatibility">
+<title>Compatibility</title>
+<simpara>Runs on CentOS versions 5 to 6, Red Hat Enterprise Linux (RHEL), and Ubuntu 10.04 to 12.10.
+CentOS 5 and RHEL 5 requires EPEL python package.</simpara>
+<simpara>Tested with CDH5beta1. Specifically:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Hadoop 0.20 / 2.2.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Hive 0.12.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Oozie 4.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HBase 0.96
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pig 0.12
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Impala 1.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Solr 4.4
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Sqoop2 1.99.3
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>These minimum versions should work (not tested):</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Hadoop 0.20 / 1.2.0 / 2.0.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Hive 0.12.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Oozie 3.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HBase 0.92
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pig 0.8
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Impala 1.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Solr 3.6
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Sqoop2 1.99.3
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Supported Browsers:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Windows: Chrome, Firefox 3.6+, Internet Explorer 9+, Safari 5+
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Linux : Chrome, Firefox 3.6+
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mac: Chrome, Firefox 3.6+, Safari 5+
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Runs with Python 2.6+</simpara>
+</section>
+<section id="_list_of_254_commits">
+<title>List of 254 Commits</title>
+<itemizedlist>
+<listitem>
+<simpara>
+18170a1 [doc] Adding 3.5 release notes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+df9bafb HUE-1772 [core] Adding a new tag remove the sample tag
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+742f1d1 HUE-1777 [beeswax] Unify is_auto status of the queries
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0d9af28 HUE-1782 [useradmin] refldap entries when importing groups causes errors
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f47c843 HUE-1775 [core] Filter out trashed documents on home page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f7e6b25 [jobsub] saving a design shows an empty page after
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+36275c1 [oozie] Path changes in FS nodes in Oozie app can&#8217;t be changed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3f21246 HUE-1778 [dbquery] Query hangs with MySql
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0ed3b45 HUE-1774 [dbquery] Update ini config with examples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+38a09c0 HUE-1780 [dbquery] datatables disabled
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1e5a830 [beeswax] Run table example creation as the current user
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+51d2ce3 HUE-1762 [dbquery] Show errors in the UI in case of DB connection failure
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+38bcb60 [oozie] Delete cleanly coordinators and bundles
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7eb2041 [pig] Fix script copy
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0ef94e4 [oozie] Set the correct example tag to the oozie workflow examples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b616733 [oozie] Load datasets in the examples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5c56582 [oozie] Fix scheduling of coordinators
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+14743b2 HUE-1771 [pig] HCatalog table autocomple does an insert
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2b0d40e HUE-1770 [core] Do no allow unselection of tag when click toggling one
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+844a6c8 HUE-1773 [beeswax] JS error when there&#8217;s an error without a particular line/character specified
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+72b93df [doc] Updated Hadoop versions of Hue 3.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+705cd62 HUE-1746 [metastore] Remove header line from datafile if header detected
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f12f1ad HUE-1701 [oozie] Import coordinator button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f2b78e1 HUE-1737 [oozie] Bigger view log icon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d693edb HUE-1767 [useradmin] Ensure posix groups and other groups are separated
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c1fc7a2 HUE-1766 [dbquery] Autocomplete behaviour should match Beeswax/Impala&#8217;s ones
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f6c0460 HUE-1758 [dbquery] Add navigator for quick table browsing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7141807 [search] URL escape links to range facets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d7c1019 HUE-1764 [dbquery] use database options when creating a connection
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b1a1f9a HUE-1765 [dbquery] Datatables breaking sometimes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e454e45 HUE-1763 [dbquery] Autocomplete doesn&#8217;t work for a new dbquery setup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+85cb561 HUE-1590 [core] Make SAML logout optional
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9d72726 HUE-1452 [oozie] Support workflow credentials
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+21edfc1 HUE-1639 [core] HTTPOnly on session cookie
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3922252 [core] Protect thread session conflicts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6c841c4 HUE-1742 [search] Improve graphical facet performances
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f11ad68 HUE-1679 [oozie] Save a workflow with a bad name fails with no information
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+37f892c [core] Remove parent definition in root pom
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f6db605 HUE-1742 [search] Improve graphical facet performances
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c8be55b HUE-1757 [dbquery] Magic table autocompletion
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+95d7fec HUE-1717 [dbquery] Add table and column autocompletion
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c90388b HUE-1754 [dbquery] provide an appropriate view when no databases are configured
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+72c4007 HUE-1756 [dbquery] Empty results view
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+822fb31 HUE-1754 [dbquery] provide an appropriate view when no databases are configured
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8874353 [core] Update hadoop version in Maven
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+98c9b54 HUE-1746 [metastore] Auto detect header if all cols are strings
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fcf7bbe HUE-1749 [core] thrift ssl support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2c16cb2 HUE-1749 [core] thrift ssl support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c347383 [core] Make hostname generic in tests and remove webhdfs threadness test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+932498a HUE-1746 [metastore] Read header from file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+41d30a2 [beeswax] Dynamic HiveServer2 port during testing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3d9e2b6 HUE-1747 [metastore] Create table from quoted csv file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3ffd686 HUE-1665 [oozie] import workflow locks database
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+264b253 HUE-1746 [metastore] Styled the header button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2c79c08 HUE-1746 [metastore] Read header from file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+33c55f8 HUE-1750 [core] Make IPv4 or IPv6 pluggable for Thrift clients
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+07de444 HUE-1750 [core] Make IPv4 or IPv6 pluggable for Thrift clients
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b7570f4 HUE-1745 [beeswax] Autocomplete table name with magic from broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ed68d2 HUE-1704 [pig] Give the user the possibility to hide the function helper and totalstorage it
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1d39b50 HUE-1728 [search] Error or disabled message when cannot connect to the Solr server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b156382 HUE-1748 [jobsub] Datatables does not resize correctly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+45863bf HUE-1739 [dbquery] 500 error on execute query
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b14ee75 HUE-1744 [core] upgrade packaged thrift
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ebe18d3 HUE-1601 [oozie] Workflow editor shouldn&#8217;t display deleted action in Import Action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+797f6d6 HUE-1727 [beeswax] Export data from a non default database
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b818b96 HUE-1715 [dbquery] test using sqlite
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8de897e HUE-1743 [core] Prevent frame busting and clickjacking
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dbebdca HUE-518 [beeswax] File Resources support other file systems
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d554856 HUE-1501 [oozie] Support coordinator datasets from non HDFS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+65ab2b5 HUE-1741 [dbquery] bugs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d370148 [fb] Trash opens up on user current path if possible
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c51589f [core] Remove old Hadoop configs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a9d55e4 [core] Add a default webhdfs url in order to avoid misconfiguration warning
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+90f3eda HUE-1743 [core] Prevent frame busting and clickjacking
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9fc933d HUE-1731 [search] Support dates in graph facets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+25908db HUE-1740 [oozie] Ko error when editing datasets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e5ba3b2 [core] Skip quick start wizard checkbox for admins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+19dd13c HUE-1714 [dbquery] Add Oracle backend
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+058d572 HUE-1713 [dbquery] Add SQLite backend
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+38b4cc5 HUE-1729 [spark] Syntax highlighting for Scala and Java and hints
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+938691c HUE-1735 [fb] Better back history
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+78b12b3 HUE-1732 [core] Hide menu sections from navbar if list of apps is empty
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e86f6af HUE-1476 [fb] Submit oozie jobs directly from HDFS with FileBrowser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+17d1fd1 [oozie] Set implicitly the user used in the API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b7aa82a HUE-1694 [impala] Multi query not always supported
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e0ebe6d [beeswax] Stop infinite loop in navigator when there is no DB
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5689651 HUE-1455 [impala] Close use and metastore queries
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4f9f48e HUE-826 [proxyapp] Add missing conf.py
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2481949 [beeswax] Sentry support for HiveServer2 and Impala
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7935b4e [beeswax] Fix monkey patching teardown in tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+34a106f [spark] Java and Scala support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6396553 HUE-1705 [spark] Initial commit
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f88f741 [core] Update tests to use the latest tarballs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0a81f27 HUE-1699 [dbquery] metastore fixes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+50cc161 HUE-1699 [rdbms] Create RDBMS app
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1190bc4 HUE-1711 [core] LDAP username import lowercase
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2e9e2c2 HUE-826 [proxyapp] Support ini parameter for URL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ffed5d8 HUE-1707 [impala] Retain query text when switching away from the app
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+14c5a11 HUE-1570 [search] Timeline display
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3b5b5d2 HUE-826 Make the new app show up in the navigation bar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+16d8d4f HUE-826 [proxy] Embedded proxied app
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d8b2a51 HUE-1664 [core] URL Redirection whitelist
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c1ca50e HUE-1096 [core] Workflow examples conflicts with existing workflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+56d14b7 HUE-1618 [graph] New graph lib
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e084947 HUE-1690 [core] Forceful Browsing / Directory Listing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+48295c5 [filebrowser] Abstract DEFAULT_HDFS_SUPERUSER in the tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ed6fce HUE-1698 [fb] Toolbar is fixed too high
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d4c4585 HUE-1680 [oozie] Java Action delete jar file from workflow lib
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f7b60c4 HUE-1696 [core] Update Knockout to version 3
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6b18c69 HUE-1695 [core] Update FontAwesome to version 4
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5f9d820 HUE-1682 [sqoop2] Better error notification when a server is not available or not responding
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9fdf857 HUE-1613 [oozie] Improve coordinator timezone description
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1dd04b4 HUE-1684 [pig] Create a Navigator for functions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+31d51d2 HUE-1692 [core] Add trademark on About page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6533488 HUE-1691 [help] Revamp a bit the style
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1c5f77b HUE-1689 [core] The wrong Browser locale is used
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+408962a HUE-1687 [core] SAML backend with simple redirect logout
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e260b29 HUE-1650 [beeswax] Add error message when no DB are available
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ca66ced HUE-1681 [core] set LOCALE_PATHS to remove deprecations
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9af7880 HUE-1666 [beeswax] Saving a query after renaming revert the name change
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d18497e HUE-1609 [core] LDAP backend and import should be case insensitive when searching for users
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+662ae83 HUE-1681 [core] set LOCALE_PATHS to remove deprecations
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bb13694 HUE-1685 [search] Add tlong and int to range facets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+408c7c5 [core] Trigger l10n
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+68c17b2 [doc] Update internal doc
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eeb0c77 HUE-1678 [search] Disable multiValued fields from sorting
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+030d2a7 HUE-1677 [core] Make SAML username source configurable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8c33d4e HUE-1638 [core] Secure database connection
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+87a90d6 HUE-1676 [core] Make SAML entity ID configurable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5e5b2f1 HUE-1675 [core] mysql extension needs an SSL fix for MySQL 5.5
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+45f4e07 HUE-1673 Make datetime fields unaware of timezones
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+99e8543 [doc] Adding ZooKeeper
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+efd2cbf [core] Bump version to 3.5
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f473411 [beeswax] Install samples should not fail silently
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fe7e160 HUE-1641 [jb] Improve UX of non started job yet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d7e0a4c HUE-1667 [hbase] Remember previously selected cluster
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+28b3819 HUE-1674 [beeswax] Query history search is broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+97f8263 HUE-1673 [core] Update desktop/settings.py to sync with django 1.4
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+64414f7 HUE-1641 [jb] Improve UX of non started job yet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f6ad99e [metastore] Restore skipped tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f74687d [hbase] Does not support int rowkeys
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+73572ba HUE-1637 [metastore] Provide URLs for databases
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5263869 HUE-1456 Better column type defaults in create table wizard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+64b8e8a HUE-1671 [hbase] Sticky search bar is half hidden when scrolling up
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d4422d9 HUE-1669 [metastore] Drop table from the table view does not show a modal anymore
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4db0343 HUE-1670 [metastore] Add icons to specific create table pages
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+022b44a HUE-1648 [beeswax] Navigator should fail gracefully in case a table has been deleted
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b742786 HUE-1508 [beeswax] Clicking on a name in Columns tab could go to the result column
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3cc9c90 HUE-1661 [filebrowser] Change spacing of file details
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5432b15 HUE-1662 [sqoop] Plus sign doesn&#8217;t go to create a new job
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3a603a0 HUE-1653 [core] Banner does not display properly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f0f6c14 [core] Trash enabled info is wrong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8855024 HUE-613 [fb] Support snappy compression
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+04a21a4 HUE-1631 Fix oozie and pig tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ef9bc19 [beeswax] Update impersonation settings
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+13516c1 HUE-1631 [oozie] Support JobTracker HA in workflows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f8aa93a HUE-670 [core] Hue should use connection pool to talk to webhdfs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d446d5c HUE-1612 [jobbrowser] Browser needs minutes to render the page if you want to see many jobs (&gt; 4000)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a9974f2 HUE-1651 [doc] New user should have default tag selected
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6ed1960 HUE-1649 [beeswax] Autocomplete error
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2bfe602 HUE-1647 [oozie] Copy button response
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+76370ff [core] Minicluster doesn&#8217;t use correct hadoop conf
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a751ed1 HUE-1642 [beeswax] Link to metastore table in navigator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d3d32ca [impala] Fix auto complete bug
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9058708 HUE-1645 [core] Multi select chooser has Move and Clean sections
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c38f0f7 [beeswax] My recently saved queries should only display my queries
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e149058 [search] Changing name of a collection gives a 500
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f6e1f13 HUE-1291 [beeswax] Saved queries should have filter for username
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+888d9cb [pig] Add test for whole log parsing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8e0583d HUE-1643 [pig] Progress does not update
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+44b77e9 [beeswax] Close queries command
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+445c2c2 [beeswax] Re-enable explain query tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7953b1b HUE-1275 [metastore] Show table details
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9987310 [core] Yarn mapreduce_shuffle renaming
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a3a8cfc HUE-1632 [oozie] Workflow with &amp; in a property fail to submit
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+75983c2 HUE-1635 [hbase] Bulk load button does not show popup with FF
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0fbb145 HUE-1634 [jobsub] Can&#8217;t open a design by its URL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+23ec4f3 HUE-1636 [oozie] Coordinators actions do not appear because of OOZIE-1481
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f7c9425 [beeswax] Make sure <emphasis>;</emphasis> is stripped when calling explain
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+26d43e9 [beeswax] Re-enable tests depending on configOverlay
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d00acd3 HUE-1630 [oozie] Dataset timezone not saved at creation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ae790da HUE-1629 [core] Improve <emphasis>projects</emphasis> section on home page if no projects are present
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2cc6f18 [beeswax] Title of the table page changed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ef93adc [beeswax] Update tests with latest HiveServer2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8449aa5 [oozie] Update section icons
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+54ca6d9 [metastore] Fix describe extended
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dce3b30 [metastore] Re-enable tests and fix HiveServer2 changes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9f51b6f [core] Adding HADOOP_HOME for Hive tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a2c5273 HUE-1565 [beeswax] Adding tests to multi partition support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+80eda27 HUE-1565 [beeswax] PartitionValueCompatible: add multiple partitions support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+253aac8 [sqoop2] sqoop server error handling
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+23009b0 HUE-1593 [jobbrowser] Exception when user is not allowed to view a job of another user
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0b15066 [sqoop] Fix connection error handling
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc7dae4 [jb] Red accepted to orange accepted state
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4bd6aa1 HUE-1626 [beeswax] Create home directory of sample user
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f17718e HUE-1625 [jb] Make resource manager API dynamic
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+be06349 [beeswax] Smarted magic table autocomplete
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8019d16 HUE-1622 [core] Mini tour on home page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e43e370 [beeswax] Use FQDN for the test server
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+50dad29 HUE-1599 [jb] Last progress precents fail to be displayed with MR2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4a08db2 [core] Reverse symlink order
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6703884 [beeswax] Skip tests depending on HiveServer2 fix
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e0c7c39 HUE-1494 [beeswax] Re-enable Hadoop tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aaf0c75 HUE-1615 [metastore] Improve UX of breadcrumbs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+07b037c HUE-1563 [search] Next button should not rely on cookie
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f4518f3 HUE-1623 [search] Show import collection error
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ff1476c HUE-1162 [oozie] Fix tests related to this change
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3512002 HUE-1619 [beeswax] Autocomplete should include <emphasis>star</emphasis> in field list
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+53e8edb HUE-1162 [oozie] Export oozie workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+52e25f5 Revert "HUE-1604 [oozie] Jar path in mapreduce action and java action should use File arg"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d9d3dfd HUE-1603 Rename of markdown files to .html fails for user guide
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c889137 [core] Skip test_error_handling test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b46598b [core] Fix LDAP config
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6117ca6 HUE-1616 [core] Diversify Oozie icons for dashboard and editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2e84287 [beeswax] Fix permissions of auto queries not linked to a design
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e7d1584 [metastore] Adding icons
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2a4e19d HUE-1566 [impala] Auto complete not wide enough
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5200065 [impala] Impersonation support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e33c265 [oozie] Remove leaked workflows from jobsub in tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+676698c [oozie] Fix typo in tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6fb4d27 [core] Fix liboozie tests specific to MR1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+443bec4 [oozie] Fix import workflow tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bf742c7 [oozie] Fix workflow with jar file tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3097f25 [core] Fix add a tag
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+59a02b2 [hadoop] Set MR2 as default
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2082484 [oozie] Fix import workflow tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+41cf6ee HUE-1594 [core] Revamp login page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e1f292f HUE-1604 [oozie] Jar path in mapreduce action and java action should use File arg
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c80e424 [oozie] Get import workflow working again
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2e3db58 [oozie] Fix permission tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6870df9 [oozie] Fix submittion tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c9a068f [sqoop] Fix sqoop tests to work with upcoming sqoop 1.99.3 release
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f2a2ab6 [sqoop] Improve testing to show real error
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d2d9375 [jobbrowser] Refactor and fix tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2e1ef2d [core] Small UX fixes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+af73c45 HUE-1607 Introduce sourceJavaVersion into Hue build
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fc73e85 [core] Update test cluster to Yarn and MR2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3e02523 HUE-1610 [core] Small screen support for navbar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+055deed HUE-1606 [core] Current project tag
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2dc8335 [core] Update SAML libs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d951ada HUE-1606 [core] Improve logout pattern
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0f3fb0d [beeswax] Improve double click in navigator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a5d2058 HUE-1569 [beeswax] Table and fields helper
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+09f743b HUE-1587 [jobsub] Edit design by its id and not index
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+475c52f HUE-1241 [pig] Do not consider macro parameters as Pig parameters.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4ef020a HUE-1581 [jobsub] Saving a design clones it
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2cf4732 HUE-1600 [core] Introduce tag counters for normal tags
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+252af7c HUE-1569 [beeswax] Table and fields helper
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9b3f8df HUE-1596 [desktop] Create an examples tag
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a1ca5ec [core] Disallow TRACE and TRACK HTTP methods
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4bfe98a [impala] Use DocModel API in the tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2b4169b [core] Use cipher list to restrict ciphers used for Hue SSL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+23933dd [core] Make search bind authentication optional for LDAP
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c52019c [doc] 3.0.0 release notes
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_contributors">
+<title>Contributors</title>
+<simpara>This Hue release is made possible thanks to the contribution from:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Aaron Newton
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aaron T. Myers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Abraham Elmahrek
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aditya Acharya
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Alex Newman
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Bayer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Yao
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ann McCown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc Wong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ben Bishop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruce Mitchener
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruno Mahé
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Eli Collins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Enrico Berti
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Eric Wong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Harsh J
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Henry Robinson
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Jon Natkins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Kevin Wang
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Lars Francke
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Loren Siebert
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Marcus McLaughlin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mike Cotton
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Paul Battaglia
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Philip Zeyliger
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Romain Rigaux
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Roman Shaposhnik
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shawn Van Ittersum
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shrijeet Paliwal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Thomas Aylott
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Todd Lipcon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Vinithra Varadharajan
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</article>

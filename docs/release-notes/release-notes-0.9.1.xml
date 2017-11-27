@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <title>HUE v0.9.1, released July 21, 2010</title>
+</articleinfo>
+<simpara>HUE 0.9.1 is mainly a bug-fix release. Most notably:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+A lot of installation related issues have been corrected.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+The JFrame filtering system now supports garbage collection of individual
+  elements, which fixes memory leak on partial refresh.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+IE compatibility has improved.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+User manual has been updated.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>This release also includes a few small features:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+New multi-select widget for the front-end.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+A new configuration variable, <literal>http_500_debug_mode</literal>, turns on debugging for
+  internal server error.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+The <literal>app_reg</literal> tool registers and display the application&#8217;s author.
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_list_of_all_bugs_fixed">
+<title>List of All Bugs Fixed</title>
+<itemizedlist>
+<listitem>
+<simpara>
+HUE-2. app_reg does not install conf/*.ini
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-3. Prod install contains jframegallery
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-4. User manual S2.1 incorrect
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-5. libs/hadoop should be more lenient looking for jars
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-8. beeswax import data doesn&#8217;t work
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-10. Makefile.vars: DESKTOP_PLUGIN_DIR incorrect
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-12. Drop down box to select user for chown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-13. app_reg should show app&#8217;s author
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-14. make processing ext-py unnecessarily
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-15. Explicitly specifying default for jobtracker.thrift.address for consistency with hdfs-site.xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-16. Provide a way to tell hudson.sh to skip cleaning the checkout.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-17. <emphasis>make install</emphasis> fails if the working tree is not clean
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-18. tests in <emphasis>help</emphasis> app should not depend on useradmin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-19. Add get_content_summaries call to NameNode plugin.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-21. Create new JFrame Filter system that allows for individual element
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-22. Allow relcoation of a Hue installation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-23. Integrate IE Compatible Protovis
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-24. Filesize Sorting doesn&#8217;t work
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-25. Allow multi-select for moving multiple users into a group
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-26. UserAdmin js file throws error in IE
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-28. confparse wasn&#8217;t handling continued lines correctly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-29. Set HADOOP_LOG_DIR for mini_cluster.py
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-30: Add support for Behavior Filters to add keyboard events to JFrame instance
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-32. User manual update
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-33. Protovis version has bug wherein mark events do not have their index properly set
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-34. Make Splitview&#8217;s fixed side be the one with the explicit size
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-35. create icons for tiny file browser and a "go up" folder
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-36. Allow form controls and the like to work in elements that toggle splitviews
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-40. virtualenv_support missing setuptools for py2.6
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-42. Toolbar buttons look messed up in Chrome
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-44. Filebrowser: move file ok button does nothing while no file/folder is selected
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-46. Bump version number for 0.9.1 release
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-47. FitText filter isn&#8217;t garbage collecting right
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-49. create table syntax error for partition table
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-50. Removing desktop/core/ext-py/python-ldap-2.3.11.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-51. Hue needs a 500 template
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-53. Fix various IE compatibility issues.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-56. 0.9.1 release notes
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_project_information">
+<title>Project Information</title>
+<simpara>Homepage: <ulink url="http://github.com/cloudera/hue">http://github.com/cloudera/hue</ulink></simpara>
+</section>
+</article>

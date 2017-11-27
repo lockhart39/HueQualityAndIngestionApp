@@ -1,0 +1,77 @@
+
+.container {
+    width: 500px;
+    clear: both;
+    float: left;
+    padding: 0;
+ }
+.container select, input{
+    width: 100%;
+    clear: both;
+}
+
+.container label{
+    width: 98.5%;
+    margin-bottom: 0;
+}   
+
+.chosen-container:not(.chosen-container-multi){
+    margin-bottom: 10px;
+}
+
+.loader {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        50%;
+    text-align: center;
+    left:       0;
+    height:     100%;
+    width:      100%;
+ }
+
+.loader::before {
+    margin: auto;
+    display:block ;
+    text-align: center;
+    content: url("/static/dataIngest/art/ajax-loader.e4234472afb9.gif");
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   loader element will be visible */
+body.loading .loader {
+    display: block;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    margin-right: 50px;
+}
+
+.arrowDiv {
+    width: 5%;
+    text-align: center;
+}
+
+.tableDiv {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+

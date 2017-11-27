@@ -1,0 +1,63 @@
+<%!from desktop.views import commonheader, commonfooter %>
+<%namespace name="shared" file="shared_components.mako" />
+
+%if not is_embeddable:
+    ${commonheader("dataIngest", "dataIngest", user, request) | n,unicode}
+%endif
+
+${shared.menubar(section='hive')}
+
+## Use double hashes for a mako template comment
+## Main body
+<div class="container-fluid">
+    <div class="card">
+        <h2 class="card-heading simple">Hive</h2>
+        <div class="card-body">
+        <form method="post" style="text-align:center;">
+            ${ csrf_token(request) | n,unicode }
+            <div class ="createDBArea">
+                <b class="fontEdits">Create database:</b>
+                <input type="text" name="createDB" style="margin: 15px 0; width:10%; font-family: sans-serif;">
+                <input type="submit" value="Create" style="margin:10px; padding:5px 40px;"><br>
+            </div>
+            <div class ="createArea">
+                <b class="fontEdits">Show accessible databases:</b><br>
+                <input type="radio" name="showDB" value="Yes">
+                <b class="fontEdits">Yes</b>
+                <input type="radio" name="showDB" value="No">
+                <b class="fontEdits">No</b><br>
+                <input type="submit" value="Show" name="showAccDB" onclick="showDB()" style="margin:0; padding:5px 40px;">
+            </div>
+            <div class ="createArea">
+                <b class="fontEdits">Choose database:</b><br>
+                <input type="text" name="dbName" style="margin:  0; width:10%; font-family: sans-serif;">
+                <input type="submit" name="showTables" value="Show Tables"><br>
+            </div>
+            <div class ="createQueryArea">
+                <textarea name="tableEdits" rows="15" style="width:40%; height:30%;"></textarea><br>
+                <input type="submit" value="Run Query" style="margin:0; padding:5px 40px;">
+            </div>
+            </form>
+              <style type="text/css">
+                .createDBArea {border-style: solid solid none solid; width:60%; padding:10px;}
+                .createArea {border-style:solid solid none solid; width:60%; padding:10px;}
+                .createQueryArea {border-style:solid solid solid solid; width:60%; padding:10px;}
+                .myLinkClass:hover {border-style:solid; text-align:left;}
+                .myLinkClass {background-color:none;}
+                .myLinkClass {color:black; margin:0;}
+                .myLinkClass {font-weight:800; padding:0 15px; text-decoration:none;}
+                .fontEdits {color: black; font-weight:800; text-align:center;}
+                .resultHead {font-weight:800; position:absolute; top:100px; right:200px;}
+                .resultsOutput {background-color: #FFFDF7; margin:50px 0; position:absolute; top:100px; right:0px; left: 1400px; height:50%;}
+              </style>
+            
+            <div>
+            	<p class="resultHead">Results:</p>
+            	<p class="resultsOutput">${createDB}</p>
+            </div>
+        </div>
+    </div>
+</div>
+%if not is_embeddable:
+    ${commonfooter(None, messages) | n,unicode}
+%endif%

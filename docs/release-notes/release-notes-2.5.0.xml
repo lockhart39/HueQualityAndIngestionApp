@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <title>Hue v2.5.0, released Monday 15th, July 2013</title>
+</articleinfo>
+<simpara>Hue, <ulink url="http://gethue.com">http://gethue.com</ulink>, is an open source UI for Hadoop and its satellite projects.
+It makes the whole platform (e.g. HDFS, MapReduce, Hive,  Oozie, Pig, Impala, Solr&#8230;) easy to use and
+accessible from your  browser (e.g. upload files to HDFS, send Hive queries from a Web editor,
+build workflows with Drag &amp; Drop&#8230; all within a single app).</simpara>
+<section id="_notable_features">
+<title>Notable Features</title>
+<itemizedlist>
+<listitem>
+<simpara>
+HBase Browser application is tailored for quickly browsing huge tables and accessing any content.
+  You can also create new tables, add data, modify existing cells and filter data with the auto-completing search bar.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_notable_fixes">
+<title>Notable Fixes</title>
+<itemizedlist>
+<listitem>
+<simpara>
+HUE-1109 [beeswax] Hive Server 2 save results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1376 [beeswax] Autocomplete doesn&#8217;t work after the <emphasis>where</emphasis> keyword
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1135 [pig] Options support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE [beeswax] Saved queries are renamed to None
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1115 [impala] Support multi db
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-641 [jb] Auto-refresh the Job Browser views
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1150 [pig] Links to inputs/outputs/MR jobs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1256 [core] Cache the HA jt
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_compatibility">
+<title>Compatibility</title>
+<simpara>Runs on CentOS versions 5 to 6, Red Hat Enterprise Linux (RHEL), and Ubuntu 10.04 to 12.10.</simpara>
+<simpara>Tested with CDH4.3. Specifically:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Hadoop 0.20 / 2.0.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Hive 0.10.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Oozie 3.3
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HBase 0.94
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Pig 0.11
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Impala 1.0 / 1.1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Solr 4.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Sqoop2 1.99.2
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Supported Browsers:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Windows: Chrome, Firefox 3.6+, Internet Explorer 9+, Safari 5+
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Linux : Chrome, Firefox 3.6+
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mac: Chrome, Firefox 3.6+, Safari 5+
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_list_of_85_commits">
+<title>List of 85 Commits</title>
+<itemizedlist>
+<listitem>
+<simpara>
+aeccb34 [doc] Add HBase app in the README
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2aafca3 HUE-1337 [impala] Support refresh from 1.0 and 1.1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ddc24ea Revert "HUE-1337 [impala] ResetCatalog() is deprecated in 1.1"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d3ab937 [hbase] query reload fix
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+11209c6 [hbase] Remove dead code failing to be parsed by babel
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2e250f8 HUE-1377 [hbase] Improve app icon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+16ae824 [hbase] Remove non ascii characters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+68ee759 [hbase] Add to app makefile
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+03d097d [beeswax] revert regenerate_thrift.sh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2bdfaa1 [hbase] cleanup regenerate_thrift.sh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2d45ab9 [hbase] Initial Commit
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+90bbe8d [beeswax] Document partition browsing limit option
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+62caa93 [core] app_reg syncdb should use the hue.ini properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7565503 HUE-1266 [core] Add <emphasis>hue version</emphasis> command
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9d42c9c [pig] Fix wrong Fs impersonation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f509c90 HUE-1368 [pig] Prettify main layout
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+683ced1 HUE-1376 [beeswax] Autocomplete doesn&#8217;t work after the <emphasis>where</emphasis> keyword
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3dfb2c7 HUE-1332 [beeswax] Smarter escaping of semicolon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+767bcf9 [oozie] Minor UX cleanup
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3d0be8a [beeswax] Make create database test more robust
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5a8d816 [beeswax] Support HiveServer2 PLAIN SASL authentication
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d2b994d HUE-1233 [core] should be possible to configure user id into which supervisor drop privs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bf3beff HUE-1281 [core] Remove unused ext-py depdencies
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1f2c714 HUE-1337 [impala] ResetCatalog() is deprecated in 1.1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+85e63ff HUE-1135 [pig] Options support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3f800fd [beeswax] Saved query are renamed to None
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2883d30 [doc] Removed old links, bad tables, updated graphics, new search doc.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4bfc9c6 HUE-1115 [impala] Support multi db
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+900e639 HUE-1321 [oozie] Shell or sqoop arguments missing in import workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f469059 HUE-1316 [oozie] Unable to use select popup box to change workflow after importing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+33c60c9 HUE-1338 [search] Support both plain text and json response from Solr
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ce1c1ed [beeswax] Create table with invalid data format is now valid
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d47bc5e [core] Detail HA howto configuration in hue.ini
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3a28455 [beeswax] Beeswax host server should appear in dump_config
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a3cde08 [fb] Fix the upload a file test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e817179 HUE-1072 [jb] Better progress bar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b2dbfb9 HUE-1159 [jb] MR2 Layout is broken by task and attempt IDs length
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+144090d HUE-1150 [pig] Links to inputs/outputs/MR jobs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0948e6d HUE-1349 [search] Save facets btn does not always show up
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+95c716f HUE-1361 [jobbrowser] Finished jobs are said to be running
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4d61896 HUE-641 [jb] Auto-refresh the Job Browser views
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ad4ec2 HUE-1335 [search] In place editing of facets and sorting fields
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+87a713e HUE-641 [jb] Auto-refresh the Job Browser views
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0b15a7b HUE-1340 [jb] NoReverseMatch error in job page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3d0aab2 [oozie] Fix refresh or workflow started by coordinator in dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4606538 HUE-1347 [search] Not remembering collection after a trip to the customize collection page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+445f04d [fb] Fix upload file and archive tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1cf0ceb HUE-1331 [core] Update calculator example
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4dbf93b HUE-1333 [core] Upgrade to knockoutjs-2.2.1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f13a5f1 HUE-1339 [pig] UI treats numbered variables as parameters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+90cf5fd HUE-1336 [pig] Call data collection on routie changes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6daa2fb HUE-1246 [pig] Change name of default saved script
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+18dccfd [fb] Fix error message when uploading on already existing destination
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b58f58f HUE-1006 [beeswax] Support download of large files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1d5fc18 HUE-1246 [pig] Change name of default saved script
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+68eaa55 HUE-1322 [useradmin] Add support for POSIX LDAP Groups
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f9cf620 HUE-1329 [search] Improve label of range facets
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4b8098f [search] Disabled collection should not appear in the search page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8270447 [fb] Fix upload test permissions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+891fbea HUE-1327 [search] disallow changing of collection index to non-existing index
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fca1c64 HUE-1326 [search] Date facets should filter by range
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c340157 HUE-1256 [core] Cache the HA jt
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+72a17ef HUE-1165 [pig] Logs with MR2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4ba5fe9 HUE-1178 [jb] Smarter logic for getting MR2 job information
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+30d7669 HUE-1280 [fb] Inline download and preview of images and pdf mimetype
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e2a2fa7 HUE-1269 [fb] Did you know about trash activation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f601e76 HUE-1286 [impala] Support settings with HiveServer2 API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5529a9a HUE-908 [core] User/group membership should be delegated to the back-end
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e2b4073 HUE-1311 [fb] Editing a file corrupt it in some way
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+40d046f [core] Home urls should be standard with a trailing slash
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+55d077a HUE-1240 [beeswax] Save a query result when using HiveServer2 interface
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d55adbc HUE_APP_REG_DIR and HUE_PTH_DIR configurable at compile time
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3b0ed99 HUE-1273 [pig] Confirmation popup when leaving unsaved script
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f6d480d HUE-1314 [shell] Prompt line is not wide enough
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3917dcf HUE-1320 [core] Drop support for IE8 and migrate to jQuery 2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+12d574a HUE-1319 [core] Upgrade to FontAwesome 3.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5713568 HUE-1292 - [core] separate core app pth and installed app pth files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5097769 [core] Set version to 2.5
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3472ecf [doc] Integrate with existing doc
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ac4055b [doc] Add user guide to the docs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0f937c8 [core] Revert original README from search README
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fbc93b4 [about] Add link to Hue website
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aee2add [doc] Add 2.4 release notes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9bc7f39 HUE-1313 [core] Unicode error in check_config
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_contributors">
+<title>Contributors</title>
+<simpara>This Hue release is made possible thanks to the contribution from:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Aaron Newton
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aaron T. Myers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Abraham Elmahrek
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aditya Acharya
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Alex Newman
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Bayer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Yao
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ann McCown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc Wong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ben Bishop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruce Mitchener
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruno Mahé
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Eli Collins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Enrico Berti
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Eric Wong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Harsh J
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Henry Robinson
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Jon Natkins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Kevin Wang
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Lars Francke
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Loren Siebert
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Marcus McLaughlin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mike Cotton
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Paul Battaglia
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Philip Zeyliger
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Romain Rigaux
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Roman Shaposhnik
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shawn Van Ittersum
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shrijeet Paliwal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Thomas Aylott
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Todd Lipcon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Vinithra Varadharajan
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</article>

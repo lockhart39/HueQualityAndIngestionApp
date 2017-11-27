@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <title>HUE v1.0.1, released Aug 20, 2010</title>
+</articleinfo>
+<simpara>HUE 1.0.1 addresses a database schema upgrade bug for users currently at
+version 0.9. (Note that this upgrade bug does <emphasis role="strong">not</emphasis> affect version 0.9.1.)</simpara>
+<section id="_list_of_all_bugs_fixed">
+<title>List of All Bugs Fixed</title>
+<itemizedlist>
+<listitem>
+<simpara>
+HUE-163. syncdb doesn&#8217;t work with db from 0.9 release
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_project_information">
+<title>Project Information</title>
+<simpara>Homepage: <ulink url="http://github.com/cloudera/hue">http://github.com/cloudera/hue</ulink></simpara>
+</section>
+</article>

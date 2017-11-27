@@ -1,0 +1,61 @@
+# English translations for Hue.
+# Copyright (C) 2013 Cloudera, Inc
+# This file is distributed under the same license as the Hue project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hue VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-10-17 16:27-0400\n"
+"PO-Revision-Date: 2013-10-28 10:31-0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: src/aws/conf.py:60
+msgid "Execute this script to produce the AWS access key ID."
+msgstr ""
+
+#: src/aws/conf.py:72
+msgid "Execute this script to produce the AWS secret access key."
+msgstr ""
+
+#: src/aws/s3/s3fs.py:72 src/aws/s3/s3fs.py:94
+#, python-format
+msgid ""
+"User is not authorized to access bucket named \"%s\". If you are "
+"attempting to create a bucket, this bucket name is already reserved."
+msgstr ""
+
+#: src/aws/s3/s3fs.py:214
+msgid "Option `glob` is not implemented"
+msgstr ""
+
+#: src/aws/s3/s3fs.py:240 src/aws/s3/s3fs.py:271
+msgid "Moving to trash is not implemented for S3"
+msgstr ""
+
+#: src/aws/s3/s3fs.py:282
+#, python-format
+msgid "Invalid bucket name: %s"
+msgstr ""
+
+#: src/aws/s3/s3fs.py:335
+#, python-format
+msgid "Invalid key to transform: %s"
+msgstr ""
+
+#: src/aws/s3/upload.py:64
+#, python-format
+msgid "Insufficient permissions to write to S3 path \"%s\"."
+msgstr ""
+
+#: src/aws/s3/upload.py:120
+msgid "No S3 filesystem found."
+msgstr ""
+

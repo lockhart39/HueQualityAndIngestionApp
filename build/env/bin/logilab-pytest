@@ -1,0 +1,4 @@
+#!/home/cloudera/hue3.11/build/env/bin/python2.6
+# EASY-INSTALL-SCRIPT: 'logilab-common==1.4.1','logilab-pytest'
+__requires__ = 'logilab-common==1.4.1'
+__import__('pkg_resources').run_script('logilab-common==1.4.1', 'logilab-pytest')

@@ -1,0 +1,1809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <title>Hue v2.2.0, released February 25th, 2013</title>
+</articleinfo>
+<simpara>Hue 2.2.0 is compatible with CDH4.2 (Cloudera&#8217;s Distribution Including Apache
+Hadoop 4.2).</simpara>
+<simpara>Website: <ulink url="http://cloudera.github.com/hue">http://cloudera.github.com/hue</ulink></simpara>
+<section id="_notable_features">
+<title>Notable Features</title>
+<itemizedlist>
+<listitem>
+<simpara>
+The Oozie application has been restyled completely and now supports Ajax refreshes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+A Cloudera Impala app was added
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Beeswax/Hive editor is more user friendly
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+FileBrowser was restyled and now includes bulk and recursive operations (e.g. multiple deletes)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+JobBrowser is compatible with YARN and job logs can be accessed in one click
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+UserAdmin was restyled and LDAP integration was improved
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+MySql InnoDB and PostgreSQL are officially supported
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_notable_fixes">
+<title>Notable Fixes</title>
+<itemizedlist>
+<listitem>
+<simpara>
+HUE-535 [beeswax] Support multiple databases
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-833 [oozie] Add all Oozie actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-873 [jb] Direct access to task logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-775 [fb] Upload zip file through filebrowser.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-867 [desktop] Ensure first user home directory is created
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-851 [oozie] Rerun, suspend, resume a workflow or Coordinator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-820 [oozie] Display any workflow as a graph
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-730 [core] Database greenlet support for MySQL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-882 [core] Add stack trace and logs link to 500 and PopUpExceptions pages
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_compatibility">
+<title>Compatibility</title>
+<simpara>Hue 2.2.0 runs on CentOS versions 5 to 6, and Ubuntu 10.04 to 12.10.</simpara>
+<simpara>Hue 2.2.0 is compatible with CDH4.2. Specifically:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+File Browser depends on Hadoop 0.20 (for WebHDFS/HttpFS).
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Beeswax is tested against Hive 0.10.0.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Job Designer depends on Oozie 3.3, using the Oozie web service API.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_list_of_304_commits">
+<title>List of 304 Commits</title>
+<itemizedlist>
+<listitem>
+<simpara>
+39f8c75 [doc] Last update
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8c7f3b7 [help] Update the help for Hue 2.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+53854d4 [build] Make Oozie setup independant of release or snapshot tarball versions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+90f21f0 HUE-1046 [oozie] Support Coordinator job properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8b63e2f HUE-1040 [oozie] Can&#8217;t use prepare field in a scheduled workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+735c7fd [shell] Update path to Sqoop2 binary
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3fee41c [beeswax] Sample user ID
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1d99305 HUEE-1037. Beeswax fails to connect secure remote metastore
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9cbd025 HUE-1038 [jobsub] Sample user created with wrong id
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+df4fd45 HUE-1034 [oozie] Streaming action should not have a job_xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4e512ff [beeswax] Visual feedback on install samples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+00cefa7 HUE-1032 [oozie] Dual representation of files attribute
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b9941cc HUE-1030 [oozie] Java Tasks with both arguments and java options generate incorrect workflow xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b27530b [oozie] Critical UX improvements
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+14d2121 [oozie] Import jobsub action fix
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e55166c [core] Sasl fixes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2733240 [core] Last drop of localized messages for 2.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c5d30b6 [impala] Saved queries page should only list Impala queries
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+20219d4 [beeswax] Support migration of query history
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9bf1fc3 [beeswax] Metastore client supports SASL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b6f71aa [oozie] Simplify hive action example
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+37e7ed8 HUE-1023 [fb] Access content of directories with conflicting URL names
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1a21529 HUE-991 [beeswax] Clicking on <emphasis>collapse</emphasis> on result page misalign the table and its button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+74a96a4 HUE-976 [fb] Number of pagination items are reset when looking at a file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1c8b114 HUE-818 [oozie] Resubmit a coordinator from a certain day
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6b2d4bf [oozie] Fix import FS workflow test case
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e9d6376 HUE-1016 [oozie] Import FS delete action bug fix
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+438a645 HUE-1020 [fb] On Chrome the permissions in the Change Permissions screen do not display the existing permissions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+85e5d93 HUE-1019 [fb] The <emphasis>New</emphasis> button is misaligned on certain browsers with a non-standard zoom applied
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0a629f0 Revert "HUE-1010 [oozie] Dashboard should have a Suspended filter"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1f2c56e HUE-1018 [oozie] Add tooltip to workflow Suspend button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1dcab39 [oozie] Remove debug statement from previous commit
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dc398c2 HUE-1017 [oozie] Workflow and coordinator editor should have a consistent navigation bar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cdf3c07 HUE-946 [oozie] Fix property name autocomplete on the edit workflow page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4fd11e8 HUE-944 [oozie] Fix edit workflow for IE8
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d931467 [core] Update translation files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e748e7a [oozie] Import workflow improvements
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4e00f77 HUE-1009 [core] LDAP backend user creation configurable
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c581d19 HUE-1007 [oozie] Modal module captures escape key events
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+11b77e8 HUE-1007 [oozie] Add loading spinner to edit workflow page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fd0ccba HUE-981 [fb] Fetch next block should be dynamic
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4206c72 HUE-902 [core] Include modified pyOpenSSL 0.13 version
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+42a279f HUE-902 [core] Include pyOpenSSL 0.13 version
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c79573a HUE-1011 [oozie] Coordinator dashboard Actions tab should have live link for External Id
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+48eefbd HUE-1010 [oozie] Dashboard should have a Suspended filter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+840f250 HUE-902 [core] Remove pyOpenSSL from dependencies
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6c7c86b HUE-1008 [oozie] Action bar of the workflow editor looses its default position
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f07a5d2 HUE-922 [fb] Rename a directory to one that already exists moves the directory under the one that exists
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d1bce9f HUE-999 [oozie] Ajax refresh of the coordinator detail page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+74d00a5 HUE-960 [oozie] Redesign workflow page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c09a7aa HUE-960 [oozie] Redesign workflow page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+47adfdc HUE-999 [oozie] Ajax refresh of the coordinator detail page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cfee9cc HUE-889 [oozie] Smarter file chooser in Workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+97d83bb [shell] Add Sqoop2 user permission
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4259fc8 [core] Backward compatibility for upgrades to Hue 2.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+280cf46 [oozie] Fix oozie tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+10fcdee HUE-988 [oozie] Fix node drop onto decision node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aa17a2a HUE-960 [oozie] Redesign workflow page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4ba7520 [oozie] Fix OozieApiMock for testing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1178545 [oozie] Fix several inconsistencies
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fa8a7c3 [oozie] Rerun, suspend, resume a workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+102666a [oozie] Token propagation warning when using Java action in secured mode
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+680b66f [core] Make thrift generated files python2.4 compliant
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2b00734 [beeswax] Migrate to Hive 0.10 and Thrift 0.9
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+427035a [oozie] Editable names for fork and decision
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ca9c494 HUE-870 [oozie] Use universal action bar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1b89554 HUE-993 [impala] Support download of result
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6e2227f [fb] Change archive to zip and add download button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+64a2df6 [oozie] Drag a node onto workflow editor.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+89cf843 [oozie] Drag a node onto workflow editor.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9663116 HUE-997 [oozie] Notification internationalization in workflow editor.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1ab1d80 HUE-991 [beeswax] Clicking on <emphasis>collapse</emphasis> on result page misalign the table and its button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d3a3e21 HUE-998 [useradmin] Turn off form autocompletion when adding/editing a user or group
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ee46c03 HUE-807 [oozie] Ajax refresh of a running job
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+609be3d HUE-934 [oozie] Edit action in bigger popup or within the page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e381d0b HUE-974 [oozie] Readonly support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b119671 HUE-990 [oozie] Only show the datasets belonging to the coordinator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b4130ae [core] Order of configuration dumps and help links follows the order of the app icons
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+517c6e6 [oozie] Location of is_shared property in workflow properties should be consistent
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+17c031b HUE-988 [oozie] Fix saving
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8c849af [shell] Update Sqoop2 command
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a56da26 HUE-989 [oozie] Action management is broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+42aa60d HUE-871 [beeswax] Expired queries should have a better user experience
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6bc9dc6 [core] Second drop of localization
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dea826a [oozie] Import workflow with Subworkflow action and rudimentary support for all oozie schema version
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4b9e291 HUE-982 [oozie] Coordinator should prepopulate namenode address if needed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8f29678 HUE-436 [beeswax] Server with embedded metastore prints inaccurate log messages
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fd3a4ef [oozie] Import workflow with Generic action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+517312b HUE-820 [oozie] Display any workflow as a graph
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ec560e6 [impala] Impala header columns are wrong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cfd3a5c [core] Fix some XSS vulnerabilities
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dfe5071 [oozie] Import workflow with Email action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a5fe7eb [oozie] Import workflow with FS action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+763f4b9 HUE-979 [oozie] Redesign workflow graph look
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+999891e HUE-984 [oozie] min-height for completed job tables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bee3ac6 HUE-935 [oozie] Better node edition experience
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+85edfd0 HUE-935 [oozie] Better node edition experience
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8fbc54e HUE-984 [oozie] min-height for completed job tables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+04be852 HUE-969 [oozie] Automatically infer schema version when importing workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dfb13cd HUE-973 [oozie] XML syntax highlighting
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+85cd772 [core] Show that postgresql_psycopg2 is supported
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c7a287d HUE-969 [oozie] Import java args should be space separated, not JSON list.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5d07522 [core] Update doc to point hue.ini in /etc/hue or desktop/conf
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+14a32a1 HUE-978 [useradmin] Base DN needs to to have components capitalized when comparing with searcn DN.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dbb61b5 HUE-978 [useradmin] Add LDAP user/group with DN
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ffcb0bf HUE-940 [oozie] Fix oozie test case for import jobsub workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+22369d5 HUE-983 [oozie] Coordinator could support previous dates
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+36ffc42 HUE-697 [jobbrowser] Ability to browse MR2 jobs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e43c3c4 HUE-940 [oozie] Revamp import JobDesigner action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8609eb6 HUE-985 [core] i18n of datatable plugin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3c02468 HUE-577 [fb] Snappy compression support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ebed8c5 [useradmin] LDAP group search merge issue fix
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+896fa20 [useradmin] Add n users that match wild card expression in LDAP import
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+21f222c [useradmin] Import any group name from LDAP
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aab1f48 [oozie] Bump version to 3.3.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aefcbf7 [oozie] Use timezone when making HTTP calls to oozie
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+46dc8d5 [core] Little i18n fix
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+10877d1 [oozie] Import decision node with DecisionEnd nodes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0338318 [useradmin] Missing parenthesis
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e115ccc [oozie] Add decision end node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4f3f838 [useradmin] Add LDAP exception details
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0b8148b [useradmin] LDAP errors caught and logged
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+69ff61d HUE-937 [oozie] JS Test cases for loading and saving a workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c1a33c6 [useradmin] LDAP search wildcards.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bd36c45 HUE-937 [useradmin] New JS tests for dynamic workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c87bb68 [useradmin] Add non-existing LDAP user fails
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c108594 [beeswax] Sanitize configuration settings tab
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0178560 [core] Using Hue blue logo on about and login page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+27c912a HUE-980 [shell] Shell stops working after first timeout
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ebf6fca [core] First pass of localization for 2.2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3ab9d4c HUE-851 [oozie] Simplify Coordinator page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+354ee28 HUE-851 [oozie] Simplify Coordinator page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aaafb8c HUE-730 [core] Database greenlet support for MySQL
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4f5ca03 HUE-851 [oozie] Simplify Coordinator page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3a69395 HUE-851 [oozie] Simplify Coordinator page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eb38948 [fb] Upload to federated cluster
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0316b2d [jobbrowser] Fix flakey test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9cadaff HUE-938 [oozie] Fix order of operations in node editing from decision node and added EL help
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+33ee9ef HUE-938 [oozie] Add reference to action names in decision node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7f4fbb5 HUE-972 [core] Build failure beacause of asm.jar dependency change
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f7e9f4f [core] UnboundLocalError in kt_renewer.py hides permissions issues
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+10c9cf2 [core] Fix various problems of i18n extraction
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9cae8df HUE-933 [oozie] Fix clone node and unsaved ribbon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ae66169 HUE-958 [jobsub] chmod in TestJobsubWithHadoop doesn&#8217;t always complete
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ee92c4f HUE-883 [oozie] Add Generic action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4c36f23 HUE-970 [oozie] In Workflow properties, Job XML field chooser should choose file, not folder
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+81f6feb HUE-833 Add Subworkflow action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+335d7df [desktop] Fix test_error_handling_failure test case
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c0f6257 HUE-833 [oozie] Add Email action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eb3576f HUE-408 [desktop] User creation form usage when first creating a user
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fd6ec82 HUE-833 [oozie] Add Fs action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e91dcd2 HUE-968 [oozie] Create new action fixes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c750938 [beeswax] It looks like Hue installation is missing hive-default.xml
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fba123b HUE-971 [oozie] Fix empty workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+09b9594 HUE-770 [beeswax] Improve secured cluster configuration experience
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e70648a [fb] Fix home dir test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2803e69 HUE-958 [fb,oozie] Fix flakey tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b3939a6 HUE-958 [liboozie] Copy Oozie sharelib in the home of Oozie user
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ab5cee9 HUE-964 [core] 500 errors should go to default debugger if we cannot render custom 500
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0d7b1c7 HUE-967 [useradmin] Useradmin shouldn&#8217;t depend on the existence of other apps
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d138867 HUE-958 [liboozie] Activate  Oozie share lib for Distcp test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6377958 HUE-958 [liboozie] Copy Oozie share lib for tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6bb1287 HUE-933 [oozie] Ribbon and confirmation popup are triggered when new action creation is cancelled
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1ac2119 HUE-958 [jobbrowser,jobsub,ooxie] Fix flakey tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b3b4094 HUE-965 [useradmin] Improve user experience
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3492325 HUE-547 [core] Files erroneously say "Licensed to the Apache Software Foundation"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b02cf1b HUE-954 [oozie] Support boolean fields
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2f7feb9 HUE-963 [core] Hue in a Kerberos enabled environment cannot use HttpFS
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3c883a1 HUE-961 [fb] Upload archive with root directory containing only directories
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a5ad934 HUE-933 [oozie] Cancel button when editing a node
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9ab1333 HUE-931 [oozie] Validate action before exiting edit modal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c55558b HUE-898 [oozie] <emphasis>definition</emphasis> not in file error fix
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b9efaa4 HUE-933 [oozie] Confirmation popup when leaving a workflow with unsaved modifications
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ed20709 [impala] Mock calls to Beeswax in the tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+34030b6 [core] i18n Update of the po files and fix or compilation errors
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9f284af HUE-535 [beeswax] Support multiple databases
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a5a3aa0 HUE-898 [oozie] Upload a workflow definition file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+68cc5f3 HUE-955 [core] Remove circular reference to exceptions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d08df91 HUE-899 [oozie] Smarter file chooser in Workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a052b14 HUE-294 [beeswax] Query editor should have line numbers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ef8c1f4 HUE-939 [oozie] Clean up workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f3caa3f HUE-929 [oozie] Support change of deployment directory
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e251bc2 HUE-407 Document what minimum versions of Firefox, Chrome, Safari and IE Hue supports.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+59e2e0d [useradmin] Improve transaction handling in update_app_permissions signal handler.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2797e0d HUE-898 [oozie] Fix linkages in xslts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d07ce83 HUE-943 [fb] Fix subdirectory pagination
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ffd5776 HUE-898 [oozie] Import workflow definition
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a673177 HUE-952 [oozie] job-xml field is not generated in some actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d40d62f HUE-947 [oozie] Sorting by modification date in Editor is wrong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6cec9d7 [build] Set Hue version to 2.2.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+efc0bd4 [core] Sort alphabetically apps in dump config
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e5ad97a [oozie] Move capture-output to bottom in Shell action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a56b7f3 HUE-942 [beeswax] Make Query Textbox higher by default
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cf1b2f1 HUE-949 [impala] Change icon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ffb076c HUE-945 [oozie] Actions fields are not loaded or saved
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c56e4b7 [beeswax] Increase number or rows fetched during download
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fbfc123 HUE-944 [oozie] Fix edit workflow for IE8
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ca28110 HUE-936 [oozie] Add back help when editing an action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+70b67b1 HUE-932 [oozie] Show <emphasis>saving</emphasis> status when editing a workflow
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9b70e33 HUE-933 [oozie] Confirmation popup when leaving a workflow with unsaved modifications
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+abe9be5 [impala] Fix test looking for Impala icon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+47025bf [impala] Adding icon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+171726c [impala] Adding locales
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1561dd7 [impala] Adding Impala app
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e299da3 [impala] Initial commit
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d4a1eca HUE-933 [oozie] Confirmation popup when leaving a workflow with unsaved modifications
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2cf1662 HUE-930 [jb] Have consistent job and task names across the whole app
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fe930e9 [core] Remove pyexcelerator
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+865b35f HUE-589 [beeswax] Support TIMESTAMP datatype
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d9e103f [beeswax] Adding datanucleus as repository
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6a90fd6 [oozie] Fix capture-output in Shell action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+03ed87c [oozie] Fix Ssh/Shell actions in new UI
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9e7b616 HUE-925 [shell] Use secure temporary files for kerberos ticket management
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3de7ffc HUE-822 [oozie] Fix tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+25d5234 [beeswax] Add <emphasis>Column</emphasis> tabs on the result page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dc7f032 HUE-822 [oozie] Prepare statements should follow fs action convention
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ab3bbba HUE-924 [beeswax] Improve UX on Save table
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c0d6d71 HUE-907 [beeswax] Create table manually can not remove column
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+68b120b [core] Fix English mistakes and text consistency
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+edf64d5 HUE-221 [shell] Sqoop2 shell
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+98b6940 HUE-824 [oozie] Support local paths in workflow path variables
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4b58bf4 [beeswax] Fix failing tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9545e7c HUE-817 [oozie] Resubmit a workflow from a certain step
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8a8f225 [doc] Shell app setuid utility should be owned by root
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e3e7fd8 HUE-923 [beeswax] On create table manually the external location file chooser doesn&#8217;t let you choose a folder
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1c898f0 HUE-923 [beeswax] On create table manually the external location file chooser doesn&#8217;t let you choose a folder
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5962e9c HUE-920 [fb] Support for files and folders with special characters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ec9c8ca [oozie] Add specific error message when Oozie is not running
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+01fa6a3 [core] Update tests to use latest builds of dependencies
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e0994eb HUE-720 [core] Test when failure to create first user home directory
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2f6c518 [core] Error creating the home directory for first user should not stop user creation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3abac7c HUE-588 [beeswax] Scrolling in job logs is broken while the job runs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dd03d3c HUE-916 [core] Save and Cancel buttons are sometimes reversed in position
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+43f8ba8 HUE-918 [help] Anchor links scroll to a shifted anchor position
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3d45edb HUE-915 [core] Uniform modal dialogs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3d09714 HUE-734 Job designer link to job browser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8b13b4f HUE-878 [desktop] Add a remote user backend
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b085489 HUE-888 [oozie] New oozie front end
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a85eaeb [beeswax] Integration of Hive Server 2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4a52276 [jobsub] Fix running job status flaky test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6990cd1 [oozie] Coordinator support for HOUR
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ce6d541 HUE-913 [core] Convert new jump to column to jQuery plugin and test it
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ac4429c HUE-914 [core] Fix form margin in Bootstrap dialogs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2ec658e HUE-674 [desktop] Add tests for dump_config stability
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0b2f8b0 [core] i18n of the desktop libs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+08eb267 HUE-899 [beeswax] Query results page should have horizontal scroll bar
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4dd8c24 [oozie] Examples owned by wrong user
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5507de3 HUE-909 [oozie] Protect from invalid external action id
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b9fbce2 [core] Add notification to the admin when Oozie is not in good status
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+429100d HUE-867 [desktop] Fix fast tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4fcb48b HUE-911 [jobbrowser] Can not see our own jobs when sharing is disabled
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+73a7db7 HUE-874 [oozie] Direct access to MR logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2732b43 [doc] Adding missing package dependencies
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+85de749 HUE-867 [desktop] Ensure first user home directory is created
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+daea7e2 HUE-873 [jb] Direct access to task logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+424cf6e HUE-873 [jb] Direct access to task logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6e1e8c6 HUE-892 [desktop] Add a SPNEGO backend so that Hue can handle Kerberos authentication
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d26ce2b HUE-790 [jobsub] Remove old files from Hue1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+80c9000 HUE-905 [beeswax] Result page rows should not have new lines
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d77516c HUE-903 [beeswax] Save results in an HDFS directory is broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+012fa17 HUE-902 [core] Add pyOpenSSL 0.11 to build
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bbdd9dc HUE-902 [core] Include pyOpenSSL in install automatically
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7e0e01b HUE-802 [fb] Remove unused code
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d597232 [core] Fix postgresql regression.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9ec8b62 HUE-900 [oozie] File chooser missing when editing a node for <emphasis>jar path</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b4cf5b5 HUE-894 [core] Log search
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1e2d1a3 HUE-890 [jobsub] Unit test the frontend
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cbba991 HUE-890 [jobsub] Unit test the frontend
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fb4d8dc HUE-893 [fb] Fix the move dialog
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9f0a8b8 HUE-753 [jobbrowser] Re-enable unit tests for job browser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1bc3e17 HUE-753 [jb] Re-enable unit tests for job browser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8c3abcd HUE-889 [oozie] Smarter file chooser in Workflow editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6d5418f HUE-882 [core] Add stack trace and logs link to 500 and PopUpExceptions pages
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+032e841 HUE-885 [core] Update knockout.js to 2.1.0
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0dfb9a0 [jobsub] Fix test_job_design_cycle test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a388dee HUE-887 [useradmin] Fix missing hue permissions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cb312c2 HUE-865 [jobsub] Bulk operations
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4e7b2fe HUE-839 [core] Javascript test framework
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8246208 HUE-887 [oozie] Fielbrowser doesn&#8217;t understand path
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+026b31e HUE-887 Fix fileuploader popup across website
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+13ace6b [jb] Fix alignment of the Upload button dropdown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2a23098 HUE-881 [useradmin] Case insensitive search boxes on add/edit group page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f67f808 HUE-884 [fb] Invalid select all for bulk operation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3f8bcd3 HUE-883 [useradmin] Extended DB support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fcbb211 Hue-883 [core] Improved support for transactional databases
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+233395c HUE-872 [useradmin] Default group has access to all apps initially
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2ea4dc1 HUE-876 [oozie] Setup Oozie Shared Lib for tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bb60a98 HUE-717 [core] Repetitive HTTP requests on each page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bd3782c HUE-876 [oozie] Add a warning if oozie share lib is not installed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c832574 HUE-835 [fb] Bulk operations
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c522e30 HUE-877 [oozie] Workflow examples require Oozie Share Lib activation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a7a9313 HUE-879 [core] 500 error can be displayed in Hue Server Logs page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ae0e8ba HUE-838 [jb] Create new file button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8b4a015 HUE-864 [oozie] Allow a read only user on the dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fb7e1c6 HUE-775 [fb] New temp directory for upload
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cff40ec HUE-775 [fb] Remove useless underscore from previous commit
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+be9f646 HUE-775 [fb] Upload zip file through filebrowser.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+21a6f2a HUE-866 [beeswax] Next/Previous buttons are half hidden
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+127e099 HUE-833 [oozie] Add DistCp action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+dfad82c [oozie] Fix load Oozie examples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2e79e3e HUE-789 [core] Remove old files from Hue 1
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c5a540f [beeswax] Execute the create table SQL automatically instead of showing it
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b482cbb [beeswax] Convert template to Python 2.4
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cdc3127 [oozie] Bumping submission test timeouts to 15 minutes
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_contributors">
+<title>Contributors</title>
+<simpara>This Hue release is made possible thanks to the contribution from:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Aaron Newton
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aaron T. Myers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Abraham Elmahrek
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aditya Acharya
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Alex Newman
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Bayer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Yao
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ann McCown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc Wong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ben Bishop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruce Mitchener
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruno Mahé
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Eli Collins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Enrico Berti
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Eric Wong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Harsh J
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Henry Robinson
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Jon Natkins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Lars Francke
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Loren Siebert
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Marcus McLaughlin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mike Cotton
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Paul Battaglia
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Philip Zeyliger
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Romain Rigaux
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Roman Shaposhnik
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shawn Van Ittersum
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shrijeet Paliwal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Thomas Aylott
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Todd Lipcon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Vinithra Varadharajan
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</article>

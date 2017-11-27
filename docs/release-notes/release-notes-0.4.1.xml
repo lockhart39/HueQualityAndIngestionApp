@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <date>2017-10-12</date>
+</articleinfo>
+<simpara>v0.4.1, released April 7, 2010</simpara>
+<simpara>Cloudera Desktop 0.4.1 is a minor bugfix release.</simpara>
+<simpara>KEY BUG FIXES</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Pagination in the Beeswax application is now available in the UI.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+The tarball build now succeeds if a previous version&#8217;s
+  Cloudera Desktop plugins are installed.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Error messages are propagated correctly in Python 2.4.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Desktop can now run on port 80.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Package dependencies on python-dev are now more accurate.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>KNOWN BUGS</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+After a successful upload with Linux&#8217;s flash player (which may warn you about
+  hanging your computer), the upload screen does not clear.  Click the red
+  (x) button to clear it.
+</simpara>
+</listitem>
+</itemizedlist>
+</article>

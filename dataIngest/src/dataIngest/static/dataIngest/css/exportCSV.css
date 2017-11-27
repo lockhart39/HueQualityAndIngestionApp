@@ -1,0 +1,77 @@
+
+.container {
+    width: 90%;
+    clear: both;
+    float: left;
+    padding: 0;
+ }
+.container select{
+    width: 99.4%;
+    clear: both;
+}
+
+.container input{
+    width: 96%;
+    clear: both;
+}
+
+.container label{
+    width: 98%;
+    margin-bottom: 0;
+}   
+
+.chosen-container:not(.chosen-container-multi){
+    margin-bottom: 10px;
+}
+
+.source{
+    display: inline-block;
+    width: 35%;
+}
+
+.arrow{
+    display: inline-block;
+    width: 5%; 
+    height: 100%;
+    vertical-align: top;
+    position: relative;
+    top: 90px;
+
+}
+
+.destination{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.loader {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        70%;
+    text-align: center;
+    left:       0;
+    height:     100%;
+    width:      100%;
+ }
+
+.loader::before {
+    margin: auto;
+    display:block ;
+    text-align: center;
+    content: url('/static/dataIngest/art/ajax-loader.gif');
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   loader element will be visible */
+body.loading .loader {
+    display: block;
+}

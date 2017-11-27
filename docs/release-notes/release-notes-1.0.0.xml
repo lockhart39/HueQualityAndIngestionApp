@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <title>HUE v1.0, released Aug 13, 2010</title>
+</articleinfo>
+<simpara>HUE is a web interface for Hadoop, and a platform for building custom
+applications with a rich framework. The 1.0 release delivers several new
+features:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+File Browser and Beeswax has basic internationalization (i18n) support. UTF-8
+  works well. Data in other encoding show up with replacement characters.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE automatically validates its configuration, detects errors and alerts the
+  administrator.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+File Browser can now handle viewing large directories.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+There is a centralized logging mechanism of front-end errors to help debugging.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Tables now support multi-select for bulk operations. Also added support
+  for <literal>shift</literal>+select and <literal>shift</literal>+keyboard controls.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Art buttons can be disabled.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>The majority of bug fixes in HUE 1.0 are for small UI glitches across different
+browsers. To highlight some other key areas:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Made keyboard shortcuts more consistent across operating systems.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Improved window sizing to better handle a small browser window.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Continuous improvement on Internet Explorer 8.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Improved documentation.
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_application_compatibility">
+<title>Application Compatibility</title>
+<simpara>The Hadoop file system library (<literal>hadoop.fs.hadoopfs</literal>) now takes and returns
+unicode strings for all file paths. Other than that, HUE 1.0 is compatible with
+applications written for HUE 0.9.x.</simpara>
+<simpara>At the UI framework level, we migrated most elements from JFrame filters to
+Behaviour. This allows us to manage memory better and scale better as we
+introduce more behaviour patterns. The changes are backward compatible, but SDK
+developers should start using the new behaviour patterns. We have updated the
+JFrame Gallery examples, and added new ones, to demonstrate the usage.</simpara>
+</section>
+<section id="_list_of_all_bugs_fixed">
+<title>List of All Bugs Fixed</title>
+<itemizedlist>
+<listitem>
+<simpara>
+HUE-27. Convert collection of JFrameFilters to Behaviors
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-36. Allow form controls and the like to work in elements that toggle splitviews
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-47. FitText filter isn&#8217;t garbage collecting right
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-48. Beeswax error box too small
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-54. beeswax can&#8217;t handle unicode data
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-57. Add support for shift selecting multiple checkboxes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-58. Add atime field to the stat dictionary returned by hadoop.fs.stats and hadoop.fs.listdir_stats
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-59. i18n support in filebrowser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-60. View to allow frontend to log warnings/errors.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-62. Allow HtmlTable context menu for multiple rows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-63. Removing HTMLTableKeys reference
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-65. Make dbug.(info|warn|error) messages use the log_frontend_event feature of HUE-60
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-66. beeswax create table UI mess
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-67. beeswax_server email notification should ignore SSL warnings
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-68. Resizing of browser window confuses app windows
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-69: JobBrowser: Kill Job not displaying an OK on a succesful kill and double-click behavior not enabled.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-70. Job Designer UI needs a little love (partial refresh, sizeTo scrolling)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-71. Deprecate build/env/bin/desktop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-72. Chrome doesn&#8217;t replace the toolbar every load
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-73. Chrome doesn&#8217;t always size tables to 100% width.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-76. Rework File Viewer navigation UI
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-78. Hue windows can be moved completely off the desktop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-79. Side-by-side select no longer works with the recent HtmlTable update
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-80. Job Designer Default for "New Jar" is wrong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-81. Remove automatic desktop rotation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-82. Update JFrame to use dbug.error when filters, linkers, renderers fail. Change default renderer to not fail gracefully.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-83. Save As&#8230; dialog is no longer working.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-84. hadoop.fs.hadoopfs_test:test_i18n_namespace failing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-86. Some cleanup for beeswax
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-87. Making active user list available across server restarts.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-88. Hue-Hadoop connectivity is not appropriately thread-safe
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-89. FileBrowser failing to profer useful error messages on upload
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-90. Useradmin table squashed together
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-92. When saving a Beeswax query that is &gt; 64 chars an error is produced but not shown to the user.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-93. The chown form of filebrowser contains useless fields
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-94. There is no indication that you&#8217;ve clicked the save button in the file editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-95. Chrome shows a fuzzy blue outline when the editor has focus.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-96. Change service name of HDFS and MR client libraries to include string "HUE Plugin"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-98. Fixing various IE issues.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-99. Application buttons in menu appear in different orders in different browsers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-100. Update art-widgets hash to fix IE issues.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-101. Incorporate new HtmlTable and be explicit about which tables are selectable.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-102. The file browser edit view "Save as" dialog box shows the "upload a file" button
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-103. Dock bar application switching alternates into windows that aren&#8217;t on top
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-104. Keyboard window shortcuts should use alt for all OSes
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-105. Child widget instances sometimes steal focus from their parents
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-106. Make Jobsub use common JFrame filters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-107. FileBrowser loads very slowly for large directories
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-108. JobBrowser task pager squished
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-109. Double clicking in file browser search box in chrome does not select all text there
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-110. Add support for disabled art buttons
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-111. Several files in the desktop/core/static/js/Source/BehaviorFilters are missing copyright headers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-112. Correctly register <emphasis>last access time</emphasis>. Add test for <emphasis>last access time</emphasis>.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-114. Jar selector for job designer should be a file chooser app not a text box
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-115. Alternating clicking "+" and "-" JFrame buttons does weird visuals things
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-116: Auto detect config errors and alert admin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-117. Add some icons from the confluence wiki into hue for the help page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-119. Chrome failed file upload hides error message
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-120. Anchor tags within frames don&#8217;t work
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-121. Proper UTF-8 support for help pages
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-122. Create a JFrame gallery that illustrates anchor tag scrolling
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-124. Improve help pages
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-125. <emphasis>supervisor -d</emphasis> creates world writable logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-126. get_current_users can get into a bad state
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-127. Delay filling popups so VML elements work in IE
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-128. Error 12030 or 12031 on logout attempt in IE
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-130. Correcting HUE-128
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-131. Improve administration documentation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-132. Create SelectWithOther Behavior Filter and propagate across Hue
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-134. FileViewer missing view_gzip icon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-135. Hue should not be adding pre tags to help documents
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-136. Hue could do a better css job, especially for help documents
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-137. Make double click delegators more stable and prevent any links with no href from breaking the desktop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-143. Some apps don&#8217;t correctly link to their help page.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-145. Launching HUE help app after closing it fails
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-146. dbug.* methods don&#8217;t work with string formatting
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-148. Update the beeswax doc&#8217;s with paul&#8217;s new wiki docs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-151. Beeswax query wait doesn&#8217;t refresh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-152. Doc: Mention how to start HUE by hand (w/o supervisor)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-153. Problems with meta refresh handling
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-154. Mousing over a link in a selected row in a table shows the wrong colors (chrome)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-155. desktop.conf circular import i18n
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_project_information">
+<title>Project Information</title>
+<simpara>Homepage: <ulink url="http://github.com/cloudera/hue">http://github.com/cloudera/hue</ulink></simpara>
+</section>
+</article>

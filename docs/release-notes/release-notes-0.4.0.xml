@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <date>2017-10-12</date>
+</articleinfo>
+<simpara>v0.4.0, released March 31, 2010.</simpara>
+<simpara>Cloudera Desktop 0.4.0 is a significant update from the previous version 0.3.0.
+This release introduces the Cloudera Desktop SDK, a way to plug in your own
+applications that leverage the Cloudera Desktop environment.  Another new
+feature is Beeswax, a front-end application for interacting with Hive.  It also
+represents many bug fixes and a re-working of the "Job Browser" and "File
+Browser" applications.</simpara>
+<simpara>NEW FEATURES</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Beeswax, a UI for Hive
+</simpara>
+<literallayout class="monospaced">Beeswax is an application for managing and using Hive.  It allows users
+to create tables, load data, and query the warehouse, all from their
+browser.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+The Cloudera Desktop SDK
+</simpara>
+<literallayout class="monospaced">It is now possible to add your own applications into Cloudera Desktop,
+integrated with the windowing system and the other applications.
+To get started, see the SDK documentation.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+File Editor
+</simpara>
+<literallayout class="monospaced">It is now possible to edit (small, text) files directly from the File Browser.
+This is particularly handy for editing small configuration files.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+"About" Application
+</simpara>
+<literallayout class="monospaced">Reachable by clicking the Cloudera "feather" in the upper lefthand corner,
+the about application displays the current configuration.</literallayout>
+</listitem>
+</itemizedlist>
+<simpara>IMPROVEMENTS</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+File Browser
+</simpara>
+<literallayout class="monospaced">The File Browser has been re-architected on top of the SDK.
+Changing permissions and changing file ownership is now possible.
+Performance on large directories is improved.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Job Browser
+</simpara>
+<literallayout class="monospaced">The Job Browser has been re-architected on top of the SDK.
+There have been several performance improvements in handling
+large jobs.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Job Designer
+</simpara>
+<literallayout class="monospaced">You may register for e-mail notifications when jobs you
+submit have completed.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Session Restore
+</simpara>
+<literallayout class="monospaced">Windows that were open when you last logged out are
+opened again automatically when you log back in.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Support for privileged ports and SSL.
+</simpara>
+<literallayout class="monospaced">You can now run Desktop on port 80, and, optionally, with SSL (see the FAQ).</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Cleaner SDK Model for "JFrame"
+</simpara>
+<literallayout class="monospaced">Most requests within Cloudera Desktop are now, under the covers,
+simple GET and POST requests which return HTML.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+SDK-Friendly Build System
+</simpara>
+<literallayout class="monospaced">The build system has been adapted to support third-party applications
+and dependencies gracefully.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Users can now change their own passwords.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Keyboard Shortcuts
+</simpara>
+<literallayout class="monospaced">A list of available shortcuts is available in the top right corner (click the
+"command" icon).</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Usage without Hadoop
+</simpara>
+<literallayout class="monospaced">Cloudera Desktop will run if Hadoop is unavailable, though
+some applications will be limited in functionality.</literallayout>
+</listitem>
+<listitem>
+<simpara>
+Frontend Javascript Performance and Compatibility
+</simpara>
+<literallayout class="monospaced">Many improvements in windowing performance.</literallayout>
+</listitem>
+</itemizedlist>
+<simpara>KEY BUG FIXES</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Creating a "home directory" while creating the user in the user manager
+  no longer produces an error.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Dates and times are now displayed in a specific timezone, which is configurable.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Inactive users are not able to login.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+The Job Designer appropriately configures hadoop.tmp.dir; this fixes
+  some permissions denied errors.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+File upload is more robust.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>KNOWN BUGS</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+After a successful upload with Linux&#8217;s flash player (which may warn you about
+  hanging your computer), the upload screen does not clear.  Click the red
+  (x) button to clear it.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Configuring the web server to listen on port 80 does not work if you are
+  using the RPM or Debian packages. This is due to the init scripts
+  improperly dropping root privileges before calling the supervisor. This
+  has been fixed in release 0.4.1.
+</simpara>
+</listitem>
+</itemizedlist>
+</article>

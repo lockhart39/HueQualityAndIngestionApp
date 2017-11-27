@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <title>Hue v2.3.0, released April 15th, 2013</title>
+</articleinfo>
+<simpara>Hue 2.3.0 is compatible with CDH4.2 (Cloudera&#8217;s Distribution Including Apache Hadoop 4.2).</simpara>
+<simpara>Website: <ulink url="http://cloudera.github.com/hue">http://cloudera.github.com/hue</ulink></simpara>
+<section id="_notable_features">
+<title>Notable Features</title>
+<itemizedlist>
+<listitem>
+<simpara>
+Pig App: new application for editing and running Pig scripts with UDF and parameters
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Catalog App: new application for manage databases, viewing tables schemas and sample of content
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Oozie Bundles are now supported
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+SQL highlighting and autocomplete for Hive / Impala apps
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Multi query and selecting a portion of a query to run
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Job Designer was totally restyled and now support all the Oozie actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Oracle databases are now supported
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_notable_fixes">
+<title>Notable Fixes</title>
+<itemizedlist>
+<listitem>
+<simpara>
+HUE-1158 [jb] MR2 Incorrect logs shown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1146 [jb] Task attemps can&#8217;t be accessed in MR2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1156 [jb] MR2 Get all the logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1141 [core] Home dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-880 [core] Hue works out of the box
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-966 [desktop] OAuthBackend and view for Oauth
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1113 [core] Oracle support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1087 [beeswax] Pagination on /beeswax/list_designs page broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+HUE-1043 [oozie] Rerun a bundle
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_compatibility">
+<title>Compatibility</title>
+<simpara>Hue 2.3.0 runs on CentOS versions 5 to 6, and Ubuntu 10.04 to 12.10.</simpara>
+<simpara>Hue 2.3.0 is compatible with CDH4.2. Specifically:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+File Browser depends on Hadoop 0.20 (for WebHDFS/HttpFS).
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Beeswax is tested against Hive 0.10.0.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Job Designer depends on Oozie 3.3, using the Oozie web service API.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_list_of_128_commits">
+<title>List of 128 Commits</title>
+<itemizedlist>
+<listitem>
+<simpara>
+494ff7c HUE-1158 [jb] MR2 Incorrect logs shown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0f7b30f HUE-1146 [jb] Task attemps can&#8217;t be accessed in MR2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e3921b7 HUE-1128 [pig] DB migration file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+84343f2 [jb] Task Attempt page fails to render
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3d6c013 [catalog] Fix create database tests
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+557cfc1 HUE-1157 [jb] MR2 Container link broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a72b2ae [oozie] Fix clone
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b54c0cd [catalog] Fix databases page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f9a3089 HUE-75 [beeswax] "show partitions" forgets its table pane
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+da8963f HUE-1152 [oozie] Can&#8217;t select a file
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8788397 HUE-1156 [jb] MR2 Get all the logs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ab407ba [impala] Error deploying hue-impala due to dependence on thrift
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2932c6e HUE-1122 [oozie] Propagate configuration option is always checked in Sub workflow action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4a4ab10 HUE-1031 [oozie] Encode generated XML in UTF-8
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+28ecd0c [oozie] Fix test case and remove super user oozie submission.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c6de770 HUE-1160 [oozie] Import workflow doesn&#8217;t create link from start to end
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+43806f0 [core] Unify examples installation
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ba855c3 HUE-1103 [jobsub] Fix files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+de29acf [jobsub] Fix checkboxes and add capture output
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0374347 [core] Various UX and UI polishing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d7c0815 HUE-1147 [pig] UpperText example
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+338c4a6 HUE-1149 [core] Package httplib2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8a320db [core] Fix config alert dock
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2041367 HUE-1103 [josub] Support files
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+68b3e65 Fix bad import
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4cf4788 HUE-1141 [core] Home dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+70e5aa7 [catalog] Database management in table browser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ae98d74 HUE-1117 [jobsub] Various js bugs
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+de8b53a HUE-1142 [beeswax] Support json paste on column names
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+da14733 [beeswax] Update tests with new re-installable examples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f69e2c6 HUE-880 [core] Hue works out of the box
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+47d71af [core] Set version to 2.3
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6909f61 [shell] Mute non available shells
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2418050 [core] Update mini cluster dependencies
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e3f7cc3 HUE-1126 [pig] Display logs of other running scripts and/or past run scripts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+7aa2479 HUE-1050 [useradmin] Create user wizard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ca5d66b HUE-1050 [useradmin] Create user wizard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+10754af HUE-1124 [pig] Improve running script log visualization
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+aeae2ac HUE-1050 [useradmin] Create user wizard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+248259f [oozie] Create workspace directory if needed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b20347e HUE-1130 [pig] UDF support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+745d60a HUE-1137 [core] Style drop area for FileUploader
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+46e1871 HUE-1074 [impala] Infinite scroll on result page
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c134c56 HUE-1129 [pig] Parameters support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ea8b714 HUE-1111 [beeswax] Save and edit the description of a query
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+841fa9a HUE-1065 [core] ldaps support in Hue
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9f8f6e3 [core] Update readme about Pig and Catalog apps
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5fc66e2 HUE-1123 [pig] Update progress when job terminates
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9c2d407 HUE-1123 [pig] Introduce progress bar instead of textual percentage
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1b015a1 HUE-1063 [beeswax] SQL autocomplete and syntax highlighting
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d74462f HUE-1125 [pig] Reduce the amount of ajax calls to the dashboard service
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8255a8a HUE-966 [desktop] OAuthBackend and view for Oauth
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d381b14 HUE-1116 [catalog] Create a table from a file or loading data are broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+966ead1 [beeswax] Document beeswax_running_query_lifetime
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+eda80af [beeswax] Fix autocomplete and restyle did you know
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+509895e [shell] Sqoop 2 instead of Sqoop2 renaming
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4e07398 HUE-1099 [fb] Chown popup is not prefilled with the currents owners
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+13847d8 [pig] Decouple view from API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+296c421 [pig] Various UX improvements
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+392cb63 [pig] Reintroduced logs on the running script
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d97c2ff [pig] Fix autocomplete
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fff06f0 [pig] First round of beautification of the app
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f78394f [pig] Initial commit
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+df7cca5 HUE-1119 [oozie] Workflow builder fork fails
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+34a9756 HUE-1120 [oozie] Prevent errors on dashboard rendering
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1081ada HUE-919 [core] Create <emphasis>scroll to top</emphasis> jQuery plugin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f536121 HUE-941 [core] Fix compatibility problems with IE8+
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f81f6b2 [oozie] Fix workflow streaming XML generation test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0f5d66b HUE-1118 [catalog] Add breadcrums to table browser
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9cc7984 HUE-1073 [beeswax] Auto complete settings
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+52cf2ce HUE-1100 [impala] Support refresh with both Beeswax and HS2 API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d556215 HUE-1115 [impala] Support multi db and use statement
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1d3a308 HUE-1107 [beeswax] Hive Server 2 kerberos support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+39f2f07 HUE-1113 [core] Oracle support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8196725 HUE-1100 [impala] Support refresh
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+51847e2 [catalog] Add locales information
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+2d0cb7b [catalog] Create Table Browser App
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1f53916 HUE-1108 [beeswax] Hive Server 2 query properties and UDF support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bdaedab HUE-1110 [impala] Support Hive Server 2 API
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ce7e3c2 HUE-1105 [oozie] Support archives in actions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1568565 [beeswax] Fix for Beeswax after Hive Server 2 support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1162e67 HUE-1075 [beeswax] Support Hive Server 2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bf86118 HUE-1102 [oozie] Cannot delete fields in action editor
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+1f78202 HUE-1104 [oozie] Add capture output to Java action
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4ae3afe [oozie] Bundle kickoff date is optional
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cace2a2 HUE-1106 [beeswax] Pagination on /beeswax/query_history page is broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d79ee52 HUE-1056 [beeswax] Highlight and run a portion of a query
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e377e6c [jb] Still display logs even if syslog is missing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+41e230b [core] Fix settings
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+89218ae HUE-1094 [fb] Fail early when creating files in a folder without permissions
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+77290a2 HUE-975 [filebrowser] Access to pagination buttons on large pages
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6d6d53e HUE-566 [beeswax] Need keyboard shortcut for executing a query in beeswax
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b0851c2 HUE-1097 [beeswax] Decouple from Impala
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3fa47e5 HUE-1047 [core] Invalid form submission blocks next submission
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fcf3c7f HUE-1095 [fb] Add "." to the directory listing
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+21acdd0 HUE-1047 [core] Invalid form submission blocks next submission
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+a9c22cc HUE-1058 [beeswax] Resize query editor textarea in IE8 and IE9
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ddfa3de [oozie] Fix subworkflow import test
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+9033de2 HUE-1077 [jobsub] Add some examples
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bbed14d [core] Hide configuration tabs application to non-superusers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+87cb7de HUE-1001 [oozie] Upload resource archive
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d170972 HUE-1089 [beeswax] Loading data can show a 500 error
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+ef9ebeb HUE-1055 [jobsub] Support design properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+f03f970 HUE-1088 [impala] Kerberos support
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d6301a4 HUE-538 [fb] Upload doesn&#8217;t work if / is not owned by <emphasis>hdfs</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e67a1e0 HUE-1087 [beeswax] Pagination on /beeswax/list_designs page broken
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+000d97f HUE-1086 [oozie] Coordinator submission should prefil variables from workflow properties
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b95b881 HUE-956 [beeswax] Load data into a table should redirect to the table
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+d9ccf6b HUE-1085 [oozie] Invalid js escaping
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+e8e9369 HUE-1082 [useradmin] Ldap Sync Users fails
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b97c8c7 HUE-1054 [jobsub] Polishing jobsub application
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4886b79 HUE-1074 [impala] Result view not showing all the results
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+4eeb114 HUE-962 [useradmin] Improve AllowAllBackend experience
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+8968d22 HUE-1070 [oozie] Display all job URLs spawned by Pig
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+c7900e0 HUE-1068 [oozie] Java action should support capture output
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+60173e1 HUE-1064 [core] JT plugin should support hadoop.rpc.protection set to anything other than "authentication"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+813a0f6 [oozie] Regroup Oozie instrumentation tests with submission ones
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3d4c3c5 HUE-910 [oozie] Add labels to Oozie instrumentation timers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+356f85b HUE-1043 [oozie] Rerun a bundle
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fa0fa4b Revert "HUE-1061 [useradmin] Edit group name"
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+b3c118b [desktop] Change comments describing LDAPS config
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+0efebd4 HUE-1061 [useradmin] Edit group name
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+3bdc408 HUE-1062 [fb] Increase chunk size during download
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+841c7fe HUE-1045 [beeswax] Use kerberos instance as host in hive site
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+fa4c985 HUE-1045 [beeswax] Beeswax host selection sasl
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+6ca40cd HUE-910 [oozie] Display all actions in workflow editor and dashboard
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+cdd1be9 HUE-1059 [oozie] Display Coordinators start time
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+5ef487d HUE-1059 [oozie] Display all Oozie web UI information
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_contributors">
+<title>Contributors</title>
+<simpara>This Hue release is made possible thanks to the contribution from:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Aaron Newton
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aaron T. Myers
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Abraham Elmahrek
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Aditya Acharya
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Alex Newman
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Bayer
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Andrew Yao
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ann McCown
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bc Wong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Ben Bishop
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruce Mitchener
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Bruno Mahé
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Eli Collins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Enrico Berti
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Eric Wong
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Harsh J
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Henry Robinson
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Jon Natkins
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Lars Francke
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Loren Siebert
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Marcus McLaughlin
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Mike Cotton
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Paul Battaglia
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Philip Zeyliger
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Romain Rigaux
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Roman Shaposhnik
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shawn Van Ittersum
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Shrijeet Paliwal
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Thomas Aylott
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Todd Lipcon
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Vinithra Varadharajan
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</article>

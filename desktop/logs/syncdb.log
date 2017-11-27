@@ -1,0 +1,6 @@
+[27/Nov/2017 10:14:53 ] settings     INFO     Welcome to Hue 3.11.0
+[27/Nov/2017 10:14:53 ] appmanager   DEBUG    Loaded Desktop Libraries: aws, hadoop, liboauth, liboozie, libopenid, librdbms, libsaml, libsentry, libsolr, libzookeeper
+[27/Nov/2017 10:14:53 ] appmanager   DEBUG    Loaded Desktop Applications: indexer, metadata, notebook
+[27/Nov/2017 10:14:53 ] settings     DEBUG    Installed Django modules: DesktopModule(aws: aws),DesktopModule(hadoop: hadoop),DesktopModule(liboauth: liboauth),DesktopModule(liboozie: liboozie),DesktopModule(libopenid: libopenid),DesktopModule(librdbms: librdbms),DesktopModule(libsaml: libsaml),DesktopModule(libsentry: libsentry),DesktopModule(libsolr: libsolr),DesktopModule(libzookeeper: libzookeeper),DesktopModule(Hue: desktop),DesktopModule(Solr Indexer: indexer),DesktopModule(Metadata: metadata),DesktopModule(Notebook: notebook)
+[27/Nov/2017 10:14:53 ] settings     DEBUG    DESKTOP_DB_TEST_NAME SET: /home/cloudera/hue3.11/desktop/desktop-test.db
+[27/Nov/2017 10:14:53 ] settings     DEBUG    DESKTOP_DB_TEST_USER SET: hue_test

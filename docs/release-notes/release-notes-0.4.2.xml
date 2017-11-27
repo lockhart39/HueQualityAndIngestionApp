@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<article lang="en">
+<articleinfo>
+    <date>2017-10-12</date>
+</articleinfo>
+<simpara>Cloudera Desktop v0.4.2, released May 21, 2010</simpara>
+<simpara>Besides the list of key enhancements and bug fixes below, the most important
+changes to highlight are:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Internet Explorer 8 support.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+User groups and group-based permissions.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Many new features and usability improvement for Beeswax.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>ENHANCEMENTS</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Compatibility:
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Basic support for Internet Explorer 8. Support for Chrome and Safari.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Support Python 2.6.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Support Ubuntu 10.04 (Lucid).
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Desktop Administration:
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Support for using MySQL as the Django database.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Automatic log rotation.
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+User Management:
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Added group support. You can assign users to groups, and grant (or deny)
+    access to use any Cloudera Desktop application based on group.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+A new user access log.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+The superuser may view the recent accesses of all users grouped by
+    applications.
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Beeswax:
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+You can save a query with parameters, which will prompt for inputs when
+    executed.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+When creating new Hive tables for existing data files, the new import
+    wizard can help defining the table columns by reading your data, as
+    well as loading the data into the new table.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+You can save the temporary results of a query as a new table, or simply as
+    files in HDFS.
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+The Cloudera Desktop SDK:
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+The ability to create a URL link to a specific view of an individual
+    application. Various email notifications use this to link to their result
+    pages.
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+UI speed improvement.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>KEY BUG FIXES</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Handle large number of Data Nodes.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+File upload under HTTPS now works.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Job Browser filters by job status correctly.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>KNOWN BUGS</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+After a successful upload with Linux&#8217;s flash player (which may warn you about
+  hanging your computer), the upload screen does not clear. Click the red (x)
+  button to clear it.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Running on Internet Explorer 8 has a memory leak issue, which can cause
+  instability with prolonged use.
+</simpara>
+</listitem>
+</itemizedlist>
+</article>
